@@ -1,0 +1,43 @@
+.bg-success {
+   background-color: #1ba085 !important;
+}
+#header {
+   border-bottom: 0.1rem solid #ccc;
+}
+.box_time {
+   border-bottom: 0.1rem solid #ccc;
+}
+.box_time .box_sale {
+   width: 10% !important;
+}
+.line_two_value {
+   width: 0.1rem;
+   height: 3rem;
+   background: #ccc;
+}
+.card {
+   border: none;
+
+   cursor: pointer;
+   width: calc((100% / 5) - 1rem);
+}
+.card:hover {
+   box-shadow: 0 0 5px rgba(75, 75, 75, 0.5);
+}
+.card-title {
+   text-align: center;
+   font-size: 1rem;
+}
+.tstall {
+   transition: all 0.2s !important;
+}
+.btn-secondary-remake {
+   color: #fff !important;
+   font-size: 1.1rem;
+}
+.translate_btn:hover {
+   transform: translateY(-5%);
+}
+.widthwr {
+   width: 100% !important;
+}
