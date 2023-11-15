@@ -5014,7 +5014,7 @@ textarea.form-control-lg {
 .list-group {
   --bs-list-group-color: var(--bs-body-color);
   --bs-list-group-bg: var(--bs-body-bg);
-  --bs-list-group-border-color: var(--bs-border-color);
+  /* --bs-list-group-border-color: var(--bs-border-color); */
   --bs-list-group-border-width: var(--bs-border-width);
   --bs-list-group-border-radius: var(--bs-border-radius);
   --bs-list-group-item-padding-x: 1rem;
@@ -5033,7 +5033,7 @@ textarea.form-control-lg {
   flex-direction: column;
   padding-left: 0;
   margin-bottom: 0;
-  border-radius: var(--bs-list-group-border-radius);
+  /* border-radius: var(--bs-list-group-border-radius); */
 }
 
 .list-group-numbered {
@@ -5064,7 +5064,7 @@ textarea.form-control-lg {
 .list-group-item {
   position: relative;
   display: block;
-  padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+  /* padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x); */
   color: var(--bs-list-group-color);
   text-decoration: none;
   background-color: var(--bs-list-group-bg);
