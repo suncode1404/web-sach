@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <link rel="stylesheet" href="css/bootstrap.css" />
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="chitiet.css" />
+
+      <title>Document</title>
+   </head>
+   <body>
+      <header id="header">
+         <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+         >
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <nav class="navbar navbar-expand-lg">
+            <div class="container container_nav_logo">
+               <a class="navbar-brand w-10" href="#">
+                  <img class="img-fluid rounded w-25" src="./img/logosach.png" alt="" />
+               </a>
+               <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+               >
+                  <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse w-75 justify-content-between" id="navbarSupportedContent">
+                  <div class="input-group w-50 justify-content-center">
+                     <input type="search" class="form-control rounded w-25" placeholder="Nhập tên sach, tác giả, tuyển tập,..." aria-label="Search" aria-describedby="search-addon" />
+                     <button type="button" class="btn btn-outline-light bg-success fs-6 d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-search me-2" viewBox="0 0 16 16">
+                           <path
+                              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                           />
+                        </svg>
+                        Tìm kiếm
+                     </button>
+                  </div>
+
+                  <ul class="navbar-nav mb-2 mb-lg-0 w-auto gap-3">
+                     <li class="nav-item bg-danger rounded p-1 fs-6">
+                        <a class="nav-link text-light fw-medium d-flex flex-column align-items-center link_service" aria-current="page" href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-cart mb-1" viewBox="0 0 16 16">
+                              <path
+                                 d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                              />
+                           </svg>
+                           Giỏ Hàng
+                        </a>
+                     </li>
+                     <li class="nav-item bg-warning rounded p-1">
+                        <a class="nav-link text-light fw-medium d-flex flex-column align-items-center link_service" href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-bell mb-1" viewBox="0 0 16 16">
+                              <path
+                                 d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"
+                              />
+                           </svg>
+                           Thông Báo
+                        </a>
+                     </li>
+                     <li class="nav-item bg-success rounded p-1">
+                        <a class="nav-link fw-medium text-light d-flex flex-column align-items-center link_service" href="#">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-person mb-1" viewBox="0 0 16 16">
+                              <path
+                                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+                              />
+                           </svg>
+                           Đăng Nhập
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+         <nav class="navbar navbar-expand-lg">
+            <div class="container">
+               <div class="collapse navbar-collapse d-flex justify-content-center me-4" id="navbarSupportedContent">
+                  <ul class="navbar-nav mb-lg-0 d-flex align-items-center gap-4">
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                              <path
+                                 fill-rule="evenodd"
+                                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                              />
+                           </svg>
+                           Danh mục
+                        </a>
+                        <ul class="dropdown-menu">
+                           <li>
+                              <a class="dropdown-item" href="#">Trinh thám - Kinh dị</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Viễn tưởng - Giả tưởng</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Khởi nghiệp - Làm giàu</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Marketing - Bán hàng</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Tài chính cá nhân</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Phát triển cá nhân</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#"> Doanh nhân - Bài học kinh doanh </a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Học tập - Hướng nghiệp</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Phật pháp ứng dụng</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Tâm lý - Giới tính</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Sức khỏe - Làm đẹp</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Công nghệ thông tin</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Giáo dục sớm</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Truyện thiếu nhi</a>
+                           </li>
+                           <li>
+                              <a class="dropdown-item" href="#">Nghệ thuật sống</a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link fs-5 link-offset-5" href="#">Sách Mới</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link fs-5 link-offset-5" href="#"> Bảng Xếp Hạng </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link fs-5 link-offset-5" href="#"> Sách trong nước </a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link fs-5 link-offset-5" href="#"> Sách ngoài nước </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <main id="main" class="mt-3">
+         <div class="container">
+            <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+               <ol class="breadcrumb fs-4">
+                  <li class="breadcrumb-item fs-4">
+                     <a href="#" class="link-dark">Home</a>
+                  </li>
+                  <li class="breadcrumb-item active fs-4 text-decoration-underline fw-medium" aria-current="page">Thiên Tài Bên Trái, Kẻ Điên Bên Phải</li>
+               </ol>
+            </nav>
+            <div class="box_item d-flex">
+               <div class="box_img d-flex w-32 flex-column">
+                  <div class="img_main d-flex align-items-center w-100">
+                     <ul class="list-group">
+                        <li class="list-group-item d-inline-block w-auto">
+                           <img src="img-chitiet/img_1.jpg" alt="" class="img-fluid" />
+                        </li>
+                        <li class="list-group-item d-inline-block w-auto">
+                           <img src="img-chitiet/img_1.jpg" alt="" class="img-fluid" />
+                        </li>
+                        <li class="list-group-item d-inline-block w-auto">
+                           <img src="img-chitiet/img_1.jpg" alt="" class="img-fluid" />
+                        </li>
+                        <li class="list-group-item d-inline-block w-auto">
+                           <img src="img-chitiet/img_4.png" alt="" class="img-fluid" />
+                        </li>
+                     </ul>
+                     <img src="img-chitiet/img_1.jpg" alt="" class="img-fluid d-inline-block w-75" />
+                  </div>
+                  <div class="buyaad d-flex justify-content-between mt-4">
+                     <button type="button" class="btn btn-outline-secondary fw-bold fs-6 py-2 border-2">Thêm vào giỏ hàng</button>
+                     <button type="button" class="btn btn-secondary py-2 fw-bold fs-5">Mua ngay</button>
+                  </div>
+               </div>
+               <div class="d-flex flex-column w-68">
+                  <h1 class="fs-2">Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</h1>
+                  <div class="d-flex justify-content-between w-75">
+                     <div class="d-flex flex-column gap-4">
+                        <p class="fs-5">Nhà cung cấp: <span class="text-primary">AZ Việt Nam</span></p>
+                        <p class="fs-5">
+                           Nhà xuất bản:
+                           <span class="text-dark fw-medium">NXB Thế Giới</span>
+                        </p>
+                     </div>
+                     <div class="d-flex flex-column gap-4">
+                        <p class="fs-5">Tác giả: <span class="text-dark fw-medium">Cao Minh</span></p>
+                        <p class="fs-5">Hình thức bìa: <span class="text-dark fw-medium">Bìa Mềm</span></p>
+                     </div>
+                  </div>
+                  <div class="box_rating d-flex align-items-center mt-4 gap-3">
+                     <div class="box_start d-flex gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                           <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                           />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                           <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                           />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                           <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                           />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                           <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                           />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                           <path
+                              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                           />
+                        </svg>
+                     </div>
+                     <p style="color: #f6a602" class="fs-5">(3 đánh giá)</p>
+                  </div>
+                  <div class="box_sale_price d-flex align-items-center gap-5 mt-4">
+                     <h1 class="text-secondary">143.200 đ</h1>
+                     <p class="fs-5 text-dark"><s>179.000 đ</s></p>
+                     <p class="btn btn-secondary fs-4 fw-medium">-20%</p>
+                  </div>
+                  <div class="box_infor_sub d-flex align-items-center gap-5 mt-4">
+                     <p class="fw-medium">Thời gian giao hàng</p>
+                     <p class="fw-medium">Giao hàng đến</p>
+                     <a href="#" class="text-primary fw-medium">Thay đổi</a>
+                  </div>
+                  <div class="box_infor_sub d-flex align-items-center gap-5 mt-4">
+                     <p class="fw-medium">Chính sách đổi trả</p>
+                     <p class="fw-medium">Đổi trả sản phẩm trong 30 ngày</p>
+                     <a href="#" class="text-primary fw-medium">Xem thêm </a>
+                  </div>
+
+                  <div class="box_p_m d-flex align-self-start gap-5 mt-4">
+                     <h1 class="text-dark fs-3 fw-bold">Số lượng:</h1>
+                     <div class="add_main border border-secondary d-flex align-self-start px-1 gap-4 align-items-center rounded">
+                        <p style="color: #999" class="d-inline-block fs-4">-</p>
+                        <p class="d-inline-block fw-bold fs-4">1</p>
+                        <p style="color: #999" class="d-inline-block fs-4">+</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="box_km_sale mt-4">
+               <h1 class="fs-3">ƯU ĐÃI LIÊN QUAN</h1>
+               <div class="box_content border-bottom d-flex gap-5 border-secondary pb-3">
+                  <p class="fs-5 fw-bold text-body-tertiary">Tất cả</p>
+                  <p class="fs-5 fw-bold text-body-tertiary">Mã giảm giá</p>
+                  <p class="fs-5 fw-bold text-body-tertiary">Free Ship</p>
+               </div>
+
+               <div class="box_content_logo d-flex gap-2 mt-4 justify-content-between">
+                  <div class="box_main_logo_content d-flex shadow p-2 gap-3">
+                     <div class="img_box_logo text-bg-secondary position-relative d-flex align-items-center justify-content-center px-2 py-3 rounded-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-gear-wide" viewBox="0 0 16 16">
+                           <path
+                              d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z"
+                           />
+                        </svg>
+                        <p class="position-absolute">%</p>
+                     </div>
+                     <div class="content_box_logo_infor">
+                        <h3 class="fs-5 fw-medium">Mã giảm 20k - Đơn trên 100k</h3>
+                        <p class="fs-6-remake text-body-tertiary fw-bold">Không Áp Dụng Cho Phiếu Quà Tặng và Sách Giáo Khoa</p>
+                     </div>
+                  </div>
+                  <div class="box_main_logo_content d-flex shadow p-2 gap-3">
+                     <div class="img_box_logo text-bg-secondary position-relative d-flex align-items-center justify-content-center px-2 py-3 rounded-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-gear-wide" viewBox="0 0 16 16">
+                           <path
+                              d="M8.932.727c-.243-.97-1.62-.97-1.864 0l-.071.286a.96.96 0 0 1-1.622.434l-.205-.211c-.695-.719-1.888-.03-1.613.931l.08.284a.96.96 0 0 1-1.186 1.187l-.284-.081c-.96-.275-1.65.918-.931 1.613l.211.205a.96.96 0 0 1-.434 1.622l-.286.071c-.97.243-.97 1.62 0 1.864l.286.071a.96.96 0 0 1 .434 1.622l-.211.205c-.719.695-.03 1.888.931 1.613l.284-.08a.96.96 0 0 1 1.187 1.187l-.081.283c-.275.96.918 1.65 1.613.931l.205-.211a.96.96 0 0 1 1.622.434l.071.286c.243.97 1.62.97 1.864 0l.071-.286a.96.96 0 0 1 1.622-.434l.205.211c.695.719 1.888.03 1.613-.931l-.08-.284a.96.96 0 0 1 1.187-1.187l.283.081c.96.275 1.65-.918.931-1.613l-.211-.205a.96.96 0 0 1 .434-1.622l.286-.071c.97-.243.97-1.62 0-1.864l-.286-.071a.96.96 0 0 1-.434-1.622l.211-.205c.719-.695.03-1.888-.931-1.613l-.284.08a.96.96 0 0 1-1.187-1.186l.081-.284c.275-.96-.918-1.65-1.613-.931l-.205.211a.96.96 0 0 1-1.622-.434L8.932.727zM8 12.997a4.998 4.998 0 1 1 0-9.995 4.998 4.998 0 0 1 0 9.996z"
+                           />
+                        </svg>
+                        <p class="position-absolute">%</p>
+                     </div>
+                     <div class="content_box_logo_infor">
+                        <h3 class="fs-5 fw-medium">Mã giảm 25k - Đơn trên 150k</h3>
+                        <p class="fs-6-remake text-body-tertiary fw-bold">Không Áp Dụng Cho Phiếu Quà Tặng và Sách Giáo Khoa</p>
+                     </div>
+                  </div>
+                  <div class="box_main_logo_content d-flex shadow p-2 gap-3">
+                     <div class="img_box_logo bg-primary position-relative d-flex align-items-center justify-content-center px-2 py-3 rounded-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" class="bi bi-truck" viewBox="0 0 16 16">
+                           <path
+                              d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+                           />
+                        </svg>
+                     </div>
+                     <div class="content_box_logo_infor">
+                        <h3 class="fs-5 fw-medium">Mã free ship 10k - Đơn từ 100k</h3>
+                        <p class="fs-6-remake text-body-tertiary fw-bold">Áp dụng với tất cả sản phẩm</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="box_propose mt-5">
+               <h1 class="fs-2 mb-5 fw-bold">Đề xuất</h1>
+               <div class="row gap-4">
+                  <div class="col w-100 p-0 m-0 shadow p-2">
+                     <div class="card w-100">
+                        <img src="./ps/1.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                           <h5 class="fs-6">Combo Sách Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</h5>
+                           <p class="text-secondary fw-bold fs-4">261.350 đ</p>
+                           <p class="text-body-tertiary fw-medium">
+                              <del>318.000 đ</del>
+                           </p>
+                           <div class="box_rating d-flex align-items-center mt-4 gap-2">
+                              <div class="box_start d-flex gap-1">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                              </div>
+                              <p style="color: #f6a602" class="fs-6">(3)</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col w-100 p-0 m-0 shadow p-2">
+                     <div class="card w-100">
+                        <img src="./ps/2.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                           <h5 class="fs-6">Combo Sách Thuật Thao Túng + Thiên Tài Bên Trái, Kẻ Điên Bên Phải</h5>
+                           <p class="text-secondary fw-bold fs-4">254.400 đ</p>
+                           <p class="text-body-tertiary fw-medium">
+                              <del>318.000 đ</del>
+                           </p>
+                           <div class="box_rating d-flex align-items-center mt-4 gap-2">
+                              <div class="box_start d-flex gap-1">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                              </div>
+                              <p style="color: #f6a602" class="fs-6">(0)</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col w-100 p-0 m-0 shadow p-2">
+                     <div class="card w-100">
+                        <img src="./ps/3.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                           <h5 class="fs-6">Combo Sách Tâm Lý Học Phạm Tội - Phác Họa Chân Dung Kẻ Phạm Tội...</h5>
+                           <p class="text-secondary fw-bold fs-4">230.200 đ</p>
+                           <p class="text-body-tertiary fw-medium">
+                              <del>324.000 đ</del>
+                           </p>
+                           <div class="box_rating d-flex align-items-center mt-4 gap-2">
+                              <div class="box_start d-flex gap-1">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                              </div>
+                              <p style="color: #f6a602" class="fs-6">(0)</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col w-100 p-0 m-0 shadow p-2">
+                     <div class="card w-100">
+                        <img src="./ps/4.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                           <h5 class="fs-6">Combo Sách Không Phải Sói Nhưng Cũng Đừng Là Cừu + Thiên Tài Bên Trái,...</h5>
+                           <p class="text-secondary fw-bold fs-4">241.916 đ</p>
+                           <p class="text-body-tertiary fw-medium">
+                              <del>307.000 đ</del>
+                           </p>
+                           <div class="box_rating d-flex align-items-center mt-4 gap-2">
+                              <div class="box_start d-flex gap-1">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                              </div>
+                              <p style="color: #f6a602" class="fs-6">(0)</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col w-100 p-0 m-0 shadow p-2">
+                     <div class="card w-100">
+                        <img src="./ps/5.png" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                           <h5 class="fs-6">Combo Sách Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)...</h5>
+                           <p class="text-secondary fw-bold fs-4">389.700 đ</p>
+                           <p class="text-body-tertiary fw-medium">
+                              <del>469.000 đ</del>
+                           </p>
+                           <div class="box_rating d-flex align-items-center mt-4 gap-2">
+                              <div class="box_start d-flex gap-1">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                    />
+                                 </svg>
+                              </div>
+                              <p style="color: #f6a602" class="fs-6">(0)</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="main_infor_container mt-5">
+               <h1 class="fs-5">Thông tin sản phẩm</h1>
+
+               <div class="box_infor_main d-flex gap-10-add">
+                  <div class="d-flex flex-column gap-4">
+                     <p class="text-body-tertiary fw-medium">Mã hàng</p>
+                     <p class="text-body-tertiary fw-medium">Tên Nhà Cung Cấp</p>
+                     <p class="text-body-tertiary fw-medium">Tác giả</p>
+                     <p class="text-body-tertiary fw-medium">Người Dịch</p>
+                     <p class="text-body-tertiary fw-medium">NXB</p>
+                     <p class="text-body-tertiary fw-medium">Năm XB</p>
+                     <p class="text-body-tertiary fw-medium">Ngôn Ngữ</p>
+                     <p class="text-body-tertiary fw-medium">Trọng lượng (gr)</p>
+                     <p class="text-body-tertiary fw-medium">Kích Thước Bao Bì</p>
+                     <p class="text-body-tertiary fw-medium">Số trang</p>
+                     <p class="text-body-tertiary fw-medium mb-5">Hình thức</p>
+                     <p class="text-body-tertiary fw-medium">Sản phẩm hiển thị trong</p>
+                     <p class="text-body-tertiary fw-medium mt-3">Sản phẩm bán chạy nhất</p>
+                  </div>
+                  <div class="d-flex flex-column gap-4">
+                     <p class="fw-medium">8936186546815</p>
+                     <p class="fw-medium text-primary">AZ Việt Nam</p>
+                     <p class="fw-medium">Cao Minh</p>
+                     <p class="fw-medium">Thu Hương</p>
+                     <p class="fw-medium">NXB Thế Giới</p>
+                     <p class="fw-medium">2021</p>
+                     <p class="fw-medium">Tiếng Việt</p>
+                     <p class="fw-medium">450</p>
+                     <p class="fw-medium">24 x 16 x 2.1 cm</p>
+
+                     <p class="fw-medium">424</p>
+                     <p class="fw-medium">Bìa Mềm</p>
+                     <p class="fw-medium d-flex flex-column mt-3 text-primary">
+                        <span> AZ Việt Nam</span>
+                        <span> Đồ Chơi Cho Bé - Giá Cực Tốt</span>
+                        <span>Tủ Sách Tâm Lý Kỹ Năng</span>
+                     </p>
+                     <p class="fw-medium text-primary">Top 100 sản phẩm Tâm lý bán chạy của tháng</p>
+                  </div>
+               </div>
+               <div class="box_text_main d-flex flex-column gap-4 mt-5">
+                  <p class="fs-5">
+                     Giá sản phẩm trên Fahasa.com đã bao gồm thuế theo luật hiện hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như Phụ
+                     phí đóng gói, phí vận chuyển, phụ phí hàng cồng kềnh,...
+                  </p>
+                  <p class="fs-6 text-body-tertiary">Chính sách khuyến mãi trên Fahasa.com không áp dụng cho Hệ thống Nhà sách Fahasa trên toàn quốc</p>
+                  <p class="fw-bold">Thiên Tài Bên Trái, Kẻ Điên Bên Phải</p>
+                  <p class="text-uppercase fw-bold">NẾU MỘT NGÀY ANH THẤY TÔI ĐIÊN, THỰC RA CHÍNH LÀ ANH ĐIÊN ĐẤY!</p>
+                  <p class="fw-medium">
+                     Hỡi những con người đang oằn mình trong cuộc sống, bạn biết gì về thế giới của mình? Là vô vàn thứ lý thuyết được các bậc vĩ nhân kiểm chứng, là luật lệ, là cả nghìn thứ sự thật
+                     bọc trong cái lốt hiển nhiên, hay những triết lý cứng nhắc của cuộc đời?
+                  </p>
+                  <p class="fw-medium">
+                     Lại đây, vượt qua thứ nhận thức tẻ nhạt bị đóng kín bằng con mắt trần gian, khai mở toàn bộ suy nghĩ, để dòng máu trong bạn sục sôi trước những điều kỳ vĩ, phá vỡ mọi quy tắc. Thế
+                     giới sẽ gọi bạn là kẻ điên, nhưng vậy thì có sao? Ranh giới duy nhất giữa kẻ điên và thiên tài chẳng qua là một sợi chỉ mỏng manh: Thiên tài chứng minh được thế giới của mình, còn
+                     kẻ điên chưa kịp làm điều đó. Chọn trở thành một kẻ điên để vẫy vùng giữa nhân gian loạn thế hay khóa hết chúng lại, sống mãi một cuộc đời bình thường khiến bạn cảm thấy hạnh phúc
+                     hơn?
+                  </p>
+                  <p class="fw-medium">
+                     Thiên tài bên trái, kẻ điên bên phải là cuốn sách dành cho những người điên rồ, những kẻ gây rối, những người chống đối, những mảnh ghép hình tròn trong những ô vuông không vừa
+                     vặn… những người nhìn mọi thứ khác biệt, không quan tâm đến quy tắc. Bạn có thể đồng ý, có thể phản đối, có thể vinh danh hay lăng mạ họ, nhưng điều duy nhất bạn không thể làm là
+                     phủ nhận sự tồn tại của họ. Đó là những người luôn tạo ra sự thay đổi trong khi hầu hết con người chỉ sống rập khuôn như một cái máy. Đa số đều nghĩ họ thật điên rồ nhưng nếu nhìn
+                     ở góc khác, ta lại thấy họ thiên tài. Bởi chỉ những người đủ điên nghĩ rằng họ có thể thay đổi thế giới mới là những người làm được điều đó.
+                  </p>
+                  <p class="fw-medium">Chào mừng đến với thế giới của những kẻ điên.</p>
+               </div>
+               <div class="rating_product border-bottom pb-4">
+                  <h1>Đánh giá sản phẩm</h1>
+                  <div class="container_main_rate d-flex justify-content-between w-100">
+                     <div class="box_numrate d-flex flex-column gap-2 align-items-center">
+                        <div class="d-flex align-items-center gap-1">
+                           <h1 class="fw-bold fs-1">4</h1>
+                           <span>/5</span>
+                        </div>
+                        <div class="box_rating d-flex align-items-center mt-2 gap-2">
+                           <div class="box_start d-flex gap-1">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                           </div>
+                           <p style="color: #f6a602" class="fs-6">(3)</p>
+                        </div>
+                        <p>(3 đánh giá)</p>
+                     </div>
+                     <div class="box_range_rate w-25">
+                        <div class="box-progess d-flex align-items-center gap-2">
+                           <span class="fw-bold">5 sao</span>
+                           <div class="progress w-75" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar bg-warning" style="width: 100%"></div>
+                           </div>
+                           <span class="text-body-tertiary">(2)</span>
+                        </div>
+                        <div class="box-progess d-flex align-items-center gap-2">
+                           <span class="fw-bold">4 sao</span>
+                           <div class="progress w-75" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar bg-warning" style="width: 100%"></div>
+                           </div>
+                           <span class="text-body-tertiary">(1)</span>
+                        </div>
+                        <div class="box-progess d-flex align-items-center gap-2">
+                           <span class="fw-bold">3 sao</span>
+                           <div class="progress w-75" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar bg-warning" style="width: 100%"></div>
+                           </div>
+                           <span class="text-body-tertiary">(0)</span>
+                        </div>
+                        <div class="box-progess d-flex align-items-center gap-2">
+                           <span class="fw-bold">2 sao</span>
+                           <div class="progress w-75" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar bg-warning" style="width: 100%"></div>
+                           </div>
+                           <span class="text-body-tertiary">(0)</span>
+                        </div>
+                        <div class="box-progess d-flex align-items-center gap-2">
+                           <span class="fw-bold">1 sao</span>
+                           <div class="progress w-75" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                              <div class="progress-bar bg-warning" style="width: 100%"></div>
+                           </div>
+                           <span class="text-body-tertiary">(0)</span>
+                        </div>
+                     </div>
+                     <div class="box_log d-flex flex-column align-items-center">
+                        <p>Chỉ có thành viên mới có thể viết nhận xét.</p>
+                        <p>Vui lòng <span class="text-primary">đăng nhập</span> hoặc <span class="text-primary">đăng ký</span> .</p>
+                     </div>
+                  </div>
+                  <p class="d-flex gap-4 mt-3">
+                     <span class="fw-bold fs-5 text-body-tertiary">Mới nhất</span>
+                     <span class="fw-bold fs-5 text-body-tertiary">Yêu thích nhất </span>
+                  </p>
+               </div>
+            </div>
+            <div class="box_comment d-flex flex-column mt-4 gap-5">
+               <div class="box_main_comment d-flex align-items-start gap-4">
+                  <p class="d-flex flex-column gap-3 w-100">
+                     <span class="fw-bold">Thảo Vy</span>
+                     <span class="text-body-tertiary fw-medium">13/08/2023</span>
+                  </p>
+                  <div class="d-flex flex-column gap-2">
+                     <div class="box_rating d-flex align-items-center gap-2">
+                        <div class="box_start d-flex gap-1">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                        </div>
+                     </div>
+                     <p>
+                        Cuốn sách này của tác giả Cao Minh, là cuốn sách ghi lại cuộc trò chuyện của tác giả và những bệnh nhân tâm thần/ hoặc bị người khác cho rằng tâm thần. Với tôi, cuốn chỉ nên
+                        dừng lại là một bài viết trên weibo hoặc trên một blog nào đó, không nên chuyển thể thành sách. Quan điểm xuyên suốt cuốn sách: + Nếu liên quan đến 'khoa học' thì đa phần toàn
+                        là những người phi khoa học --> dễ đưa ra những nhận định sai, khiến người đọc vì thế cũng tiếp thu một lượng kiến thức sai. Hơn hết tác giả cũng chỉ đọc về tài liệu khoa học
+                        để tìm cách nói chuyện được với bệnh nhận --> ngôn ngữ cũng vì thế mà cũng không chuẩn + Nếu liên quan đến 'đời sống' thì đều mơ hồ bởi nó chỉ dừng lại ở cảm nhận của người
+                        bệnh hoặc những người đươc cho là bị bệnh --> Vì thế nếu coi là triết lý hoặc một vấn đề cần người đọc ngộ ra thì cũng chẳng tới. Nếu cần những cái "ngộ" này, tôi nghĩ mọi
+                        người nên đọc những cuốn của thiền sư Thích Nhất Hạnh hoặc Đạt Ma hoặc của J.Krishnamurti, mỗi câu hỏi được đặt ra khiến chúng ta suy nghĩ theo chiều hướng khác nhau nhưng lại
+                        cùng một mẫu số là lắng nghe bản thân mình. Quyển này nghe tên thì hay nhưng nội dung lại không thể đong đếm được. Vì nếu xét về mặt kiến thức tôi cho giá trị mà nó mạng lại
+                        rất ít (chính xác là hầu như không có). Những nội dung bên trong, người đọc vốn dĩ có thể đọc ở những cuốn sách khác, khoa học và khách quan hơn. Nếu xét tới mặt giải trí, xem
+                        như lại cung cấp một khía cạnh được khai thác từ một đề tài còn lạ với nhiều người: bệnh nhân tâm thần hoặc là những người mà chúng ta cho như là vậy.
+                     </p>
+                     <div class="d-flex gap-5">
+                        <p class="d-flex align-items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                              <path
+                                 d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"
+                              />
+                           </svg>
+                           Thích (8)
+                        </p>
+                        <p class="d-flex align-items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                              <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                           </svg>
+                           Báo cáo
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="box_main_comment d-flex align-items-start gap-4">
+                  <p class="d-flex flex-column gap-3 w-100">
+                     <span class="fw-bold">Gia Bảo</span>
+                     <span class="text-body-tertiary fw-medium">15/10/2023</span>
+                  </p>
+                  <div class="d-flex flex-column gap-2">
+                     <div class="box_rating d-flex align-items-center gap-2">
+                        <div class="box_start d-flex gap-1">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                        </div>
+                     </div>
+                     <p>
+                        Cuốn sách này của tác giả Cao Minh, là cuốn sách ghi lại cuộc trò chuyện của tác giả và những bệnh nhân tâm thần/ hoặc bị người khác cho rằng tâm thần. Với tôi, cuốn chỉ nên
+                        dừng lại là một bài viết trên weibo hoặc trên một blog nào đó, không nên chuyển thể thành sách. Quan điểm xuyên suốt cuốn sách: + Nếu liên quan đến 'khoa học' thì đa phần toàn
+                        là những người phi khoa học --> dễ đưa ra những nhận định sai, khiến người đọc vì thế cũng tiếp thu một lượng kiến thức sai. Hơn hết tác giả cũng chỉ đọc về tài liệu khoa học
+                        để tìm cách nói chuyện được với bệnh nhận --> ngôn ngữ cũng vì thế mà cũng không chuẩn + Nếu liên quan đến 'đời sống' thì đều mơ hồ bởi nó chỉ dừng lại ở cảm nhận của người
+                        bệnh hoặc những người đươc cho là bị bệnh --> Vì thế nếu coi là triết lý hoặc một vấn đề cần người đọc ngộ ra thì cũng chẳng tới. Nếu cần những cái "ngộ" này, tôi nghĩ mọi
+                        người nên đọc những cuốn của thiền sư Thích Nhất Hạnh hoặc Đạt Ma hoặc của J.Krishnamurti, mỗi câu hỏi được đặt ra khiến chúng ta suy nghĩ theo chiều hướng khác nhau nhưng lại
+                        cùng một mẫu số là lắng nghe bản thân mình. Quyển này nghe tên thì hay nhưng nội dung lại không thể đong đếm được. Vì nếu xét về mặt kiến thức tôi cho giá trị mà nó mạng lại
+                        rất ít (chính xác là hầu như không có). Những nội dung bên trong, người đọc vốn dĩ có thể đọc ở những cuốn sách khác, khoa học và khách quan hơn. Nếu xét tới mặt giải trí, xem
+                        như lại cung cấp một khía cạnh được khai thác từ một đề tài còn lạ với nhiều người: bệnh nhân tâm thần hoặc là những người mà chúng ta cho như là vậy.
+                     </p>
+                     <div class="d-flex gap-5">
+                        <p class="d-flex align-items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                              <path
+                                 d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"
+                              />
+                           </svg>
+                           Thích (28)
+                        </p>
+                        <p class="d-flex align-items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                              <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                           </svg>
+                           Báo cáo
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="box_main_comment d-flex align-items-start gap-4">
+                  <p class="d-flex flex-column gap-3 w-100">
+                     <span class="fw-bold">Ngọc Thoại</span>
+                     <span class="text-body-tertiary fw-medium">13/04/2023</span>
+                  </p>
+                  <div class="d-flex flex-column gap-2">
+                     <div class="box_rating d-flex align-items-center gap-2">
+                        <div class="box_start d-flex gap-1">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                              <path
+                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                              />
+                           </svg>
+                        </div>
+                     </div>
+                     <p>
+                        Cuốn sách này của tác giả Cao Minh, là cuốn sách ghi lại cuộc trò chuyện của tác giả và những bệnh nhân tâm thần/ hoặc bị người khác cho rằng tâm thần. Với tôi, cuốn chỉ nên
+                        dừng lại là một bài viết trên weibo hoặc trên một blog nào đó, không nên chuyển thể thành sách. Quan điểm xuyên suốt cuốn sách: + Nếu liên quan đến 'khoa học' thì đa phần toàn
+                        là những người phi khoa học --> dễ đưa ra những nhận định sai, khiến người đọc vì thế cũng tiếp thu một lượng kiến thức sai. Hơn hết tác giả cũng chỉ đọc về tài liệu khoa học
+                        để tìm cách nói chuyện được với bệnh nhận --> ngôn ngữ cũng vì thế mà cũng không chuẩn + Nếu liên quan đến 'đời sống' thì đều mơ hồ bởi nó chỉ dừng lại ở cảm nhận của người
+                        bệnh hoặc những người đươc cho là bị bệnh --> Vì thế nếu coi là triết lý hoặc một vấn đề cần người đọc ngộ ra thì cũng chẳng tới. Nếu cần những cái "ngộ" này, tôi nghĩ mọi
+                        người nên đọc những cuốn của thiền sư Thích Nhất Hạnh hoặc Đạt Ma hoặc của J.Krishnamurti, mỗi câu hỏi được đặt ra khiến chúng ta suy nghĩ theo chiều hướng khác nhau nhưng lại
+                        cùng một mẫu số là lắng nghe bản thân mình. Quyển này nghe tên thì hay nhưng nội dung lại không thể đong đếm được. Vì nếu xét về mặt kiến thức tôi cho giá trị mà nó mạng lại
+                        rất ít (chính xác là hầu như không có). Những nội dung bên trong, người đọc vốn dĩ có thể đọc ở những cuốn sách khác, khoa học và khách quan hơn. Nếu xét tới mặt giải trí, xem
+                        như lại cung cấp một khía cạnh được khai thác từ một đề tài còn lạ với nhiều người: bệnh nhân tâm thần hoặc là những người mà chúng ta cho như là vậy.
+                     </p>
+                     <div class="d-flex gap-5">
+                        <p class="d-flex align-items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                              <path
+                                 d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"
+                              />
+                           </svg>
+                           Thích (11)
+                        </p>
+                        <p class="d-flex align-items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                              <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                           </svg>
+                           Báo cáo
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="box_service d-flex justify-content-between mt-5">
+               <div class="box_service_main d-flex align-items-end gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+                     <path
+                        d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"
+                     />
+                     <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1Zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1Z" />
+                  </svg>
+                  <span class="fs-4 fw-bold">CHÍNH SÁCH KHÁCH SỈ</span>
+               </div>
+               <div class="box_service_main d-flex align-items-end gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
+                     <path
+                        d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+                     /></svg
+                  ><span class="fs-4 fw-bold">THỜI GIAN GIAO HÀNG </span>
+               </div>
+               <div class="box_service_main d-flex align-items-end gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                     <path
+                        d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"
+                     />
+                     <path
+                        fill-rule="evenodd"
+                        d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"
+                     />
+                  </svg>
+                  <span class="fs-4 fw-bold">CHÍNH SÁCH ĐỔI TRẢ</span>
+               </div>
+            </div>
+         </div>
+      </main>
+
+      <footer id="footer" class="mt-5">
+         <div class="container">
+            <div class="infor_footer">
+               <div class="container">
+                  <div class="row gap-4 border-bottom border-black py-5">
+                     <div class="col-3 d-flex flex-column align-items-center gap-5 ps-5">
+                        <img class="img-fluid rounded w-35" src="./img/logosach.png" alt="" />
+                        <ul class="list-group align-self-start gap-3">
+                           <li class="list-group-item fw-medium fs-5 d-flex align-items-center gap-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                 <path
+                                    fill-rule="evenodd"
+                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                                 />
+                              </svg>
+                              1900190019
+                           </li>
+                           <li class="list-group-item fw-medium fs-5 d-flex align-items-center gap-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                 <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                                 />
+                              </svg>
+                              duan@gmail.com
+                           </li>
+                           <li class="list-group-item fw-medium fs-5 d-flex align-items-center gap-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                              </svg>
+                              18 Tô kí, Q12, TPHCM
+                           </li>
+                        </ul>
+                        <div class="d-flex align-self-start gap-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                              <path
+                                 d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                              <path
+                                 d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                              <path
+                                 d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                              />
+                           </svg>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                              <path
+                                 d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"
+                              />
+                           </svg>
+                        </div>
+                     </div>
+                     <div class="col-3">
+                        <ul class="list-group gap-4">
+                           <h3>Điều khoàn sử dụng</h3>
+
+                           <li class="list-group-item fs-5">Điều khoàn sử dụng</li>
+                           <li class="list-group-item fs-5">Chính sách bảo mật cá nhận</li>
+                           <li class="list-group-item fs-5">Giới thiệu</li>
+                           <li class="list-group-item fs-5">Hệ thống nhà sách</li>
+                        </ul>
+                     </div>
+                     <div class="col-3">
+                        <ul class="list-group gap-4">
+                           <h3>Tài khoản của tôi</h3>
+
+                           <li class="list-group-item fs-5">Tạo tài khoản mới</li>
+                           <li class="list-group-item fs-5">Quên mật khẩu</li>
+                           <li class="list-group-item fs-5">Chi tiết tài khoản</li>
+                           <li class="list-group-item fs-5">Lịch sử mua hàng</li>
+                        </ul>
+                     </div>
+                     <div class="col">
+                        <ul class="list-group gap-4">
+                           <h3>Hỗ trợ</h3>
+
+                           <li class="list-group-item fs-5">Chính sách đổi trả</li>
+                           <li class="list-group-item fs-5">Chính sách bảo hành</li>
+                           <li class="list-group-item fs-5">Chính sách vận chuyển</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                     <ul class="list-group flex-row gap-5">
+                        <li class="list-group-item fs-5 fw-medium">Privacy</li>
+                        <li class="list-group-item fs-5 fw-medium">Sitemap</li>
+                        <li class="list-group-item fs-5 fw-medium">Terms</li>
+                        <li class="list-group-item fs-5 fw-medium">Purchase</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+         crossorigin="anonymous"
+      ></script>
+      <script src="app.js"></script>
+   </body>
+</html>
