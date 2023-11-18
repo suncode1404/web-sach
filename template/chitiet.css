@@ -1,0 +1,42 @@
+.w-32 {
+ width: 32%;
+}
+.w-68 {
+ width: 68%;
+}
+p {
+ margin: 0;
+ padding: 0;
+}
+.img_main {
+ width: calc(100% / 2);
+}
+.img_main .list-group {
+ /* width: calc(100% / 2); */
+}
+.img_main .list-group-item {
+ width: auto;
+}
+.img_main .list-group-item img {
+ width: 70%;
+}
+.button {
+}
+.box_img .buyaad .btn {
+ width: 47%;
+}
+/* .box_p_m{
+   display: inline-block !important;
+} */
+p[style="color: #999"] {
+ cursor: pointer;
+}
+.fs-6-remake {
+ font-size: 0.85rem;
+}
+.card:hover {
+ box-shadow: none;
+}
+.gap-10-add{
+   gap:15rem;
+}
