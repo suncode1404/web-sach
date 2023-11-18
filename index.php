@@ -19,5 +19,5 @@ if(isset($_GET['mod'])) {
     include_once 'controller/c_'.$ctrl_name.'.php';
 }else {
     //Chuyển về trang chủ
-    header('Location: mod=page&act=home');
+    header('Location: ?mod=page&act=home');
 }

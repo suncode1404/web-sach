@@ -3,11 +3,11 @@
 //Gửi nhận dữ liệu thông qua view
 if(isset($_GET['act'])) {
     switch ($_GET['act']) {
-        case 'home':
+        case 'detail':
             //Lấy dữ liệu
-            
+
             //Hiện thị dữ liệu
-            $view_page = 'page_home';
+            $view_name = 'book_detail';
             break;
         default:
             break;
