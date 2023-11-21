@@ -24,7 +24,7 @@
          </button>
          <nav class="navbar navbar-expand-lg">
             <div class="container container_nav_logo">
-               <a class="navbar-brand w-10" href="#">
+               <a class="navbar-brand w-10" href="?mode=page&act=home">
                   <img class="img-fluid rounded w-25" src="template/img/logosach.png" alt="" />
                </a>
                <button
@@ -101,51 +101,11 @@
                            Danh mục
                         </a>
                         <ul class="dropdown-menu">
-                           <li>
-                              <a class="dropdown-item" href="#">Trinh thám - Kinh dị</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Viễn tưởng - Giả tưởng</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Khởi nghiệp - Làm giàu</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Marketing - Bán hàng</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Tài chính cá nhân</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Phát triển cá nhân</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#"> Doanh nhân - Bài học kinh doanh </a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Học tập - Hướng nghiệp</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Phật pháp ứng dụng</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Tâm lý - Giới tính</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Sức khỏe - Làm đẹp</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Công nghệ thông tin</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Giáo dục sớm</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Truyện thiếu nhi</a>
-                           </li>
-                           <li>
-                              <a class="dropdown-item" href="#">Nghệ thuật sống</a>
-                           </li>
+                           <?php foreach($dsChuDe as $chude):?>
+                              <li>
+                                 <a class="dropdown-item" href="?mod=category&act=detail&id=<?=$chude['MaCD']?>"><?=$chude['TenCD']?></a>
+                              </li>
+                           <?php endforeach;?>
                         </ul>
                      </li>
                      <li class="nav-item">
