@@ -28,61 +28,19 @@
                   <!-- ======================================== -->
                   <!-- ======================================== -->
                   <!-- ======================================== -->
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-1/1.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
+                  <?php foreach($dsSales as $item):?>
+                     <div class="col card gap-1 p-2 tstall">
+                        <img src="<?=$item['HinhSP']?>" class="card-img-top" alt="..." />
+                        <div class="card-body d-flex flex-column justify-content-between">
+                           <h5 class="card-title"><?=$item['TenSP']?></h5>
+                           <div class="mt-3 d-flex justify-content-between">
+                              <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($item['GiaSP'], 0, ',', '.').'đ';?></span>
+                              <span class="fw-medium"><?=number_format($item['GiaKhuyenMai'], 0, ',', '.').'đ';?></span>
+                           </div>
+                           <a href="?mod=book&act=detail" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                         </div>
-                        <a href="?mod=book&act=detail" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                      </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-1/2.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Không Phải Sói Nhưng Cũng Đừng Là Cừu</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-1/3.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Bộ Não Thứ Hai</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-1/4.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Câu Chuyện Nghệ Thuật</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-1/5.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Tarot Nhập Môn (Tái Bản 2019)</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
+                  <?php endforeach; ?>
                   <!-- ======================================== -->
                   <!-- ======================================== -->
                   <!-- ======================================== -->

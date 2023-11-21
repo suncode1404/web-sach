@@ -5,8 +5,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <link rel="stylesheet" href="template/css/bootstrap.css" />
-      <link rel="stylesheet" href="template/style.css" />
-      <link rel="stylesheet" href="template/chitiet.css" />
+      <link rel="stylesheet" href="template/css-custom/style.css" />
+      <link rel="stylesheet" href="template/css-custom/chitiet.css" />
+      <link rel="stylesheet" href="template/css-custom/ngoainuoc.css" />
       <title>Document</title>
    </head>
    <body>
@@ -127,37 +128,39 @@
       </header>
       <main id="main">
          <div class="container">
-            <div id="carouselExampleIndicators" class="carousel slide">
-               <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <?php if($view_name == 'page_home'):?>
+               <div id="carouselExampleIndicators" class="carousel slide">
+                  <div class="carousel-indicators">
+                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <img src="template/img/banner/1.jpg" class="d-block w-100" alt="..." />
+                     </div>
+                     <div class="carousel-item">
+                        <img src="template/img/banner/2.jpg" class="d-block w-100" alt="..." />
+                     </div>
+                     <div class="carousel-item">
+                        <img src="template/img/banner/3.jpg" class="d-block w-100" alt="..." />
+                     </div>
+                     <div class="carousel-item">
+                        <img src="template/img/banner/4.jpg" class="d-block w-100" alt="..." />
+                     </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                     <span class="visually-hidden">Next</span>
+                  </button>
                </div>
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <img src="template/img/banner/1.jpg" class="d-block w-100" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                     <img src="template/img/banner/2.jpg" class="d-block w-100" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                     <img src="template/img/banner/3.jpg" class="d-block w-100" alt="..." />
-                  </div>
-                  <div class="carousel-item">
-                     <img src="template/img/banner/4.jpg" class="d-block w-100" alt="..." />
-                  </div>
-               </div>
-               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-               </button>
-               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-               </button>
-            </div>
-            <img src="template/img/banner/sub.jpg" class="img-fluid mt-3" alt="..." />
+               <img src="template/img/banner/sub.jpg" class="img-fluid mt-3" alt="..." />
+            <?php endif;?>
 
             <div class="d-flex flex-column">
                <!-- Ruột template -->

@@ -6,7 +6,7 @@
             case 'detail':
                 //Lấy dữ liệu
                 include_once 'model/m_category.php';
-                $ctChuDe = category_All($_GET['id']);
+                $ctChuDe = category_getById($_GET['id']);
                 include_once 'model/m_book.php';
                 $dsSach = book_getByCategory($_GET['id']);
                 //Hiện thị dữ liệu
