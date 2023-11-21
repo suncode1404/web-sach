@@ -9,6 +9,9 @@ body{
 .bg-success {
    background-color: #1ba085 !important;
 }
+a{
+   text-decoration: none;
+}
 #header {
    border-bottom: 0.1rem solid #ccc;
 }
