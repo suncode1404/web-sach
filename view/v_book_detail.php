@@ -4,7 +4,10 @@
                   <li class="breadcrumb-item fs-4">
                      <a href="?mode=page&act=home" class="link-dark">Home</a>
                   </li>
-                  <li class="breadcrumb-item active fs-4 text-decoration-underline fw-medium" aria-current="page">Thiên Tài Bên Trái, Kẻ Điên Bên Phải</li>
+                  <li class="breadcrumb-item active fs-4 fw-medium" aria-current="page">
+                     <a href="?mod=category&act=detail&id=<?=$ctSach['MaCD']?>" class="link-dark"><?=$ctSach['TenCD']?></a>
+                  </li>
+                  <li class="breadcrumb-item active fs-4 text-decoration-underline fw-medium" aria-current="page"><?=strlen($ctSach['TenSP'])<=100?$ctSach['TenSP']:substr($ctSach['TenSP'],0,100).'...'?></li>
                </ol>
             </nav>
             <div class="box_item d-flex">
@@ -24,7 +27,7 @@
                            <img src="template/img-chitiet/img_4.png" alt="" class="img-fluid" />
                         </li>
                      </ul>
-                     <img src="template/img-chitiet/img_1.jpg" alt="" class="img-fluid d-inline-block w-75" />
+                     <img src="<?=$ctSach['HinhSP']?>" alt="" class="img-fluid d-inline-block w-75" />
                   </div>
                   <div class="buyaad d-flex justify-content-between mt-4">
                      <button type="button" class="btn btn-outline-secondary fw-bold fs-6 py-2 border-2">Thêm vào giỏ hàng</button>
@@ -32,17 +35,17 @@
                   </div>
                </div>
                <div class="d-flex flex-column w-68">
-                  <h1 class="fs-2">Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</h1>
+                  <h1 class="fs-2"><?=$ctSach['TenSP']?></h1>
                   <div class="d-flex justify-content-between w-75">
                      <div class="d-flex flex-column gap-4">
                         <p class="fs-5">Nhà cung cấp: <span class="text-primary">AZ Việt Nam</span></p>
                         <p class="fs-5">
                            Nhà xuất bản:
-                           <span class="text-dark fw-medium">NXB Thế Giới</span>
+                           <span class="text-dark fw-medium"><?=$ctSach['NhaXuatBan']?></span>
                         </p>
                      </div>
                      <div class="d-flex flex-column gap-4">
-                        <p class="fs-5">Tác giả: <span class="text-dark fw-medium">Cao Minh</span></p>
+                        <p class="fs-5">Tác giả: <span class="text-dark fw-medium"><?=$ctSach['TacGia']?></span></p>
                         <p class="fs-5">Hình thức bìa: <span class="text-dark fw-medium">Bìa Mềm</span></p>
                      </div>
                   </div>
@@ -77,8 +80,8 @@
                      <p style="color: #f6a602" class="fs-5">(3 đánh giá)</p>
                   </div>
                   <div class="box_sale_price d-flex align-items-center gap-5 mt-4">
-                     <h1 class="text-secondary">143.200 đ</h1>
-                     <p class="fs-5 text-dark"><s>179.000 đ</s></p>
+                     <h1 class="text-secondary"><?=number_format($ctSach['GiaSP'],0,'.','.').'đ'?></h1>
+                     <p class="fs-5 text-dark"><s><?=number_format($ctSach['GiaSP'],0,'.','.').'đ'?></s></p>
                      <p class="btn btn-secondary fs-4 fw-medium">-20%</p>
                   </div>
                   <div class="box_infor_sub d-flex align-items-center gap-5 mt-4">
@@ -393,9 +396,9 @@
                   <div class="d-flex flex-column gap-4">
                      <p class="fw-medium">8936186546815</p>
                      <p class="fw-medium text-primary">AZ Việt Nam</p>
-                     <p class="fw-medium">Cao Minh</p>
+                     <p class="fw-medium"><?=$ctSach['TacGia']?></p>
                      <p class="fw-medium">Thu Hương</p>
-                     <p class="fw-medium">NXB Thế Giới</p>
+                     <p class="fw-medium"><?=$ctSach['NhaXuatBan']?></p>
                      <p class="fw-medium">2021</p>
                      <p class="fw-medium">Tiếng Việt</p>
                      <p class="fw-medium">450</p>
@@ -413,29 +416,14 @@
                </div>
                <div class="box_text_main d-flex flex-column gap-4 mt-5">
                   <p class="fs-5">
-                     Giá sản phẩm trên Fahasa.com đã bao gồm thuế theo luật hiện hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như Phụ
+                     Giá sản phẩm trên BookStore.com đã bao gồm thuế theo luật hiện hành. Bên cạnh đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ giao hàng mà có thể phát sinh thêm chi phí khác như Phụ
                      phí đóng gói, phí vận chuyển, phụ phí hàng cồng kềnh,...
                   </p>
-                  <p class="fs-6 text-body-tertiary">Chính sách khuyến mãi trên Fahasa.com không áp dụng cho Hệ thống Nhà sách Fahasa trên toàn quốc</p>
-                  <p class="fw-bold">Thiên Tài Bên Trái, Kẻ Điên Bên Phải</p>
-                  <p class="text-uppercase fw-bold">NẾU MỘT NGÀY ANH THẤY TÔI ĐIÊN, THỰC RA CHÍNH LÀ ANH ĐIÊN ĐẤY!</p>
+                  <p class="fs-6 text-body-tertiary">Chính sách khuyến mãi trên BookStore.com không áp dụng cho Hệ thống Nhà sách Fahasa trên toàn quốc</p>
+                  <p class="fw-bold"><?=$ctSach['TenSP']?></p>
                   <p class="fw-medium">
-                     Hỡi những con người đang oằn mình trong cuộc sống, bạn biết gì về thế giới của mình? Là vô vàn thứ lý thuyết được các bậc vĩ nhân kiểm chứng, là luật lệ, là cả nghìn thứ sự thật
-                     bọc trong cái lốt hiển nhiên, hay những triết lý cứng nhắc của cuộc đời?
+                  <?=$ctSach['MoTa']?>
                   </p>
-                  <p class="fw-medium">
-                     Lại đây, vượt qua thứ nhận thức tẻ nhạt bị đóng kín bằng con mắt trần gian, khai mở toàn bộ suy nghĩ, để dòng máu trong bạn sục sôi trước những điều kỳ vĩ, phá vỡ mọi quy tắc. Thế
-                     giới sẽ gọi bạn là kẻ điên, nhưng vậy thì có sao? Ranh giới duy nhất giữa kẻ điên và thiên tài chẳng qua là một sợi chỉ mỏng manh: Thiên tài chứng minh được thế giới của mình, còn
-                     kẻ điên chưa kịp làm điều đó. Chọn trở thành một kẻ điên để vẫy vùng giữa nhân gian loạn thế hay khóa hết chúng lại, sống mãi một cuộc đời bình thường khiến bạn cảm thấy hạnh phúc
-                     hơn?
-                  </p>
-                  <p class="fw-medium">
-                     Thiên tài bên trái, kẻ điên bên phải là cuốn sách dành cho những người điên rồ, những kẻ gây rối, những người chống đối, những mảnh ghép hình tròn trong những ô vuông không vừa
-                     vặn… những người nhìn mọi thứ khác biệt, không quan tâm đến quy tắc. Bạn có thể đồng ý, có thể phản đối, có thể vinh danh hay lăng mạ họ, nhưng điều duy nhất bạn không thể làm là
-                     phủ nhận sự tồn tại của họ. Đó là những người luôn tạo ra sự thay đổi trong khi hầu hết con người chỉ sống rập khuôn như một cái máy. Đa số đều nghĩ họ thật điên rồ nhưng nếu nhìn
-                     ở góc khác, ta lại thấy họ thiên tài. Bởi chỉ những người đủ điên nghĩ rằng họ có thể thay đổi thế giới mới là những người làm được điều đó.
-                  </p>
-                  <p class="fw-medium">Chào mừng đến với thế giới của những kẻ điên.</p>
                </div>
                <div class="rating_product border-bottom pb-4">
                   <h1>Đánh giá sản phẩm</h1>

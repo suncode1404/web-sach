@@ -12,6 +12,7 @@
                 //Hiện thị dữ liệu
                 $view_name = 'category_detail';
                 break;
+           
             default:
                 break;
         }

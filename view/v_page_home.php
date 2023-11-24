@@ -28,16 +28,16 @@
                   <!-- ======================================== -->
                   <!-- ======================================== -->
                   <!-- ======================================== -->
-                  <?php foreach($dsSales as $item):?>
+                  <?php foreach($dsSales as $sach):?>
                      <div class="col card gap-1 p-2 tstall">
-                        <img src="<?=$item['HinhSP']?>" class="card-img-top" alt="..." />
+                        <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                         <div class="card-body d-flex flex-column justify-content-between">
-                           <h5 class="card-title"><?=$item['TenSP']?></h5>
+                           <h5 class="card-title"><?=$sach['TenSP']?></h5>
                            <div class="mt-3 d-flex justify-content-between">
-                              <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($item['GiaSP'], 0, ',', '.').'đ';?></span>
-                              <span class="fw-medium"><?=number_format($item['GiaKhuyenMai'], 0, ',', '.').'đ';?></span>
+                              <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($sach['GiaSP'], 0, '.', '.').'đ';?></span>
+                              <span class="fw-medium"><?=number_format($sach['GiaKhuyenMai'], 0, '.', '.').'đ';?></span>
                            </div>
-                           <a href="?mod=book&act=detail" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
+                           <a href="?mod=book&act=detail&id=<?=$sach['MaSP']?>" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                         </div>
                      </div>
                   <?php endforeach; ?>
@@ -65,71 +65,19 @@
                   <!-- ======================================== -->
                   <!-- ======================================== -->
                   <!-- ======================================== -->
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-2/1.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Khiêu vũ với ngòi bút</h5>
-                        <div class="mt-3 d-flex justify-content-center">
-                           <!-- <span class="text-body-tertiary text-decoration-line-through"
-                              >140.000đ</span
-                           > -->
-                           <span class="fw-medium">Tác giả: Joseph Sugarman</span>
+                  <?php foreach($dsRankTopBooks as $sach):?>
+                     <div class="col card gap-1 p-2 tstall">
+                        <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                        <div class="card-body d-flex flex-column justify-content-between">
+                           <h5 class="card-title"><?=$sach['TenSP']?></h5>
+                           <div class="mt-3 d-flex justify-content-between">
+                              <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($sach['GiaSP'],0,".",".").'đ'?> </span>
+                              <span class="fw-medium"><?=number_format($sach['GiaKhuyenMai'],0,".",".").'đ'?></span>
+                           </div>
+                           <a href="?mod=book&act=detail&id=<?=$sach['MaSP']?>" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                         </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                      </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-2/2.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Kiệt tác của sự sống</h5>
-                        <div class="mt-3 d-flex justify-content-center">
-                           <!-- <span class="text-body-tertiary text-decoration-line-through"
-                              >140.000đ</span
-                           > -->
-                           <span class="fw-medium">Tác giả: ZenBooks</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-2/3.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Tế bào gốc</h5>
-                        <div class="mt-3 d-flex justify-content-center">
-                           <!-- <span class="text-body-tertiary text-decoration-line-through"
-                              >140.000đ</span
-                           > -->
-                           <span class="fw-medium">Tác giả: FIRST NEW</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-2/4.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Sao chúng ta lại ngủ</h5>
-                        <div class="mt-3 d-flex justify-content-center">
-                           <!-- <span class="text-body-tertiary text-decoration-line-through"
-                              >140.000đ</span
-                           > -->
-                           <span class="fw-medium">Tác giả: Hải Đăng</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-2/5.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Raw vegan</h5>
-                        <div class="mt-3 d-flex justify-content-center">
-                           <!-- <span class="text-body-tertiary text-decoration-line-through"
-                              >140.000đ</span
-                           > -->
-                           <span class="fw-medium">Tác giả: Anthony William</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
+                  <?php endforeach;?>
                   <!-- ======================================== -->
                   <!-- ======================================== -->
                   <!-- ======================================== -->
@@ -141,7 +89,7 @@
                <!-- ======================================== -->
                <div class="box_time d-flex align-items-center gap-4">
                   <div class="widthwr">
-                     <span class="fs-4 fw-semibold">Sách trong nước</span>
+                     <span class="fs-4 fw-semibold">Sách Ngoài Nước</span>
                   </div>
                </div>
                <!-- ================Sách trong nước ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇================== -->
@@ -154,117 +102,19 @@
                   <!-- ======================================== -->
                   <!-- ======================================== -->
                   <!-- ======================================== -->
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-3/1.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Bé Nối Số Trong Phạm Vi 10 - Động Vật Dưới Nước</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
+                  <?php foreach($dsDomesticBooks as $sach):?>
+                     <div class="col card gap-1 p-2 tstall">
+                        <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                        <div class="card-body d-flex flex-column justify-content-between">
+                           <h5 class="card-title"><?=$sach['TenSP']?></h5>
+                           <div class="mt-3 d-flex justify-content-between">
+                              <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($sach['GiaSP'],0,".",".").'đ'?> </span>
+                              <span class="fw-medium"><?=number_format($sach['GiaKhuyenMai'],0,".",".").'đ'?></span>
+                           </div>
+                           <a href="?mod=book&act=detail&id=<?=$sach['MaSP']?>" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                         </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                      </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-3/2.jpg" class="card-img-top" alt="..." />
-
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Mùa Nước Nổi Văn Hoá Đồng Bằng Sông Cửu Long</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-3/3.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Tế bào gốc</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-3/4.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">[Phiên chợ sách cũ] Đàn Bà Nước Lọc</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-3/5.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">[Phiên chợ sách cũ] Mưa Trong Bình Minh</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-4/1.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Tủ Sách Giáo Dục Trong Nhà Trường</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-4/2.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">[Phiên chợ sách cũ] Sống Trong Thời Viễn Tưởng</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-4/3.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Vừa Nhắm Mắt Vừa Mở Cửa Số (Tái Bản 2022)</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-4/4.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Muôn Kiếp Nhân Sinh - Many Times, Many Lives</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-4/5.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">[Phiên chợ sách cũ] Ngày Trong Sương Mù</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
+                  <?php endforeach;?>
                   <!-- ======================================== -->
                   <!-- ======================================== -->
                   <!-- ======================================== -->
@@ -290,116 +140,19 @@
                   <!-- ======================================== -->
                   <!-- ======================================== -->
 
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-5/1.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Kỹ Năng Bán Hàng Tuyệt Đỉnh (Tái Bản 2022)</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
+                  <?php foreach($dsForeignBooks as $sach):?>
+                     <div class="col card gap-1 p-2 tstall">
+                        <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                        <div class="card-body d-flex flex-column justify-content-between">
+                           <h5 class="card-title"><?=$sach['TenSP']?></h5>
+                           <div class="mt-3 d-flex justify-content-between">
+                              <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($sach['GiaSP'],0,".",".").'đ'?> </span>
+                              <span class="fw-medium"><?=number_format($sach['GiaKhuyenMai'],0,".",".").'đ'?></span>
+                           </div>
+                           <a href="?mod=book&act=detail&id=<?=$sach['MaSP']?>" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                         </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                      </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-5/2.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Nóng Giận Là Bản Năng, Tĩnh Lặng Là Bản Lĩnh</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-5/3.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Non Sông Nước Việt (Sách Ảnh)</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-5/4.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Homo Deus - Lược Sử Tương Lai</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-5/5.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Nghệ Thuật Tư Duy Chiến Lược</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-6/1.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Nhà Giả Kim (Tái Bản 2020)</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-6/2.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Raw Vegan - Sức Mạnh Chữa Lành Của Thực Vật</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-6/3.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Những Chuyến Du Hành Qua Xứ Thượng Ở Đông Dương</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-6/4.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Khi Hơi Thở Hóa Thinh Không (Tái Bản 2020)</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
-                  <div class="col card gap-1 p-2 tstall">
-                     <img src="template/img/product-6/5.jpg" class="card-img-top" alt="..." />
-                     <div class="card-body d-flex flex-column justify-content-between">
-                        <h5 class="card-title">Cơ Thể Tự Chữa Lành: Thực Phẩm Thay Đổi Cuộc Sống</h5>
-                        <div class="mt-3 d-flex justify-content-between">
-                           <span class="text-body-tertiary text-decoration-line-through"> 140.000đ </span>
-                           <span class="fw-medium">100.000đ</span>
-                        </div>
-                        <a href="#" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
-                     </div>
-                  </div>
+                  <?php endforeach;?>
                   <!-- ======================================== -->
                   <!-- ======================================== -->
                   <!-- ======================================== -->
