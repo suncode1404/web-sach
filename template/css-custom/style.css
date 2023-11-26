@@ -65,3 +65,15 @@ li {
    margin: 0;
    padding: 0;
 }
+.box_login_succ{
+
+}
+/* .box_login_succ li:hover a{
+   background: none;
+   color: orange;
+} */
+.drop-dow-action li:hover a{
+ color: orange !important;
+ background: none !important;
+
+}
