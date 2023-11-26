@@ -1,0 +1,28 @@
+.bg-primary-subtle {
+   background: #20273d !important;
+   padding: 8rem;
+}
+.hidden {
+   display: none !important;
+}
+
+.form-dn {
+   width: 23rem;
+   height: 3rem;
+}
+.form-dn::placeholder {
+   text-transform: uppercase;
+}
+.btn-login-main,
+.btn-regis-main {
+   width: 10rem;
+   height: 4rem;
+   text-transform: uppercase;
+}
+.btn_regis,
+.btn_login {
+   cursor: pointer;
+}
+.regis-sub {
+   cursor: pointer;
+}
