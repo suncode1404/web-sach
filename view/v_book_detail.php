@@ -29,9 +29,16 @@
                      </ul>
                      <img src="<?=$ctSach['HinhSP']?>" alt="" class="img-fluid d-inline-block w-75" />
                   </div>
+                  <?php if(isset($_SESSION['thongbao'])):?>
+                     <div class="alert alert-danger" role="alert">
+                           <?=$_SESSION['thongbao']?>
+                     </div>
+                  <?php endif;unset($_SESSION['thongbao']);?>
                   <div class="buyaad d-flex justify-content-between mt-4">
-                     <button type="button" class="btn btn-outline-secondary fw-bold fs-6 py-2 border-2">Thêm vào giỏ hàng</button>
-                     <button type="button" class="btn btn-secondary py-2 fw-bold fs-5">Mua ngay</button>
+                     <button type="button" class="btn btn-outline-secondary fw-bold fs-6 py-2 border-2">
+                        <a href="?mod=book&act=addToCart&id=<?=$ctSach['MaSP']?>">Thêm vào giỏ hàng</a>
+                     </button>
+                     <button type="button" class="btn btn-secondary py-2 fw-bold fs-5 mx-2">Mua ngay</button>
                   </div>
                </div>
                <div class="d-flex flex-column w-68">
@@ -97,11 +104,7 @@
 
                   <div class="box_p_m d-flex align-self-start gap-5 mt-4">
                      <h1 class="text-dark fs-3 fw-bold">Số lượng:</h1>
-                     <div class="add_main border border-secondary d-flex align-self-start px-1 gap-4 align-items-center rounded">
-                        <p style="color: #999" class="d-inline-block fs-4">-</p>
-                        <p class="d-inline-block fw-bold fs-4">1</p>
-                        <p style="color: #999" class="d-inline-block fs-4">+</p>
-                     </div>
+                     <input type="number" class="h-70 w-25 p-2 border-2" style="outline: none;">
                   </div>
                </div>
             </div>
@@ -161,49 +164,57 @@
             <div class="box_propose mt-5">
                <h1 class="fs-2 mb-5 fw-bold">Đề xuất</h1>
                <div class="row gap-4">
-                  <div class="col w-100 p-0 m-0 shadow p-2">
-                     <div class="card w-100">
-                        <img src="template/ps/1.png" class="card-img-top" alt="..." />
-                        <div class="card-body">
-                           <h5 class="fs-6">Combo Sách Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</h5>
-                           <p class="text-secondary fw-bold fs-4">261.350 đ</p>
-                           <p class="text-body-tertiary fw-medium">
-                              <del>318.000 đ</del>
-                           </p>
-                           <div class="box_rating d-flex align-items-center mt-4 gap-2">
-                              <div class="box_start d-flex gap-1">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                    <path
-                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                                    />
-                                 </svg>
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                    <path
-                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                                    />
-                                 </svg>
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                    <path
-                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                                    />
-                                 </svg>
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                    <path
-                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                                    />
-                                 </svg>
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                    <path
-                                       d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                                    />
-                                 </svg>
+                  <?php foreach($dsRandomSach as $sach):?>
+                     <div class="col w-100 p-0 m-0 shadow p-2">
+                        <div class="card w-100">
+                           <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                           <div class="card-body">
+                              <h5 class="fs-6"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
+                              <p class="text-secondary fw-bold fs-4"><?=$sach['GiaSP']?></p>
+                              <p class="text-body-tertiary fw-medium">
+                                 <del><?=$sach['GiaKhuyenMai']?></del>
+                              </p>
+                              <div class="box_rating d-flex align-items-center mt-4 gap-2">
+                                 <div class="box_start d-flex gap-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                       <path
+                                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                       />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                       <path
+                                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                       />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                       <path
+                                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                       />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                       <path
+                                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                       />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                       <path
+                                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                       />
+                                    </svg>
+                                    
+                                 </div>
+                                 <p style="color: #f6a602" class="fs-6">(3)</p>
                               </div>
-                              <p style="color: #f6a602" class="fs-6">(3)</p>
+                              <a
+                                          class="btn btn-success align-self-end" href="?mod=book&act=detail&id=<?=$sach['MaSP']?>"
+                                        >
+                                            Xem Chi tiet
+                                        </a>
                            </div>
                         </div>
                      </div>
-                  </div>
-                  <div class="col w-100 p-0 m-0 shadow p-2">
+                  <?php endforeach;?>
+                  <!-- <div class="col w-100 p-0 m-0 shadow p-2">
                      <div class="card w-100">
                         <img src="template/ps/2.png" class="card-img-top" alt="..." />
                         <div class="card-body">
@@ -370,7 +381,7 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                </div>
             </div>
 
@@ -502,213 +513,95 @@
                            <span class="text-body-tertiary">(0)</span>
                         </div>
                      </div>
-                     <div class="box_log d-flex flex-column align-items-center">
-                        <p>Chỉ có thành viên mới có thể viết nhận xét.</p>
-                        <p>Vui lòng <span class="text-primary">đăng nhập</span> hoặc <span class="text-primary">đăng ký</span> .</p>
-                     </div>
+                     <?php if(!isset($_SESSION['user'])):?>
+                        <div class="box_log d-flex flex-column align-items-center">
+                           <p>Chỉ có thành viên mới có thể viết nhận xét.</p>
+                           <p>Vui lòng 
+                              <span class="text-primary">
+                                 <a href="?mod=user&act=login">đăng nhập</a>
+                              </span> hoặc 
+                              <span class="text-primary">
+                                 <a href="?mod=user&act=resign">đăng ký</a></span> .</p>
+                        </div>
+                     <?php endif;?>
                   </div>
+                  <?php if(isset($_SESSION['user'])):?>
+                     <p class="d-flex gap-4 mt-3">
+                        <h2>Cảm nghĩ của bạn đọc</h2>
+                        <form action="?mod=book&act=comment" method="post">
+                           <input type="text" name="NoiDung" class="form-control form-control" placeholder="Bạn nghĩ gì về cuốn sách này?">
+                           <input type="hidden" name="MaSP" value="<?=$ctSach['MaSP']?>">
+                           <button class="btn btn-primary mt-2" type="submit">Gửi</button>
+                        </form>
+                     </p>
+                  <?php endif;?>
                   <p class="d-flex gap-4 mt-3">
                      <span class="fw-bold fs-5 text-body-tertiary">Mới nhất</span>
                      <span class="fw-bold fs-5 text-body-tertiary">Yêu thích nhất </span>
                   </p>
+                  
                </div>
             </div>
             <div class="box_comment d-flex flex-column mt-4 gap-5">
-               <div class="box_main_comment d-flex align-items-start gap-4">
-                  <p class="d-flex flex-column gap-3 w-100">
-                     <span class="fw-bold">Thảo Vy</span>
-                     <span class="text-body-tertiary fw-medium">13/08/2023</span>
-                  </p>
-                  <div class="d-flex flex-column gap-2">
-                     <div class="box_rating d-flex align-items-center gap-2">
-                        <div class="box_start d-flex gap-1">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
+               <?php foreach($dsCamNghi as $comment):?>
+                  <div class="box_main_comment d-flex align-items-start gap-4">
+                     <p class="d-flex flex-column gap-3 w-100">
+                        <span class="fw-bold"><?=$comment['HoTen']?></span>
+                        <span class="text-body-tertiary fw-medium"><?=$comment['NgayGui']?></span>
+                     </p>
+                     <div class="d-flex flex-column gap-2">
+                        <div class="box_rating d-flex align-items-center gap-2">
+                           <div class="box_start d-flex gap-1">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#999" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                 <path
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                                 />
+                              </svg>
+                           </div>
+                        </div>
+                        <p>
+                        <?=$comment['NoiDung']?>
+                        </p>
+                        <div class="d-flex gap-5">
+                           <p class="d-flex align-items-center gap-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                                 <path
+                                    d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"
+                                 />
+                              </svg>
+                              Thích (8)
+                           </p>
+                           <p class="d-flex align-items-center gap-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                 <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
+                              </svg>
+                              Báo cáo
+                           </p>
                         </div>
                      </div>
-                     <p>
-                        Cuốn sách này của tác giả Cao Minh, là cuốn sách ghi lại cuộc trò chuyện của tác giả và những bệnh nhân tâm thần/ hoặc bị người khác cho rằng tâm thần. Với tôi, cuốn chỉ nên
-                        dừng lại là một bài viết trên weibo hoặc trên một blog nào đó, không nên chuyển thể thành sách. Quan điểm xuyên suốt cuốn sách: + Nếu liên quan đến 'khoa học' thì đa phần toàn
-                        là những người phi khoa học --> dễ đưa ra những nhận định sai, khiến người đọc vì thế cũng tiếp thu một lượng kiến thức sai. Hơn hết tác giả cũng chỉ đọc về tài liệu khoa học
-                        để tìm cách nói chuyện được với bệnh nhận --> ngôn ngữ cũng vì thế mà cũng không chuẩn + Nếu liên quan đến 'đời sống' thì đều mơ hồ bởi nó chỉ dừng lại ở cảm nhận của người
-                        bệnh hoặc những người đươc cho là bị bệnh --> Vì thế nếu coi là triết lý hoặc một vấn đề cần người đọc ngộ ra thì cũng chẳng tới. Nếu cần những cái "ngộ" này, tôi nghĩ mọi
-                        người nên đọc những cuốn của thiền sư Thích Nhất Hạnh hoặc Đạt Ma hoặc của J.Krishnamurti, mỗi câu hỏi được đặt ra khiến chúng ta suy nghĩ theo chiều hướng khác nhau nhưng lại
-                        cùng một mẫu số là lắng nghe bản thân mình. Quyển này nghe tên thì hay nhưng nội dung lại không thể đong đếm được. Vì nếu xét về mặt kiến thức tôi cho giá trị mà nó mạng lại
-                        rất ít (chính xác là hầu như không có). Những nội dung bên trong, người đọc vốn dĩ có thể đọc ở những cuốn sách khác, khoa học và khách quan hơn. Nếu xét tới mặt giải trí, xem
-                        như lại cung cấp một khía cạnh được khai thác từ một đề tài còn lạ với nhiều người: bệnh nhân tâm thần hoặc là những người mà chúng ta cho như là vậy.
-                     </p>
-                     <div class="d-flex gap-5">
-                        <p class="d-flex align-items-center gap-2">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
-                              <path
-                                 d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"
-                              />
-                           </svg>
-                           Thích (8)
-                        </p>
-                        <p class="d-flex align-items-center gap-2">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                              <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                           </svg>
-                           Báo cáo
-                        </p>
-                     </div>
                   </div>
-               </div>
-               <div class="box_main_comment d-flex align-items-start gap-4">
-                  <p class="d-flex flex-column gap-3 w-100">
-                     <span class="fw-bold">Gia Bảo</span>
-                     <span class="text-body-tertiary fw-medium">15/10/2023</span>
-                  </p>
-                  <div class="d-flex flex-column gap-2">
-                     <div class="box_rating d-flex align-items-center gap-2">
-                        <div class="box_start d-flex gap-1">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                        </div>
-                     </div>
-                     <p>
-                        Cuốn sách này của tác giả Cao Minh, là cuốn sách ghi lại cuộc trò chuyện của tác giả và những bệnh nhân tâm thần/ hoặc bị người khác cho rằng tâm thần. Với tôi, cuốn chỉ nên
-                        dừng lại là một bài viết trên weibo hoặc trên một blog nào đó, không nên chuyển thể thành sách. Quan điểm xuyên suốt cuốn sách: + Nếu liên quan đến 'khoa học' thì đa phần toàn
-                        là những người phi khoa học --> dễ đưa ra những nhận định sai, khiến người đọc vì thế cũng tiếp thu một lượng kiến thức sai. Hơn hết tác giả cũng chỉ đọc về tài liệu khoa học
-                        để tìm cách nói chuyện được với bệnh nhận --> ngôn ngữ cũng vì thế mà cũng không chuẩn + Nếu liên quan đến 'đời sống' thì đều mơ hồ bởi nó chỉ dừng lại ở cảm nhận của người
-                        bệnh hoặc những người đươc cho là bị bệnh --> Vì thế nếu coi là triết lý hoặc một vấn đề cần người đọc ngộ ra thì cũng chẳng tới. Nếu cần những cái "ngộ" này, tôi nghĩ mọi
-                        người nên đọc những cuốn của thiền sư Thích Nhất Hạnh hoặc Đạt Ma hoặc của J.Krishnamurti, mỗi câu hỏi được đặt ra khiến chúng ta suy nghĩ theo chiều hướng khác nhau nhưng lại
-                        cùng một mẫu số là lắng nghe bản thân mình. Quyển này nghe tên thì hay nhưng nội dung lại không thể đong đếm được. Vì nếu xét về mặt kiến thức tôi cho giá trị mà nó mạng lại
-                        rất ít (chính xác là hầu như không có). Những nội dung bên trong, người đọc vốn dĩ có thể đọc ở những cuốn sách khác, khoa học và khách quan hơn. Nếu xét tới mặt giải trí, xem
-                        như lại cung cấp một khía cạnh được khai thác từ một đề tài còn lạ với nhiều người: bệnh nhân tâm thần hoặc là những người mà chúng ta cho như là vậy.
-                     </p>
-                     <div class="d-flex gap-5">
-                        <p class="d-flex align-items-center gap-2">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
-                              <path
-                                 d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"
-                              />
-                           </svg>
-                           Thích (28)
-                        </p>
-                        <p class="d-flex align-items-center gap-2">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                              <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                           </svg>
-                           Báo cáo
-                        </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="box_main_comment d-flex align-items-start gap-4">
-                  <p class="d-flex flex-column gap-3 w-100">
-                     <span class="fw-bold">Ngọc Thoại</span>
-                     <span class="text-body-tertiary fw-medium">13/04/2023</span>
-                  </p>
-                  <div class="d-flex flex-column gap-2">
-                     <div class="box_rating d-flex align-items-center gap-2">
-                        <div class="box_start d-flex gap-1">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f6a602" class="bi bi-star-fill" viewBox="0 0 16 16">
-                              <path
-                                 d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-                              />
-                           </svg>
-                        </div>
-                     </div>
-                     <p>
-                        Cuốn sách này của tác giả Cao Minh, là cuốn sách ghi lại cuộc trò chuyện của tác giả và những bệnh nhân tâm thần/ hoặc bị người khác cho rằng tâm thần. Với tôi, cuốn chỉ nên
-                        dừng lại là một bài viết trên weibo hoặc trên một blog nào đó, không nên chuyển thể thành sách. Quan điểm xuyên suốt cuốn sách: + Nếu liên quan đến 'khoa học' thì đa phần toàn
-                        là những người phi khoa học --> dễ đưa ra những nhận định sai, khiến người đọc vì thế cũng tiếp thu một lượng kiến thức sai. Hơn hết tác giả cũng chỉ đọc về tài liệu khoa học
-                        để tìm cách nói chuyện được với bệnh nhận --> ngôn ngữ cũng vì thế mà cũng không chuẩn + Nếu liên quan đến 'đời sống' thì đều mơ hồ bởi nó chỉ dừng lại ở cảm nhận của người
-                        bệnh hoặc những người đươc cho là bị bệnh --> Vì thế nếu coi là triết lý hoặc một vấn đề cần người đọc ngộ ra thì cũng chẳng tới. Nếu cần những cái "ngộ" này, tôi nghĩ mọi
-                        người nên đọc những cuốn của thiền sư Thích Nhất Hạnh hoặc Đạt Ma hoặc của J.Krishnamurti, mỗi câu hỏi được đặt ra khiến chúng ta suy nghĩ theo chiều hướng khác nhau nhưng lại
-                        cùng một mẫu số là lắng nghe bản thân mình. Quyển này nghe tên thì hay nhưng nội dung lại không thể đong đếm được. Vì nếu xét về mặt kiến thức tôi cho giá trị mà nó mạng lại
-                        rất ít (chính xác là hầu như không có). Những nội dung bên trong, người đọc vốn dĩ có thể đọc ở những cuốn sách khác, khoa học và khách quan hơn. Nếu xét tới mặt giải trí, xem
-                        như lại cung cấp một khía cạnh được khai thác từ một đề tài còn lạ với nhiều người: bệnh nhân tâm thần hoặc là những người mà chúng ta cho như là vậy.
-                     </p>
-                     <div class="d-flex gap-5">
-                        <p class="d-flex align-items-center gap-2">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
-                              <path
-                                 d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"
-                              />
-                           </svg>
-                           Thích (11)
-                        </p>
-                        <p class="d-flex align-items-center gap-2">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-                              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                              <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z" />
-                           </svg>
-                           Báo cáo
-                        </p>
-                     </div>
-                  </div>
-               </div>
+               <?php endforeach;?>
             </div>
 
             <div class="box_service d-flex justify-content-between mt-5">

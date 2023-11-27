@@ -32,7 +32,7 @@
                      <div class="col card gap-1 p-2 tstall">
                         <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                         <div class="card-body d-flex flex-column justify-content-between">
-                           <h5 class="card-title"><?=$sach['TenSP']?></h5>
+                           <h5 class="card-title"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
                            <div class="mt-3 d-flex justify-content-between">
                               <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($sach['GiaSP'], 0, '.', '.').'đ';?></span>
                               <span class="fw-medium"><?=number_format($sach['GiaKhuyenMai'], 0, '.', '.').'đ';?></span>
@@ -69,7 +69,7 @@
                      <div class="col card gap-1 p-2 tstall">
                         <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                         <div class="card-body d-flex flex-column justify-content-between">
-                           <h5 class="card-title"><?=$sach['TenSP']?></h5>
+                           <h5 class="card-title"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
                            <div class="mt-3 d-flex justify-content-between">
                               <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($sach['GiaSP'],0,".",".").'đ'?> </span>
                               <span class="fw-medium"><?=number_format($sach['GiaKhuyenMai'],0,".",".").'đ'?></span>
@@ -106,7 +106,7 @@
                      <div class="col card gap-1 p-2 tstall">
                         <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                         <div class="card-body d-flex flex-column justify-content-between">
-                           <h5 class="card-title"><?=$sach['TenSP']?></h5>
+                           <h5 class="card-title"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
                            <div class="mt-3 d-flex justify-content-between">
                               <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($sach['GiaSP'],0,".",".").'đ'?> </span>
                               <span class="fw-medium"><?=number_format($sach['GiaKhuyenMai'],0,".",".").'đ'?></span>
@@ -144,7 +144,7 @@
                      <div class="col card gap-1 p-2 tstall">
                         <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                         <div class="card-body d-flex flex-column justify-content-between">
-                           <h5 class="card-title"><?=$sach['TenSP']?></h5>
+                           <h5 class="card-title"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
                            <div class="mt-3 d-flex justify-content-between">
                               <span class="text-body-tertiary text-decoration-line-through"> <?=number_format($sach['GiaSP'],0,".",".").'đ'?> </span>
                               <span class="fw-medium"><?=number_format($sach['GiaKhuyenMai'],0,".",".").'đ'?></span>

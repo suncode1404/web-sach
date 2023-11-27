@@ -6,12 +6,21 @@
 
       <link rel="stylesheet" href="template/css/bootstrap.css" />
       <link rel="stylesheet" href="template/css-custom/style.css" />
+      <?php if($view_name == 'book_detail'):?> 
       <link rel="stylesheet" href="template/css-custom/chitiet.css" />
+      <?php elseif($view_name == 'page_foreignbooks' || $view_name == 'page_domesticbooks'):?>
       <link rel="stylesheet" href="template/css-custom/ngoainuoc.css" />
+      <?php elseif($view_name == 'page_rankbooks'):?>
+      <link rel="stylesheet" href="template/css-custom/xephang.css" />
+      <?php elseif($view_name == 'user_resign' || $view_name == 'user_login'):?>
+      <link rel="stylesheet" href="template/css-custom/dndk.css" />
+      <link rel="stylesheet" href="template/css-custom/responsive.css" />
+      <?php endif;?> 
       <title>Document</title>
    </head>
    <body>
-   <header id="header">
+      <?php if(!($view_name == 'user_login' || $view_name == 'user_resign')):?>
+      <header id="header">
          <button
             class="navbar-toggler"
             type="button"
@@ -78,7 +87,7 @@
                         <a
                            class="nav-link text-light fw-medium d-flex flex-column align-items-center link_service"
                            aria-current="page"
-                           href="#"
+                           href="?mod=page&act=cart"
                         >
                            <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -115,26 +124,56 @@
                            Thông Báo
                         </a>
                      </li>
-                     <li class="nav-item bg-success rounded p-1">
-                        <a
-                           class="nav-link fw-medium text-light d-flex flex-column align-items-center link_service"
-                           href="#"
-                        >
-                           <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="22"
-                              height="22"
-                              fill="white"
-                              class="bi bi-person mb-1"
-                              viewBox="0 0 16 16"
+                     <?php if(!isset($_SESSION['user'])):?>
+                        <li class="nav-item bg-success rounded p-1">
+                           <a
+                              class="nav-link fw-medium text-light d-flex flex-column align-items-center link_service"
+                              href="?mod=user&act=login"
                            >
-                              <path
-                                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
-                              />
-                           </svg>
-                           Đăng Nhập
-                        </a>
+                              <svg
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="22"
+                                 height="22"
+                                 fill="white"
+                                 class="bi bi-person mb-1"
+                                 viewBox="0 0 16 16"
+                              >
+                                 <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+                                 />
+                              </svg>
+                              Đăng Nhập
+                           </a>
+                        </li>
+                     <?php else:?>
+                        
+                        <li
+                        class="nav-item d-flex align-items-center"
+                     >
+                        
+
+                        <!-- ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇cái này là lúc login tài khoản ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇ -->
+
+                         <div class="position-relative bg-primary rounded p-1 box_login_succ h-100 d-flex align-items-center">
+                           <a class="nav-link dropdown-toggle fs-5 text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Xin Chào, <?=$_SESSION['user']['HoTen']?>
+                            </a>
+                           <ul class="dropdown-menu position-absolute bg-dark drop-dow-action end-0">
+                              <li><a class="dropdown-item text-light" href="#">Thông tin tài khoản</a></li>
+                              <li><a class="dropdown-item text-light" href="#">Lịch Sử Mượn sách</a></li>
+                              <?php if($_SESSION['user']['Quyen']>=1):?>
+                                 <li><hr class="dropdown-divider bg-dark-subtle"></li>
+                                 <li><a class="dropdown-item text-light" href="#">Trang quản lý</a></li>
+                              <?php endif;?>
+                              <li><hr class="dropdown-divider bg-dark-subtle"></li>
+                              <li><a class="dropdown-item text-light" href="?mod=user&act=logout">Đăng xuất</a></li>
+
+                           </ul>
+
+                        </div> 
+                        <!-- ⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆cái này là lúc login tài khoản ⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆ -->
                      </li>
+                     <?php endif;?>
                   </ul>
                </div>
             </div>
@@ -178,10 +217,7 @@
                         </ul>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link fs-5 link-offset-5" href="#">Sách Mới</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link fs-5 link-offset-5" href="#">Bảng Xếp Hạng</a>
+                        <a class="nav-link fs-5 link-offset-5" href="?mod=page&act=rankbooks">Bảng Xếp Hạng</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link fs-5 link-offset-5" href="?mod=page&act=domesticbooks&id=16">Sách trong nước</a>
@@ -194,6 +230,7 @@
             </div>
          </nav>
       </header>
+      <?php endif;?>
       <main id="main">
          <div class="container">
             <?php if($view_name == 'page_home'):?>
@@ -236,14 +273,14 @@
             </div>
          </div>
       </main>
-
+      <?php if(!($view_name == 'user_login' || $view_name == 'user_resign')):?>
       <footer id="footer" class="mt-5">
          <div class="container">
             <div class="infor_footer">
                <div class="container">
                   <div class="row gap-4 border-bottom border-black py-5">
                      <div class="col-3 d-flex flex-column align-items-center gap-5 ps-5">
-                        <img class="img-fluid rounded w-35" src="./img/logosach.png" alt="" />
+                        <img class="img-fluid rounded w-35" src="template/img/logosach.png" alt="" />
                         <ul class="list-group align-self-start gap-3">
                            <li class="list-group-item fw-medium fs-5 d-flex align-items-center gap-3">
                               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
@@ -335,11 +372,12 @@
             
          </div>
       </footer>
+      <?php endif;?>
       <script
          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
          crossorigin="anonymous"
       ></script>
-      <script src="app.js"></script>
+      <script src="template/app.js"></script>
    </body>
 </html>

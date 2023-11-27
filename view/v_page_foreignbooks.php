@@ -153,7 +153,7 @@
                         <div class="accordion-body p-3">
                            <div
                               class="row g-3 align-items-center border-bottom pb-3">
-                              <div class="col-auto">
+                              <!-- <div class="col-auto">
                                  <label
                                     for="inputPassword6"
                                     class="col-form-label fs-5 fw-bold"
@@ -189,7 +189,7 @@
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                  </select>
-                              </div>
+                              </div> -->
                            </div>
 
                            <div
@@ -222,6 +222,7 @@
                                           ><?=$sach['GiaKhuyenMai']?></span
                                        >
                                     </div>
+                                 
                                  </div>
                               </a>
                               <?php endforeach;?>
@@ -235,59 +236,43 @@
                            </div>
 
                            <nav
-                              aria-label="Page navigation example "
-                              class="d-flex justify-content-center">
-                              <ul class="pagination gap-3">
-                                 <li class="page-item">
-                                    <a class="page-link text-dark" href="#"
-                                       ><svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="16"
-                                          height="16"
-                                          fill="currentColor"
-                                          class="bi bi-chevron-left"
-                                          viewBox="0 0 16 16">
-                                          <path
-                                             fill-rule="evenodd"
-                                             d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" /></svg
-                                    ></a>
-                                 </li>
-                                 <li class="page-item">
-                                    <a class="page-link text-dark" href="#"
-                                       >1</a
-                                    >
-                                 </li>
-                                 <li class="page-item">
-                                    <a class="page-link text-dark" href="#"
-                                       >2</a
-                                    >
-                                 </li>
-                                 <li class="page-item">
-                                    <a class="page-link text-dark" href="#"
-                                       >3</a
-                                    >
-                                 </li>
-                                 <li class="page-item">
-                                    <a class="page-link text-dark" href="#"
-                                       >4</a
-                                    >
-                                 </li>
-
-                                 <li class="page-item">
-                                    <a class="page-link text-dark" href="#"
-                                       ><svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="16"
-                                          height="16"
-                                          fill="currentColor"
-                                          class="bi bi-chevron-right"
-                                          viewBox="0 0 16 16">
-                                          <path
-                                             fill-rule="evenodd"
-                                             d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" /></svg
-                                    ></a>
-                                 </li>
-                              </ul>
+                            aria-label="Page navigation example "
+                            class="d-flex justify-content-center">
+                            <ul class="pagination gap-3">
+                                <li class="page-item <?=($page<=1)?'disabled':'';?>">
+                                <a class="page-link text-dark" href="?mod=book&act=search&keyword=domesticbooks&page=<?=$page-1?>"
+                                    ><svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-chevron-left"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" /></svg
+                                ></a>
+                                </li>
+                                <?php for($i=1;$i<=$sotrang;$i++):?>
+                                    <li class="page-item <?=($page==$i)?'active':'';?>">
+                                    <a class="page-link" href="?mod=book&act=search&keyword=domesticbooks&page=<?=$i?>"><?=$i?></a>
+                                    </li>
+                                <?php endfor;?>   
+                                <li class="page-item <?=($page>=$sotrang)?'disabled':'';?>">
+                                <a class="page-link text-dark" href="?mod=book&act=search&keyword=domesticbooks&page=<?=$page+1?>"
+                                    ><svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-chevron-right"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" /></svg
+                                ></a>
+                                </li>
+                            </ul>
                            </nav>
                         </div>
                      </div>

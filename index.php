@@ -2,7 +2,7 @@
     //Điều hướng tới controller
     include_once 'model/m_category.php';
     $dsChuDe =category_All();
-
+    session_start();
     if(isset($_GET['mod'])) {
         switch($_GET['mod']) {
             case 'page':

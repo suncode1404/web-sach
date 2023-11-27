@@ -25,6 +25,12 @@ if(isset($_GET['act'])) {
             $ctChuDe = category_getById($_GET['id']);
             include_once 'model/m_book.php';
             $dsSach = book_getByCategory($_GET['id']);
+            $page =1;
+            if(isset($_GET['page'])) {
+                $page = $_GET['page'];
+            }
+            $keyword = $_GET['act'];
+            $sotrang =ceil(intval(book_searchTotal($keyword,$page))/10);
             //Hiện thị dữ liệu
             $view_name = 'page_domesticbooks';
             break;
@@ -34,8 +40,26 @@ if(isset($_GET['act'])) {
             $ctChuDe = category_getById($_GET['id']);
             include_once 'model/m_book.php';
             $dsSach = book_getByCategory($_GET['id']);
+            $page =1;
+            if(isset($_GET['page'])) {
+                $page = $_GET['page'];
+            }
+            $keyword = $_GET['act'];
+            $sotrang =ceil(intval(book_searchTotal($keyword,$page))/10);
             //Hiện thị dữ liệu
             $view_name = 'page_foreignbooks';
+            break;
+        case 'rankbooks':
+            //Lấy dữ liệu
+
+            //Hiện thị dữ liệu
+            $view_name = 'page_rankbooks';
+            break;
+        case 'cart':
+            //Lấy dữ liệu
+
+            //Hiện thị dữ liệu
+            $view_name = 'page_cart';
             break;
         default:
             break;

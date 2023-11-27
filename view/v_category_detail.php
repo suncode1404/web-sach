@@ -104,7 +104,6 @@
                 </div>
             </div>
         </div>
-
         <div class="accordion-item p-2">
             <h2 class="accordion-header fs-5 mb-3">
                 Chọn mức giá phù hợp
@@ -137,7 +136,7 @@
                     value="0" />
                 </div>
             </div>
-        </div>
+    </div>
     </div>
         <div class="box_card w-75 ">
             <div class="accordion " id="accordionExample">
@@ -149,50 +148,9 @@
                     id="collapseOne"
                     class="accordion-collapse collapse show"
                     data-bs-parent="#accordionExample">
-                    <div class="accordion-body p-3">
+                    <div class="accordion-body p-3">    
                         <div
-                            class="row g-3 align-items-center border-bottom pb-3">
-                            <div class="col-auto">
-                                <label
-                                for="inputPassword6"
-                                class="col-form-label fs-5 fw-bold"
-                                >Sắp xếp theo</label
-                                >
-                            </div>
-                            <div class="col-auto">
-                                <select
-                                class="form-select"
-                                aria-label="Default select example">
-                                <option selected>Sắp Xếp Theo</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="col-auto">
-                                <select
-                                class="form-select"
-                                aria-label="Default select example">
-                                <option selected>Còn Hàng</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                </select>
-                            </div>
-                            <div class="col-auto">
-                                <select
-                                class="form-select"
-                                aria-label="Default select example">
-                                <option selected>50 sản phẩm</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                </select>
-                            </div>
-                        </div>
-    
-                        <div
-                            class="row row-cols-1 row-cols-md-5 gap-1 justify-content-between mt-5">
+                            class="row row-cols-1 row-cols-md-5 gap-1 mt-5">
                             <!-- =============cái này là box sản phẩm ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇======== -->
                             <!-- ======================================== -->
                             <!-- ======================================== -->
@@ -209,7 +167,7 @@
                                         <div
                                         class="card-body d-flex flex-column justify-content-between">
                                         <h5 class="card-title">
-                                            <?=$sach['TenSP']?>
+                                            <?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?>
                                         </h5>
                                         <div
                                             class="mt-3 d-flex flex-column align-items-center gap-3">
@@ -221,6 +179,11 @@
                                                 ><?=number_format($sach['GiaKhuyenMai'], 0, ',', '.').'đ';?></span
                                             >
                                         </div>
+                                        <a
+                                          class="btn btn-success" href="?mod=book&act=detail&id=<?=$sach['MaSP']?>"
+                                        >
+                                            Xem Chi tiet
+                                        </a>
                                         </div>
                                     </div>
                                     <?php endforeach;?>
@@ -237,8 +200,8 @@
                             aria-label="Page navigation example "
                             class="d-flex justify-content-center">
                             <ul class="pagination gap-3">
-                                <li class="page-item">
-                                <a class="page-link text-dark" href="#"
+                                <li class="page-item <?=($page<=1)?'disabled':'';?>">
+                                <a class="page-link text-dark" href="?mod=book&act=search&keyword=domesticbooks&page=<?=$page-1?>"
                                     ><svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="16"
@@ -251,29 +214,13 @@
                                             d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" /></svg
                                 ></a>
                                 </li>
-                                <li class="page-item">
-                                <a class="page-link text-dark" href="#"
-                                    >1</a
-                                >
-                                </li>
-                                <li class="page-item">
-                                <a class="page-link text-dark" href="#"
-                                    >2</a
-                                >
-                                </li>
-                                <li class="page-item">
-                                <a class="page-link text-dark" href="#"
-                                    >3</a
-                                >
-                                </li>
-                                <li class="page-item">
-                                <a class="page-link text-dark" href="#"
-                                    >4</a
-                                >
-                                </li>
-    
-                                <li class="page-item">
-                                <a class="page-link text-dark" href="#"
+                                <?php for($i=1;$i<=$sotrang;$i++):?>
+                                    <li class="page-item <?=($page==$i)?'active':'';?>">
+                                    <a class="page-link" href="?mod=book&act=search&keyword=domesticbooks&page=<?=$i?>"><?=$i?></a>
+                                    </li>
+                                <?php endfor;?>   
+                                <li class="page-item <?=($page>=$sotrang)?'disabled':'';?>">
+                                <a class="page-link text-dark" href="?mod=book&act=search&keyword=domesticbooks&page=<?=$page+1?>"
                                     ><svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         width="16"
@@ -287,7 +234,7 @@
                                 ></a>
                                 </li>
                             </ul>
-                        </nav>
+                           </nav>
                     </div>
                     </div>
                 </div>
