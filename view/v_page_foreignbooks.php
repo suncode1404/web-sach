@@ -202,29 +202,33 @@
                               <!-- ======================================== -->
                               <!-- ======================================== -->
                               <?php foreach($dsSach as $sach):?>
-                              <a href="#" class="col card gap-1 p-2 tstall">
-                                 <img
+                              <div class="col card gap-1 p-2 tstall">
+                                    <img
                                     src="<?=$sach['HinhSP']?>"
                                     class="card-img-top"
                                     alt="..." />
-                                 <div
+                                    <div
                                     class="card-body d-flex flex-column justify-content-between">
                                     <h5 class="card-title">
-                                       <?=$sach['TenSP']?>
+                                       <?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?>
                                     </h5>
                                     <div
                                        class="mt-3 d-flex flex-column align-items-center gap-3">
                                        <span
                                           class="text-body-tertiary text-decoration-line-through">
-                                          <?=$sach['GiaSP']?>
+                                          <?=number_format($sach['GiaSP'], 0, ',', '.').'đ';?>
                                        </span>
                                        <span class="fw-medium"
-                                          ><?=$sach['GiaKhuyenMai']?></span
+                                          ><?=number_format($sach['GiaKhuyenMai'], 0, ',', '.').'đ';?></span
                                        >
                                     </div>
-                                 
-                                 </div>
-                              </a>
+                                    <a
+                                    class="btn btn-success" href="?mod=book&act=detail&id=<?=$sach['MaSP']?>"
+                                    >
+                                       Xem Chi tiet
+                                    </a>
+                                    </div>
+                              </div>
                               <?php endforeach;?>
                               <!-- ======================================== -->
                               <!-- ======================================== -->

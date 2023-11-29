@@ -61,6 +61,7 @@
                            id="formGroupExampleInput"
                            placeholder="Tên đăng nhập"
                            name="user"
+                           
                         />
                      </div>
                      <div class="mb-3">
@@ -70,6 +71,7 @@
                            id="formGroupExampleInput2"
                            placeholder="Mật khẩu"
                            name="pass"
+                           
                         />
                      </div>
                      <p class="regis-sub align-self-end text-uppercase fw-bold fs-6"><a href="?mod=user&act=resign">Đăng Ký tài khoản</a></p>

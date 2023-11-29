@@ -51,14 +51,26 @@ if(isset($_GET['act'])) {
             break;
         case 'rankbooks':
             //Lấy dữ liệu
-
+            include_once 'model/m_book.php';
+            //lấy ra bxh sách
+            $dsRankTopBooks = book_getTopRankBooks(10);
+            //lấy ra những sách đang sale
+            $dsSales = book_getSales(3);
             //Hiện thị dữ liệu
             $view_name = 'page_rankbooks';
             break;
         case 'cart':
             //Lấy dữ liệu
-
-            //Hiện thị dữ liệu
+            include_once 'model/m_history.php';
+            $ctGioSach =[];
+            if(isset($_SESSION['user'])) {
+                $MaTK = $_SESSION['user']['MaTK'];
+                $GioSach = history_hasCart($MaTK);
+                if($GioSach) {
+                    $ctGioSach =history_getCart($MaTK);
+                }
+            }
+            // Hiện thị dữ liệu
             $view_name = 'page_cart';
             break;
         default:

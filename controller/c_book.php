@@ -10,6 +10,9 @@ if(isset($_GET['act'])) {
             $dsRandomSach = book_getRandomByCategory($ctSach['MaCD']);
             include_once 'model/m_comment.php';
             $dsCamNghi = comment_getByBook($_GET['id']);
+            if(isset($_POST['addcart'])) {
+                header('Location: ?mod=book&act=addToCart&id='.$ctSach['MaSP'].'&count='.$_POST['count']);
+            }
             //Hiện thị dữ liệu
             $view_name = 'book_detail';
             break;
@@ -47,7 +50,30 @@ if(isset($_GET['act'])) {
             if(!isset($_SESSION['user'])) {
                 $_SESSION['thongbao'] = 'Bạn cần đăng nhập để mua hàng';
                 header('Location: ?mod=book&act=detail&id='.$ctSach['MaSP']);
+                return;
             } 
+            $count = $_GET['count'];
+            $MaSP = $_GET['id'];
+            $MaTK = $_SESSION['user']['MaTK'];
+            try {
+                //Kiểm tra có giỏ hàng hay chưa?
+                include_once 'model/m_history.php';
+                $kq = history_hasCart($MaTK);
+                if($kq) {
+                    //Đúng, đã có giỏ hàng, thêm vào giỏ hàng
+                    history_addToCart($kq['MaLS'],$MaSP);
+                }else {
+                    //sai, chưa có giỏ sách 
+                    history_add($MaTK,$count);
+                    $kq = history_hasCart($MaTK);
+                    history_addToCart($kq['MaLS'],$MaSP);          
+                }
+                $_SESSION['giohang'] = 'Đã thêm sách vào giỏ hàng';
+            } catch (\Throwable $th) {  
+                $_SESSION['thongbao'] ='Sách này đã có trong giỏ';
+            }
+                
+            header('Location: ?mod=book&act=detail&id='.$MaSP.'&count='.$count);
             break;
         case 'comment':
             include_once 'model/m_comment.php';

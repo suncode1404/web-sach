@@ -157,7 +157,7 @@
                            </div>
 
                            <div
-                              class="row row-cols-1 row-cols-md-5 gap-1 justify-content-between mt-5">
+                              class="row row-cols-1 row-cols-md-5 gap-1 mt-5">
                               <!-- =============cái này là box sản phẩm ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇======== -->
                               <!-- ======================================== -->
                               <!-- ======================================== -->
@@ -166,29 +166,34 @@
                               <!-- ======================================== -->
                               <!-- ======================================== -->
                               <?php foreach($dsSach as $sach):?>
-                              <a href="#" class="col card gap-1 p-2 tstall">
-                                 <img
-                                    src="<?=$sach['HinhSP']?>"
-                                    class="card-img-top"
-                                    alt="..." />
-                                 <div
-                                    class="card-body d-flex flex-column justify-content-between">
-                                    <h5 class="card-title">
-                                       <?=$sach['TenSP']?>
-                                    </h5>
-                                    <div
-                                       class="mt-3 d-flex flex-column align-items-center gap-3">
-                                       <span
-                                          class="text-body-tertiary text-decoration-line-through">
-                                          <?=$sach['GiaSP']?>
-                                       </span>
-                                       <span class="fw-medium"
-                                          ><?=$sach['GiaKhuyenMai']?></span
-                                       >
+                                    <div class="col card gap-1 p-2 tstall">
+                                        <img
+                                        src="<?=$sach['HinhSP']?>"
+                                        class="card-img-top"
+                                        alt="..." />
+                                        <div
+                                        class="card-body d-flex flex-column justify-content-between">
+                                        <h5 class="card-title">
+                                            <?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?>
+                                        </h5>
+                                        <div
+                                            class="mt-3 d-flex flex-column align-items-center gap-3">
+                                            <span
+                                                class="text-body-tertiary text-decoration-line-through">
+                                                <?=number_format($sach['GiaSP'], 0, ',', '.').'đ';?>
+                                            </span>
+                                            <span class="fw-medium"
+                                                ><?=number_format($sach['GiaKhuyenMai'], 0, ',', '.').'đ';?></span
+                                            >
+                                        </div>
+                                        <a
+                                          class="btn btn-success" href="?mod=book&act=detail&id=<?=$sach['MaSP']?>"
+                                        >
+                                            Xem Chi tiet
+                                        </a>
+                                        </div>
                                     </div>
-                                 </div>
-                              </a>
-                              <?php endforeach;?>
+                                    <?php endforeach;?>
                               <!-- ======================================== -->
                               <!-- ======================================== -->
                               <!-- ======================================== -->

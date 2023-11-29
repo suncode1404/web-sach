@@ -10,7 +10,7 @@
                   <li class="breadcrumb-item active fs-4 text-decoration-underline fw-medium" aria-current="page"><?=strlen($ctSach['TenSP'])<=100?$ctSach['TenSP']:substr($ctSach['TenSP'],0,100).'...'?></li>
                </ol>
             </nav>
-            <div class="box_item d-flex">
+            <form action="" class="box_item d-flex" method="post">
                <div class="box_img d-flex w-32 flex-column">
                   <div class="img_main d-flex align-items-center w-100">
                      <ul class="list-group">
@@ -34,9 +34,14 @@
                            <?=$_SESSION['thongbao']?>
                      </div>
                   <?php endif;unset($_SESSION['thongbao']);?>
+                  <?php if(isset($_SESSION['giohang'])):?>
+                     <div class="alert alert-success" role="alert">
+                           <?=$_SESSION['giohang']?>
+                     </div>
+                  <?php endif;unset($_SESSION['giohang']);?>
                   <div class="buyaad d-flex justify-content-between mt-4">
-                     <button type="button" class="btn btn-outline-secondary fw-bold fs-6 py-2 border-2">
-                        <a href="?mod=book&act=addToCart&id=<?=$ctSach['MaSP']?>">Thêm vào giỏ hàng</a>
+                     <button type="submit" name="addcart" class="btn btn-outline-secondary fw-bold fs-6 py-2 border-2">
+                        Thêm vào giỏ hàng
                      </button>
                      <button type="button" class="btn btn-secondary py-2 fw-bold fs-5 mx-2">Mua ngay</button>
                   </div>
@@ -53,7 +58,7 @@
                      </div>
                      <div class="d-flex flex-column gap-4">
                         <p class="fs-5">Tác giả: <span class="text-dark fw-medium"><?=$ctSach['TacGia']?></span></p>
-                        <p class="fs-5">Hình thức bìa: <span class="text-dark fw-medium">Bìa Mềm</span></p>
+                        <p class="fs-5">Số lượng sản phẩm: <span class="text-dark fw-medium"><?=$ctSach['SoLuong']?></span></p>
                      </div>
                   </div>
                   <div class="box_rating d-flex align-items-center mt-4 gap-3">
@@ -104,10 +109,10 @@
 
                   <div class="box_p_m d-flex align-self-start gap-5 mt-4">
                      <h1 class="text-dark fs-3 fw-bold">Số lượng:</h1>
-                     <input type="number" class="h-70 w-25 p-2 border-2" style="outline: none;">
+                     <input type="number" class="h-70 w-25 p-2 border-2" style="outline: none;" min='0' name="count" value="1">
                   </div>
                </div>
-            </div>
+            </form>
             <div class="box_km_sale mt-4">
                <h1 class="fs-3">ƯU ĐÃI LIÊN QUAN</h1>
                <div class="box_content border-bottom d-flex gap-5 border-secondary pb-3">

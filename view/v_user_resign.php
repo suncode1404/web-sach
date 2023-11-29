@@ -62,6 +62,7 @@
                                   class="form-control border-success form-dn"
                                   id="formGroupExampleInput"
                                   placeholder="<?= empty($_POST['fullname'])?'Tên':$fullname?>"
+                                  value="<?= empty($_POST['fullname'])?'':$fullname?>"
                                />
                             </div>
                             <?php if(isset($_SESSION['fullname'])):?>
@@ -76,6 +77,7 @@
                                   class="form-control border-success form-dn"
                                   id="formGroupExampleInput2"
                                   placeholder="<?= empty($_POST['username'])?'Tên đăng nhập':$username?>"
+                                  value="<?= empty($_POST['username'])?'':$username?>"
                                />
                             </div>
                             <?php if(isset($_SESSION['username'])):?>
@@ -90,6 +92,7 @@
                                   class="form-control border-success form-dn"
                                   id="formGroupExampleInput2"
                                   placeholder="<?= empty($_POST['phone'])?'Số điện thoại':$phone?>"
+                                  value="<?= empty($_POST['phone'])?'':$phone?>"
                                />
                             </div>
                             <?php if(isset($_SESSION['phone'])):?>
@@ -103,7 +106,8 @@
                                   name="password"
                                   class="form-control border-success form-dn"
                                   id="formGroupExampleInput2"
-                                  placeholder="<?= empty($_POST['password'])?'Mật khẩu':$password?>"
+                                  placeholder="<?= empty($_POST['password'])?'Mật khẩu':''?>"
+                                  value="<?= empty($_POST['password'])?'':$password?>"
                                />
                             </div>
                             <?php if(isset($_SESSION['password'])):?>
@@ -118,6 +122,7 @@
                                   class="form-control border-success form-dn"
                                   id="formGroupExampleInput2"
                                   placeholder="<?= empty($_POST['address'])?'Nhập địa chỉ':$address?>"
+                                  value="<?= empty($_POST['address'])?'':$address?>"
                                />
                             </div>
                             <?php if(isset($_SESSION['address'])):?>

@@ -155,7 +155,7 @@
                         <!-- ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇cái này là lúc login tài khoản ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇ -->
 
                          <div class="position-relative bg-primary rounded p-1 box_login_succ h-100 d-flex align-items-center">
-                           <a class="nav-link dropdown-toggle fs-5 text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           <a class="nav-link dropdown-toggle fs-6 text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                            Xin Chào, <?=$_SESSION['user']['HoTen']?>
                             </a>
                            <ul class="dropdown-menu position-absolute bg-dark drop-dow-action end-0">

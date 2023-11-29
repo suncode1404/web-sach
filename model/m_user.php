@@ -5,3 +5,6 @@
     function user_resign($fullname,$username,$phone,$password,$address) {
         return pdo_execute("INSERT INTO taikhoan(`HoTen`,`TenTaiKhoan`,`SoDienThoai`,`MatKhau`,`DiaChi`) VALUES(?,?,?,?,?)",$fullname,$username,$phone,$password,$address);
     }
+    function user_getUser() {
+        return pdo_query("SELECT * FROM taikhoan");
+    }

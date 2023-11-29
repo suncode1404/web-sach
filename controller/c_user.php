@@ -13,7 +13,7 @@ if(isset($_GET['act'])) {
                     $_SESSION['user'] = $result;
                     header('Location: ?mod=page&act=home');
                 }else {
-                    $_SESSION['thongbao'] = 'Tên tài khoản hoặc mật khẩu không trùng khớp';
+                    $_SESSION['thongbao'] = 'Tên tài khoản hoặc mật khẩu không đúng';
                 }
             }
             //Hiện thị dữ liệu
@@ -28,6 +28,7 @@ if(isset($_GET['act'])) {
         case 'resign':
             //Lấy dữ liệu
             include_once 'model/m_user.php';
+            $tk_all = user_getUser();
             if(isset($_POST['fullname']) || isset ($_POST['username']) || isset ($_POST['phone']) || isset ($_POST['password']) || isset ($_POST['address']) ) {
                 $fullname = filter_input(INPUT_POST,'fullname',FILTER_SANITIZE_SPECIAL_CHARS);
                 $username = filter_input(INPUT_POST,'username',FILTER_SANITIZE_SPECIAL_CHARS);
@@ -50,7 +51,7 @@ if(isset($_GET['act'])) {
                 }else {
                     $pattern = '/^[^0-9\s][^\s]+$/';
                     if(!preg_match($pattern,$username)) {
-                        $_SESSION['user'] = 'Tên đăng nhập phải dính liền';
+                        $_SESSION['username'] = 'Tên đăng nhập phải dính liền';
                     }
                 };
                 //Validate phone
@@ -80,8 +81,28 @@ if(isset($_GET['act'])) {
                         $_SESSION['address'] = 'Địa chỉ không được có kí tự đặt biệt';
                     }
                 };
+                foreach($tk_all as $tk) {
+                    if($tk['TenTaiKhoan']==$username ) {
+                       $_SESSION['username'] = 'Tên tài khoản đã tồn tại';
+                    }elseif($tk['SoDienThoai']==$phone) {
+                        $_SESSION['phone'] = 'Số điện thoại đã dược sử dụng';
+                    }else {
+                        
+                    }
+                }
+                if(empty($_SESSION['fullname'])&&empty($_SESSION['username'])&&empty($_SESSION['phone'])&&empty($_SESSION['password'])&&empty($_SESSION['address'])) {
+                    // echo '1';
+                    // echo '<pre/>';
+                    // print_r($tk_all);
+                    // echo '<pre/>';  
+                    user_resign($fullname,$username,$phone,$password,$address);
+                    header('Location: ?mod=user&act=login');
+                }
             }
-            // user_resign('thi trung tinh','tinhpro123','0398981104','tinh123','Thuận An - Bình Dương');
+
+    
+
+
 
             //Hiện thị dữ liệu
             $view_name='user_resign';
@@ -91,3 +112,4 @@ if(isset($_GET['act'])) {
     }
     include_once 'view/v_user_layout.php';
 }
+

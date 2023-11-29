@@ -12,84 +12,50 @@
                   </div>
                   <div class="box_qtt d-flex gap-5 me-5">
                      <p class="fw-medium me-5">Số lượng</p>
+                     <p class="fw-medium me-2">Giá Sách..</p>
+
                      <p class="fw-medium me-2">Thành tiền</p>
                   </div>
                </div>
 
                <div class="box_product_content d-flex flex-column gap-3">
-                  <div class="product_check d-flex justify-content-between">
-                     <div class="form-check d-flex">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <img src="./img/product-1/1.jpg" class="img-fluid" width="15%" alt="" />
-                        <p class="fw-bold fs-5">Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</p>
-                     </div>
-
-                     <div class="box_add_qtt d-flex gap-5">
-                        <div
-                           class="add_main border border-secondary d-inline-flex align-self-start px-1 gap-4 align-items-center rounded me-4"
-                        >
-                           <p style="color: #999" class="d-inline-block fs-4 mb-0">-</p>
-                           <p class="d-inline-block fw-bold fs-4 mb-0">1</p>
-                           <p style="color: #999" class="d-inline-block fs-4 mb-0">+</p>
+                  <?php foreach($ctGioSach as $sach):?>
+                     <div class="product_check d-flex justify-content-between">
+                        <div class="form-check d-flex">
+                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                           <img src="<?=$sach['HinhSP']?>" class="img-fluid" width="15%" alt="" />
+                           <p class="fw-bold fs-5"><?=$sach['TenSP']?></p>
                         </div>
 
-                        <p class="fw-bold">143.000đ</p>
-
-                        <p>
-                           <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="25"
-                              height="25"
-                              fill="currentColor"
-                              class="bi bi-trash"
-                              viewBox="0 0 16 16"
+                        <div class="box_add_qtt d-flex gap-5 boxmoney">
+                           <div
+                              class="add_main border-0 d-inline-flex align-self-start px-1  rounded me-4"
                            >
-                              <path
-                                 d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
-                              />
-                              <path
-                                 d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
-                              />
-                           </svg>
-                        </p>
-                     </div>
-                  </div>
-                  <div class="product_check d-flex justify-content-between">
-                     <div class="form-check d-flex">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <img src="./img/product-1/1.jpg" class="img-fluid" width="15%" alt="" />
-                        <p class="fw-bold fs-5">Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</p>
-                     </div>
+                              <input type="number" class="p-2 border-2 count w-50" style="outline: none;" value="<?=$sach['SoLuongLS']?>">
+                           </div>
 
-                     <div class="box_add_qtt d-flex gap-5">
-                        <div
-                           class="add_main border border-secondary d-inline-flex align-self-start px-1 gap-4 align-items-center rounded me-4"
-                        >
-                           <p style="color: #999" class="d-inline-block fs-4 mb-0">-</p>
-                           <p class="d-inline-block fw-bold fs-4 mb-0">1</p>
-                           <p style="color: #999" class="d-inline-block fs-4 mb-0">+</p>
+                           <p class="fw-bold thanhtien"><?=number_format($sach['GiaKhuyenMai'], 0, '.', '.').'đ';?></p>
+
+                           <p>
+                              <svg
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="25"
+                                 height="25"
+                                 fill="currentColor"
+                                 class="bi bi-trash"
+                                 viewBox="0 0 16 16"
+                              >
+                                 <path
+                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                                 />
+                                 <path
+                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                                 />
+                              </svg>
+                           </p>
                         </div>
-
-                        <p class="fw-bold">143.000đ</p>
-                        <p>
-                           <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="25"
-                              height="25"
-                              fill="currentColor"
-                              class="bi bi-trash"
-                              viewBox="0 0 16 16"
-                           >
-                              <path
-                                 d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
-                              />
-                              <path
-                                 d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
-                              />
-                           </svg>
-                        </p>
                      </div>
-                  </div>
+                  <?php endforeach;?>
                </div>
 
                <div>
@@ -138,3 +104,14 @@
                </div>
             </div>
          </div>
+
+
+<script>
+   var input = document.querySelectorAll('.boxmoney');
+   console.log( input)
+   for(const sach of input) {
+      var count = sach.querySelector('.count').value;
+      console.log( count)
+
+   }
+</script>
