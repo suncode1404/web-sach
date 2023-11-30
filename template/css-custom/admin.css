@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+:root {
+   --outline: none;
+   --zero: 0;
+   --max: 100%;
+   --rl: relative;
+   --ab: absolute;
+   --ct: center;
+   --text: #fff;
+}
+
+* {
+   margin: var(--zero);
+   padding: var(--zero);
+   box-sizing: border-box;
+   text-decoration: none;
+   outline: none;
+   border: none;
+}
+
+body {
+   background-color: #1ba085;
+   height: 100vh;
+   width: 100vw;
+}
+
+html {
+   font-family: "Roboto", sans-serif;
+   font-size: 62.5%;
+}
+
+.container {
+   position: var(--rl);
+   width: var(--max);
+   height: var(--max);
+}
+
+.box-content {
+   height: var(--max);
+   width: var(--max);
+   position: var(--ab);
+   bottom: 0;
+}
+.box-content .box-sub-content {
+   width: var(--max);
+   height: var(--max);
+   position: var(--rl);
+}
+.box-content .box-sub-content .box-c-service {
+   width: 15%;
+   padding-top: 3rem;
+}
+
+.box-content .box-sub-content .box-c-service .b-boxsv .user-service .main-user {
+   display: flex;
+   flex-direction: column;
+   align-items: var(--ct);
+   color: var(--text);
+   font-size: 2.1rem;
+   gap: 1rem;
+}
+
+.box-content .box-sub-content .box-c-service .b-boxsv .btn-service {
+   margin-top: 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: var(--ct);
+   gap: 2rem;
+}
+.box-content .box-sub-content .box-c-service .b-boxsv .btn-service button {
+   width: 80%;
+   padding: 1rem;
+   border-radius: 1rem;
+
+   display: flex;
+   justify-content: var(--ct);
+   align-items: var(--ct);
+   gap: 1rem;
+   font-size: 1.6rem;
+   font-weight: 500;
+   color: var(--text);
+   cursor: pointer;
+}
+
+.box-content .box-sub-content .box-c-service .b-boxsv .btn-service button:first-child {
+   background: #ffc019;
+}
+
+.box-content .box-sub-content .box-c-service .b-boxsv .btn-service button:last-child {
+   background: #0a2f66;
+}
+
+.box-content .box-sub-content .box-c-service .b-boxsv .list-service {
+   margin-top: 3rem;
+}
+
+.box-content .box-sub-content .box-c-service .b-boxsv .list-service .nav-item {
+   display: flex;
+   justify-content: var(--ct);
+}
+.box-content .box-sub-content .box-c-service .b-boxsv .list-service .nav-item .list-item {
+   display: flex;
+   flex-direction: column;
+   gap: 5rem;
+}
+
+.box-content .box-sub-content .box-c-service .b-boxsv .list-service .nav-item .list-item .item-main {
+   list-style: none;
+}
+
+.box-content
+   .box-sub-content
+   .box-c-service
+   .b-boxsv
+   .list-service
+   .nav-item
+   .list-item
+   .item-main
+   .link-item {
+   display: flex;
+   align-items: var(--ct);
+   color: var(--text);
+   font-size: 2.2rem;
+   gap: 2rem;
+}
+
+.box-content .box-sub-content .box-c-infor {
+   width: 85%;
+   height: 90%;
+   background: var(--text);
+   position: var(--ab);
+   bottom: 0;
+   right: 0;
+}
+
+.box-content .box-sub-content .box-c-infor .container-box-infor {
+   padding: 0 1rem;
+}
+.box-content .box-sub-content .box-c-infor .container-box-infor .box-title-infor {
+   padding: 1rem 2rem;
+   display: flex;
+   justify-content: space-between;
+}
+
+.box-content .box-sub-content .box-c-infor .container-box-infor .box-title-infor > p {
+   font-weight: 700;
+   font-size: 4rem;
+   color: #3c3939;
+}
+
+.box-content .box-sub-content .box-c-infor .container-box-infor .box-title-infor > button {
+   padding: 0 1rem;
+   font-weight: 700;
+   font-size: 2.2rem;
+   color: var(--text);
+   background-color: #1ba085;
+   border-radius: 1rem;
+   cursor: pointer !important;
+}
+.box-c-infor .box-device-status .table-infor-item {
+   border-collapse: collapse;
+}
+.name-infor-th {
+   padding: 3rem;
+   font-size: 2rem;
+}
+ .table-infor-item > tbody > tr {
+   border-bottom: 1px solid #ccc !important;
+}
+.box-c-infor .table-infor-item tbody > tr > td {
+   font-size: 2.1rem;
+   text-align: center;
+   padding: 3rem 0;
+}
+
+.box-c-infor .table-infor-item .btn-setting {
+   padding: 0.7rem 1rem;
+   border-radius: 0.5rem;
+   font-size: 1.5rem;
+   cursor: pointer;
+   color: var(--text);
+}
+
+.table-infor-item .stt-change {
+   background-color: #ffb901;
+}
+
+.table-infor-item .stt-dlt {
+   background-color: red;
+}
+
+.box-device-infor {
+   padding: 1rem 2rem;
+}
+
+.box-device-infor .bdi-bar-content {
+   padding: 1.5rem;
+   display: flex;
+   justify-content: space-between;
+   box-shadow: 0 0 1rem 0.5rem #ccc;
+   border-radius: 1rem;
+   /* height: 100%; */
+   position: relative;
+}
+
+.box-device-infor .bdi-bar-content p {
+   font-size: 2.2rem;
+   font-weight: 700;
+}
+.box-device-infor .bdi-bar-content .line-sub {
+   top: 0;
+   bottom: 0;
+   left: 0;
+   transform: translateX(-50%);
+   width: 1.5rem;
+   background: #ffc019;
+   border-radius: 1rem;
+   position: absolute;
+}
+.box-device-infor {
+   width: var(--max);
+}
+.box-device-infor .box-show-content {
+   margin-top: 5rem;
+
+   width: var(--max);
+   display: flex;
+}
+.box-device-infor .box-show-content .box-content-server-main {
+   width: 60%;
+   display: flex;
+   gap: 4rem;
+   flex-wrap: wrap;
+}
+.box-device-infor .box-show-content .box-content-canvas {
+   width: 40%;
+}
+.box-device-infor .box-show-content .box-content-server-main .box-main-bcsm {
+   width: calc(50% - 4rem);
+   max-height: 15rem;
+   display: flex;
+   align-items: center;
+   box-shadow: 0 0 1rem 1px #ccc;
+   padding: 1rem;
+   border-radius: 1rem;
+}
+
+.box-device-infor .box-show-content .box-content-server-main .box-main-bcsm .icon-box-main-bcsm {
+   /* padding: 1rem 1rem; */
+   background: red;
+   padding: 3rem;
+   color: var(--text);
+   display: flex;
+   align-items: center;
+   height: 100%;
+   border-radius: 1rem;
+}
+.box-device-infor .box-show-content .box-content-server-main .box-main-bcsm .text-box-main-bcsm {
+   margin-left: 1rem;
+   display: flex;
+   flex-direction: column;
+   gap: 2.5rem;
+}
+.box-device-infor
+   .box-show-content
+   .box-content-server-main
+   .box-main-bcsm
+   .text-box-main-bcsm
+   span:nth-child(1) {
+   font-size: 2.5rem;
+   font-weight: 700;
+   color: red;
+}
+.box-device-infor
+   .box-show-content
+   .box-content-server-main
+   .box-main-bcsm
+   .text-box-main-bcsm
+   span:nth-child(2) {
+   font-size: 2rem;
+   font-weight: 700;
+   /* color: red; */
+}
+.box-device-infor
+   .box-show-content
+   .box-content-server-main
+   .box-main-bcsm
+   .text-box-main-bcsm
+   span:nth-child(3) {
+   font-size: 1.5rem;
+   font-weight: 500;
+   /* color: red; */
+}
+.box-device-infor .header-canvas-title {
+   padding-bottom: 1rem;
+   font-size: 2.6rem;
+   border-bottom: 3px solid rgb(213, 213, 5);
+}
+.box-device-status {
+}
+.box-device-status .table-status {
+   border-collapse: collapse;
+}
+.box-device-status .table-status .name-thead-table,
+.name-td-table {
+   border: 1px solid #dddddd !important;
+   padding: 2rem !important;
+   font-size: 2.2rem !important;
+}
+.container .box-btn {
+   position: var(--ab);
+   right: 2rem;
+   top: 2rem;
+   color: var(--text);
+   display: flex;
+   align-items: var(--ct);
+   gap: 1rem;
+   font-size: 2.2rem;
+   font-weight: 500;
+   cursor: pointer;
+}
+.type-ship{
+   text-align: center;
+}
+.hidd {
+   display: none !important;
+}
+
+.centerdf {
+   text-align: center;
+}
+.max-with {
+   width: 100%;
+}
