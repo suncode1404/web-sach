@@ -1,0 +1,33 @@
+.img-cart-css{
+    max-width: 150px;
+    min-width: 0;
+}
+
+@media (max-width:390px){
+   .text-name-js{
+    font-size: 1.1rem !important;
+   }
+   .box-service-cart{
+    flex-direction: column;
+    align-items: flex-end;
+   }
+   .box-service-cart input{
+    width: 50% !important;
+   }
+   .box-buy-product{
+    flex-direction: column;
+    
+   }
+   .box-buy-product p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: .8rem !important;
+   }
+   .box-buy-product .btn{
+font-size: .8rem !important;
+   }
+   .box-status-product{
+    flex-direction: column;
+   }
+}

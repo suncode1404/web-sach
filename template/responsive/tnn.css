@@ -1,0 +1,17 @@
+@media (max-width: 390px) {
+   .box-country {
+      flex-direction: column !important;
+   }
+   .box-select-country,
+   .box_card {
+      width: 100% !important;
+   }
+   .box-book-main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+   }
+   .card {
+      width: 100%;
+   }
+   
+}
