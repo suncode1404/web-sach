@@ -7,7 +7,7 @@ if(isset($_GET['act'])) {
             //Lấy dữ liệu
             include_once 'model/m_user.php';
             if(isset($_POST['user']) && isset($_POST['pass'])) {
-                $result = user_login($_POST['user'],$_POST['pass']);
+                $result = user_login($_POST['user'],md5($_POST['pass']));
                 if($result) {
                     //Thành công
                     $_SESSION['user'] = $result;
@@ -90,13 +90,9 @@ if(isset($_GET['act'])) {
                         
                     }
                 }
-                if(empty($_SESSION['fullname'])&&empty($_SESSION['username'])&&empty($_SESSION['phone'])&&empty($_SESSION['password'])&&empty($_SESSION['address'])) {
-                    // echo '1';
-                    // echo '<pre/>';
-                    // print_r($tk_all);
-                    // echo '<pre/>';  
+                if(empty($_SESSION['fullname'])&&empty($_SESSION['username'])&&empty($_SESSION['phone'])&&empty($_SESSION['password'])&&empty($_SESSION['address'])) {  
                     $_SESSION['dangky'] = 'Đăng ký tài khoản thành công';
-                    user_resign($fullname,$username,$phone,$password,$address);
+                    user_resign($fullname,$username,$phone,md5($password),$address);
                     header('Location: ?mod=user&act=login');
                 }
             }

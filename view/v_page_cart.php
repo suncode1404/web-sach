@@ -17,7 +17,7 @@
                      <thead class="text-center">
                         <tr>
                            <th scope="col"></th>
-                           <th scope="col">Số lượng</th>
+                           <th scope="col">Sách</th>
                            <th scope="col">Số Lượng</th>
                            <th scope="col">Giá</th>
                            <th scope="col">Thành Tiền</th>
@@ -48,7 +48,6 @@
                                        name="count"
                                        value="<?=$sach['SoLuongLS']?>"
                                        min ="1"
-                                       onclick="count()"
                                     />
                               </td>
                               <td class="text-center fs-5 " ><?=number_format($sach['GiaKhuyenMai'], 0, '.', '.').'đ';?></td>
@@ -107,20 +106,26 @@
                            <p class="fw-medium">Chọn tất cả (2)</p>
                            <p class="fw-medium">Xóa</p>
                         </div>
-                        <div class="d-flex align-items-center w-50">
+                        <form action="?mod=page&act=bill" method="post" class="d-flex align-items-center w-50">
                            <div class="d-flex flex-column align-items-center me-5 w-100">
                               <p class="fw-medium">
-                                 Tổng thanh toán (2 sản phẩm):
+                                 Tổng thanh toán ( <span id="quantity">0</span> sản phẩm):
                                  <span class="text-body-tertiary fs-4 tongtien">0</span>
+                                 <input type="hidden">
                               </p>
                               <p class="fw-medium">
                                  Tiết kiệm:
                                  <span class=" text-danger">0đ</span>
                               </p>
                            </div>
-                           <button class="btn btn-success w-50"><a href="?mod=page$act=bill" style="color:#fff;">Mua Hàng</a></button>
-                        </div>
+                           <button class="btn btn-success w-50">Mua Hàng</button>
+                        </form>
                      </div>
+                     <?php if(isset($_SESSION['thongbao'])):?>
+                           <div class="text-center alert alert-warning" role="alert">
+                              <?=$_SESSION['thongbao']?>
+                           </div>
+                     <?php endif;unset($_SESSION['thongbao'])?>
                   </div>
                </div>
             </div>
@@ -128,57 +133,51 @@
 
 <script>
    function count() {
-      var count = document.querySelectorAll('.count');
-      var array = Array.from(count);
-      for (let index = 0; index < array.length; index++) {
-         const element = array[index];
-         if(array[index] == event.target) {
-            count = element.value; 
-            box = element.parentElement.parentElement
-            const price = parseFloat(box.querySelector('.price').textContent);
-            const thanhtien = box.querySelector('.thanhtien');
-            gia = thanhtien.textContent
-            const dataNew = Number(gia.replace('.','').replace('₫',''))
-            const inputslc = box.querySelector('.checkout');
-            const inputset = inputslc.setAttribute('date-price',dataNew)
-            thanhtien.innerText = (count*price)
-            .toLocaleString('vi-VN', {style: 'currency',currency: 'VND'});
-            
-            console.log(inputset);
-         }
-      }
-      checkout()
+      const count = document.querySelectorAll('.count');
+      const tongtien = document.querySelector('.tongtien')   
+      count.forEach(e => {
+         e.addEventListener("click", ()=> {
+            if(e == event.target) {
+               const count = e.value;
+               const box = e.parentElement.parentElement;
+               const price =Number( box.querySelector('.price').textContent);
+               const thanhtien = box.querySelector('.thanhtien');
+               thanhtien.innerHTML = (count*price).toLocaleString('vi-VN',{style: 'currency', currency: 'VND' });
+               const input = box.querySelector('.checkout')
+               input.setAttribute('data-price',count*price)
+               input.removeAttribute('disabled');
+            }
+         })
+      })
    }
    function checkout() {
       const checkout = document.querySelectorAll('.checkout');
       const tongtien = document.querySelector('.tongtien')   
       let total = 0
+      let soluong = 1;
       checkout.forEach(e => 
-      e.addEventListener("click" , ()=> {
-         if(e.checked) {
-            total += Number(e.dataset.price);
-            tongtien.textContent = total + "Đ"
-         }
-         if(!e.checked) {
-            total -= Number(e.dataset.price);
-            tongtien.textContent = total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+         e.addEventListener("click" , ()=> {
+            const box =e.parentElement.parentElement
+            // const img =box.querySelector('img').src;
+            const count = box.querySelector('.count')
+            const quantity = document.querySelector('#quantity')
+            if(e.checked) {
+               quantity.innerHTML = Number(quantity.textContent) + soluong
+               count.disabled = true
+               total += Number(e.dataset.price);
+               tongtien.textContent = total.toLocaleString('vi-VN',{style: 'currency', currency: 'VND'});
+            }
+            if(!e.checked) {
+               quantity.innerHTML = Number(quantity.textContent) - soluong
+               count.disabled = false
+               total -= Number(e.dataset.price);
+               tongtien.textContent = total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 
-         }
-      })
+            }
+         })
       )
-      // var array = Array.from(checkout);
-
-      // for (let index = 0; index < array.length; index++) {
-      //    const element = array[index];
-      //    if(array[index].checked) {
-      //       var box = element.parentElement.parentElement;
-      //       var thanhtien = box.querySelector('.thanhtien');
-      //       tongtien.innerHTML = parseInt((thanhtien.textContent).replace(/[^\d]/g, ""))
-      //       console.log(thanhtien)
-      //    }else{
-      //       tongtien.innerText = 0
-      //    }
       }
+      count()
       checkout()
 
    // }

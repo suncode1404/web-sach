@@ -77,8 +77,11 @@
                      <p class="regis-sub align-self-end text-uppercase fw-bold fs-6"><a href="?mod=user&act=resign">Đăng Ký tài khoản</a></p>
                      <?php if(isset($_SESSION['thongbao'])):?>
                         <p class="alert alert-danger"><?=$_SESSION['thongbao'];?></p>
-                        <p class="alert alert-success"><?=$_SESSION['dangky'];?></p>
                         <?php endif;unset($_SESSION['thongbao']);?> 
+                     </div>
+                     <?php if(isset($_SESSION['dangky'])):?>
+                        <p class="alert alert-success"><?=$_SESSION['dangky'];?></p>
+                        <?php endif;unset($_SESSION['dangky']);?> 
                      </div>
                      <button class="btn btn-success  btn-login-main" type="submit">Đăng Nhập</button>
                </form>

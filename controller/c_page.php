@@ -73,6 +73,16 @@ if(isset($_GET['act'])) {
             // Hiện thị dữ liệu
             $view_name = 'page_cart';
             break;
+        case 'bill':
+            if(isset($_SESSION['user'])) {
+
+            }else {
+                $_SESSION['thongbao']= 'Bạn phải đăng nhập để mua hàng';
+                header('Location:?mod=page&act=cart');
+            }
+            //Hiện thị dữ liệu
+            $view_name = 'page_bill';
+            break;
         default:
             break;
     }

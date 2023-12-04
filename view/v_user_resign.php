@@ -50,7 +50,7 @@
                    class="d-flex justify-content-center flex-column align-items-center gap-5 w-75"
                 >
                    <h1 class="text-uppercase w-100 text-center">
-                      Đăng Nhập
+                      Đăng Ký
                    </h1>
                    <div class="text-center">
                       <form action="?mod=user&act=resign" method="post">
