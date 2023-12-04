@@ -19,7 +19,7 @@
 }
 
 body {
-   background-color: #1ba085;
+   background: #1ba085;
    height: 100vh;
    width: 100vw;
 }
@@ -131,6 +131,7 @@ html {
    position: var(--ab);
    bottom: 0;
    right: 0;
+   overflow: auto;
 }
 
 .box-content .box-sub-content .box-c-infor .container-box-infor {
@@ -148,8 +149,8 @@ html {
    color: #3c3939;
 }
 
-.box-content .box-sub-content .box-c-infor .container-box-infor .box-title-infor > button {
-   padding: 0 1rem;
+.box-content .box-sub-content .box-c-infor .container-box-infor .box-title-infor > form .btn-add {
+   padding: 1rem 2rem;
    font-weight: 700;
    font-size: 2.2rem;
    color: var(--text);
