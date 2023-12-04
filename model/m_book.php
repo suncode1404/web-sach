@@ -1,4 +1,13 @@
 <?php
+    function book_getBook() {
+        return pdo_query("SELECT * FROM sanpham sp INNER JOIN chude cd ON sp.MaCD = cd.MaCD");
+    }
+    function book_countBook() {
+        return pdo_query_value("SELECT COUNT(*) FROM sanpham");
+    }
+    function book_checkCountBook() {
+        return pdo_query_value("SELECT COUNT(*) FROM sanpham WHERE SoLuong <=10");
+    }
     function book_getByCategory($id) {
         return pdo_query("SELECT * FROM sanpham WHERE MaCD=?",$id);
     }
@@ -16,7 +25,6 @@
     }
     function book_search($keyword,$page=1) {
         $start = ($page-1)*10;
-        // Trang 1 lấy 8 cuốn
         // trang 1 bắt đầu từ 0
         // trang 2 bắt đầu từ 10
         // trang 3 bắt đàu từ 20

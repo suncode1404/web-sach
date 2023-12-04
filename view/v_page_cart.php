@@ -10,52 +10,73 @@
                         </label>
                      </div>
                   </div>
-                  <div class="box_qtt d-flex gap-5 me-5">
-                     <p class="fw-medium me-5">Số lượng</p>
-                     <p class="fw-medium me-2">Giá Sách..</p>
-
-                     <p class="fw-medium me-2">Thành tiền</p>
-                  </div>
                </div>
 
                <div class="box_product_content d-flex flex-column gap-3">
-                  <?php foreach($ctGioSach as $sach):?>
-                     <div class="product_check d-flex justify-content-between">
-                        <div class="form-check d-flex">
-                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                           <img src="<?=$sach['HinhSP']?>" class="img-fluid" width="15%" alt="" />
-                           <p class="fw-bold fs-5"><?=$sach['TenSP']?></p>
-                        </div>
-
-                        <div class="box_add_qtt d-flex gap-5 boxmoney">
-                           <div
-                              class="add_main border-0 d-inline-flex align-self-start px-1  rounded me-4"
-                           >
-                              <input type="number" class="p-2 border-2 count w-50" style="outline: none;" value="<?=$sach['SoLuongLS']?>">
-                           </div>
-
-                           <p class="fw-bold thanhtien"><?=number_format($sach['GiaKhuyenMai'], 0, '.', '.').'đ';?></p>
-
-                           <p>
-                              <svg
-                                 xmlns="http://www.w3.org/2000/svg"
-                                 width="25"
-                                 height="25"
-                                 fill="currentColor"
-                                 class="bi bi-trash"
-                                 viewBox="0 0 16 16"
-                              >
-                                 <path
-                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
-                                 />
-                                 <path
-                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
-                                 />
-                              </svg>
-                           </p>
-                        </div>
-                     </div>
-                  <?php endforeach;?>
+                  <table class="table">
+                     <thead class="text-center">
+                        <tr>
+                           <th scope="col"></th>
+                           <th scope="col">Số lượng</th>
+                           <th scope="col">Số Lượng</th>
+                           <th scope="col">Giá</th>
+                           <th scope="col">Thành Tiền</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <?php foreach($ctGioSach as $sach):?>
+                           <tr class="text-center box-sp">
+                              <td> <input class="form-check-input checkout" data-price="<?=$sach['GiaKhuyenMai']*$sach['SoLuongLS']?>" type="checkbox" value="" /></td>
+                              <td class="w-50">
+                                 <div class="d-flex">
+                                    <img src="<?=$sach['HinhSP']?>" class="img-fluid" width="25%" alt="" />
+                                    <div>
+                                       <p class="fs-4 text-start"><?=$sach['TenSP']?></p>
+                                       <p class="fs-5 text-start"><?=$sach['TacGia']?></p>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td>
+                                    <input class="count"
+                                       style="
+                                          outline: none;
+                                          border: solid 2px #1ba085;
+                                          border-radius: 5px;
+                                          padding: 2px;
+                                       "
+                                       type="number"
+                                       name="count"
+                                       value="<?=$sach['SoLuongLS']?>"
+                                       min ="1"
+                                       onclick="count()"
+                                    />
+                              </td>
+                              <td class="text-center fs-5 " ><?=number_format($sach['GiaKhuyenMai'], 0, '.', '.').'đ';?></td>
+                              <td class="text-center fs-5 price" style="display: none;"><?=$sach['GiaKhuyenMai']?></td>
+                              <td class="text-center fw-bolder text-danger thanhtien"><?=number_format($sach['GiaKhuyenMai']*$sach['SoLuongLS'], 0, '.', '.').'₫';?></td>
+                              <td>
+                                 <a href="?mod=book&act=removeFromCart&id=<?=$sach['MaSP']?>">
+                                 <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="25"
+                                    height="25"
+                                    fill="currentColor"
+                                    class="bi bi-trash"
+                                    viewBox="0 0 16 16"
+                                 >
+                                    <path
+                                       d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"
+                                    />
+                                    <path
+                                       d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"
+                                    />
+                                 </svg>
+                                 </a>
+                              </td>
+                           </tr>
+                           <?php endforeach;?>
+                     </tbody>
+                  </table>
                </div>
 
                <div>
@@ -90,14 +111,14 @@
                            <div class="d-flex flex-column align-items-center me-5 w-100">
                               <p class="fw-medium">
                                  Tổng thanh toán (2 sản phẩm):
-                                 <span class="text-body-tertiary">222.000đ</span>
+                                 <span class="text-body-tertiary fs-4 tongtien">0</span>
                               </p>
                               <p class="fw-medium">
                                  Tiết kiệm:
-                                 <span class="text-body-tertiary">0đ</span>
+                                 <span class=" text-danger">0đ</span>
                               </p>
                            </div>
-                           <button class="btn btn-success w-50">Mua Hàng</button>
+                           <button class="btn btn-success w-50"><a href="?mod=page$act=bill" style="color:#fff;">Mua Hàng</a></button>
                         </div>
                      </div>
                   </div>
@@ -105,13 +126,60 @@
             </div>
          </div>
 
-
 <script>
-   var input = document.querySelectorAll('.boxmoney');
-   console.log( input)
-   for(const sach of input) {
-      var count = sach.querySelector('.count').value;
-      console.log( count)
-
+   function count() {
+      var count = document.querySelectorAll('.count');
+      var array = Array.from(count);
+      for (let index = 0; index < array.length; index++) {
+         const element = array[index];
+         if(array[index] == event.target) {
+            count = element.value; 
+            box = element.parentElement.parentElement
+            const price = parseFloat(box.querySelector('.price').textContent);
+            const thanhtien = box.querySelector('.thanhtien');
+            gia = thanhtien.textContent
+            const dataNew = Number(gia.replace('.','').replace('₫',''))
+            const inputslc = box.querySelector('.checkout');
+            const inputset = inputslc.setAttribute('date-price',dataNew)
+            thanhtien.innerText = (count*price)
+            .toLocaleString('vi-VN', {style: 'currency',currency: 'VND'});
+            
+            console.log(inputset);
+         }
+      }
+      checkout()
    }
+   function checkout() {
+      const checkout = document.querySelectorAll('.checkout');
+      const tongtien = document.querySelector('.tongtien')   
+      let total = 0
+      checkout.forEach(e => 
+      e.addEventListener("click" , ()=> {
+         if(e.checked) {
+            total += Number(e.dataset.price);
+            tongtien.textContent = total + "Đ"
+         }
+         if(!e.checked) {
+            total -= Number(e.dataset.price);
+            tongtien.textContent = total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+
+         }
+      })
+      )
+      // var array = Array.from(checkout);
+
+      // for (let index = 0; index < array.length; index++) {
+      //    const element = array[index];
+      //    if(array[index].checked) {
+      //       var box = element.parentElement.parentElement;
+      //       var thanhtien = box.querySelector('.thanhtien');
+      //       tongtien.innerHTML = parseInt((thanhtien.textContent).replace(/[^\d]/g, ""))
+      //       console.log(thanhtien)
+      //    }else{
+      //       tongtien.innerText = 0
+      //    }
+      }
+      checkout()
+
+   // }
 </script>

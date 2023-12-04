@@ -184,6 +184,7 @@
                                                 ><?=number_format($sach['GiaKhuyenMai'], 0, ',', '.').'đ';?></span
                                             >
                                         </div>
+                                        <a href="?mod=book&act=detail&id=<?=$sach['MaSP']?>" class="mt-3 translate_btn btn btn-secondary-remake tstall bg-success"> Tìm hiểu </a>
                                         </div>
                                     </div>
                                     <?php endforeach;?>

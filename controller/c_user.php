@@ -69,7 +69,7 @@ if(isset($_GET['act'])) {
                 }else {
                     $pattern = '/^(?=.*[A-Z].*[A-Z])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z])(?=.*[!@#\$%\^\*\(\)-\+]).{8,}$/';
                     if(!preg_match($pattern,$password)) {
-                        $_SESSION['password'] = 'Password yếu yêu cầu lớn hơn 8 kí tự và có 2 kí tự hoa, đặc biệt';
+                        $_SESSION['password'] = 'Password yếu yêu cầu lớn hơn 8 kí tự và có 2 kí tự hoa,số và đặc biệt';
                     }
                 };
                 //Validate password
@@ -78,7 +78,7 @@ if(isset($_GET['act'])) {
                 }else {
                     $pattern = '/^[\d\w\s,-]{10,}$/ui';
                     if(!preg_match($pattern,$address)) {
-                        $_SESSION['address'] = 'Địa chỉ không được có kí tự đặt biệt';
+                        $_SESSION['address'] = 'Địa chỉ không được có kí tự biệt và lớn hơn 10 kí tự';
                     }
                 };
                 foreach($tk_all as $tk) {
@@ -95,6 +95,7 @@ if(isset($_GET['act'])) {
                     // echo '<pre/>';
                     // print_r($tk_all);
                     // echo '<pre/>';  
+                    $_SESSION['dangky'] = 'Đăng ký tài khoản thành công';
                     user_resign($fullname,$username,$phone,$password,$address);
                     header('Location: ?mod=user&act=login');
                 }

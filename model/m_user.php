@@ -8,3 +8,6 @@
     function user_getUser() {
         return pdo_query("SELECT * FROM taikhoan");
     }
+    function user_countUser() {
+        return pdo_query_value("SELECT COUNT(*) FROM taikhoan WHERE Quyen=0");
+    }

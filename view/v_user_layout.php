@@ -163,7 +163,7 @@
                               <li><a class="dropdown-item text-light" href="#">Lịch Sử Mượn sách</a></li>
                               <?php if($_SESSION['user']['Quyen']>=1):?>
                                  <li><hr class="dropdown-divider bg-dark-subtle"></li>
-                                 <li><a class="dropdown-item text-light" href="#">Trang quản lý</a></li>
+                                 <li><a class="dropdown-item text-light" href="?mod=admin&act=dashboard">Trang quản lý</a></li>
                               <?php endif;?>
                               <li><hr class="dropdown-divider bg-dark-subtle"></li>
                               <li><a class="dropdown-item text-light" href="?mod=user&act=logout">Đăng xuất</a></li>

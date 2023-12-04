@@ -61,12 +61,12 @@ if(isset($_GET['act'])) {
                 $kq = history_hasCart($MaTK);
                 if($kq) {
                     //Đúng, đã có giỏ hàng, thêm vào giỏ hàng
-                    history_addToCart($kq['MaLS'],$MaSP);
+                    history_addToCart($kq['MaLS'],$MaSP,$count);
                 }else {
                     //sai, chưa có giỏ sách 
-                    history_add($MaTK,$count);
+                    history_add($MaTK);
                     $kq = history_hasCart($MaTK);
-                    history_addToCart($kq['MaLS'],$MaSP);          
+                    history_addToCart($kq['MaLS'],$MaSP,$count);          
                 }
                 $_SESSION['giohang'] = 'Đã thêm sách vào giỏ hàng';
             } catch (\Throwable $th) {  
@@ -74,6 +74,16 @@ if(isset($_GET['act'])) {
             }
                 
             header('Location: ?mod=book&act=detail&id='.$MaSP.'&count='.$count);
+            break;
+        case 'removeFromCart':
+            include_once 'model/m_history.php';
+            $MaTK = $_SESSION['user']['MaTK'];
+            $MaSP = $_GET['id'];
+            $GioSach = history_hasCart($MaTK);
+            if($GioSach) {
+                history_removeFromCart($GioSach['MaLS'],$MaSP);
+            }
+            header('Location: ?mod=page&act=cart');
             break;
         case 'comment':
             include_once 'model/m_comment.php';
