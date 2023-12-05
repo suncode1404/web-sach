@@ -85,6 +85,15 @@ if(isset($_GET['act'])) {
             }
             header('Location: ?mod=page&act=cart');
             break;
+        case 'updateCart':
+            include_once 'model/m_history.php';
+            $MaTK = $_SESSION['user']['MaTK'];
+            $GioHang = history_hasCart($MaTK);
+            if($GioHang) {
+                
+            }
+            print_r($_POST);
+            break;
         case 'comment':
             include_once 'model/m_comment.php';
             comment_add($_SESSION['user']['MaTK'],$_POST['MaSP'],$_POST['NoiDung']);

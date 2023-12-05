@@ -10,6 +10,8 @@ if(isset($_GET['act'])) {
             $checkSP = book_checkCountBook();
             include_once 'model/m_user.php';
             $tongUser = user_countUser();
+            include_once 'model/m_history.php';
+            $dsLS = history_getAllByAccount();
             //Hiện thị dữ liệu
             $view_name = 'admin_dashboard';
             break;
@@ -26,6 +28,13 @@ if(isset($_GET['act'])) {
             $dsBook = book_getBook();
             //Hiện thị dữ liệu
             $view_name = 'admin_product';
+            break;
+        case 'product-edit':
+             //Lấy dữ liệu
+            include_once 'model/m_book.php';
+            $dsBook = book_getBook();
+            //Hiện thị dữ liệu
+            $view_name = 'admin_product_edit';
             break;
         default:
             break;

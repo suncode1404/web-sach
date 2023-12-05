@@ -100,7 +100,7 @@
                               <p class="fw-medium">
                                  Tổng thanh toán ( <span class="quantity">0</span> sản phẩm):
                                  <span class="text-body-tertiary fs-4 tongtien">0</span>
-                                 <input type="hidden">
+                                 <input type="hidden"class="valuetongtien" value="0" name="valuetongtien">
                               </p>
                               <p class="fw-medium">
                                  Tiết kiệm:
@@ -141,28 +141,25 @@
    }
    function checkout() {
       const checkout = document.querySelectorAll('.checkout');
-      const tongtien = document.querySelector('.tongtien')   
+      const tongtien = document.querySelector('.tongtien')  ;
       let total = 0
       let soluong = 1;
       checkout.forEach(e => 
          e.addEventListener("click" , ()=> {
             const box =e.parentElement.parentElement
-            const img =box.querySelector('img').src;
-            const count = box.querySelector('.count').value
-            const nameBook = box.querySelector('.ten').textContent
-            const auth = box.querySelector('.tacgia').textContent
+            let valuetongtien = Number(document.querySelector('.valuetongtien').value);
             const quantity = document.querySelector('.quantity')
             const muahang = document.querySelector('.muahang')
-            console.log(quantity)
-            if(e.checked) {
-
+            if(e.checked) {   
                quantity.innerHTML = Number(quantity.textContent) + soluong
                count.disabled = true
                total += Number(e.dataset.price);
                tongtien.textContent = total.toLocaleString('vi-VN',{style: 'currency', currency: 'VND'});
-               console.log(muahang)
+               
                muahang.addEventListener('submit', e => {
                   e.preventDefault()
+                  valuetongtien += total
+                  localStorage.setItem('valuetongtin',valuetongtien);
                   window.location.href = '?mod=page&act=bill';
                })
                
@@ -172,6 +169,7 @@
                count.disabled = false
                total -= Number(e.dataset.price);
                tongtien.textContent = total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+               valuetongtien -= total
             }
          })
       )

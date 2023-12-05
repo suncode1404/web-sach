@@ -16,3 +16,6 @@
     function history_removeFromCart($MaLS,$MaSP) {
         pdo_execute("DELETE FROM chitietlichsu WHERE MaLS =? AND MaSP= ?",$MaLS,$MaSP);
     }
+    function history_getAllByAccount () {
+        return pdo_query("SELECT * FROM lichsu ls INNER JOIN taikhoan tk ON ls.MaTK = tk.MaTk");
+    }
