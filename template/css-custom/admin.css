@@ -142,7 +142,6 @@ html {
    display: flex;
    justify-content: space-between;
 }
-
 .box-content .box-sub-content .box-c-infor .container-box-infor .box-title-infor > p {
    font-weight: 700;
    font-size: 4rem;
@@ -279,6 +278,7 @@ html {
    .text-box-main-bcsm
    span:nth-child(2) {
    font-size: 2rem;
+
    font-weight: 700;
    /* color: red; */
 }

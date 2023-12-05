@@ -353,8 +353,33 @@
                </div>
                <div class="box_check_product d-flex flex-column">
                   <h1 class="fs-5 border-bottom border-black pb-3">Kiểm tra lại đơn hàng</h1>
-
-                  <div class="d-flex justify-content-between align-items-center">
+                  <table class="table">
+                     <thead class="text-center">
+                        <tr>
+                           <th scope="col"></th>
+                           <th scope="col">Sách</th>
+                           <th scope="col">Số Lượng</th>
+                           <th scope="col">Giá</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                           <tr class="text-center box-sp">
+                              <td> <input class="form-check-input checkout" data-price="<?=$sach['GiaKhuyenMai']*$sach['SoLuongLS']?>" type="checkbox" value="" /></td>
+                              <td class="w-50">
+                                 <div class="d-flex">
+                                    <img src="./img/product-1/1.jpg" class="img-fluid" width="25%" alt="" />
+                                    <div>
+                                       <p class="fs-4 text-start">Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</p>
+                                       <p class="fs-5 text-start">Cao Minh</p>
+                                    </div>
+                                 </div>
+                              </td>
+                              <td class="text-center fs-5 " >1</td>
+                              <td class="text-center fs-5 " >143.000đ</td>
+                           </tr>
+                     </tbody>
+                  </table>
+                  <!-- <div class="d-flex justify-content-between align-items-center">
                      <div class="box_infor_product d-flex gap-5 align-items-center">
                         <img src="./img/product-1/1.jpg" class="img-fluid w-25" alt="" />
                         <p class="fw-medium">Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</p>
@@ -363,7 +388,7 @@
                         <p class="fw-bold">143.000đ</p>
                         <p>1</p>
                      </div>
-                  </div>
+                  </div> -->
                   <div class="box_button_check_sale align-self-end">
                      <div class="btn-group gap-5" role="group" aria-label="Basic example">
                         <button type="button" class="btn btn-outline-success rounded-1">
