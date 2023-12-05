@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+      <link rel="icon" href="template/img/logosach.png">
       <link rel="stylesheet" href="template/css/bootstrap.css" />
       <link rel="stylesheet" href="template/css-custom/style.css" />
       <?php if($view_name == 'book_detail'):?> 
@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="template/css-custom/dndk.css" />
       <link rel="stylesheet" href="template/css-custom/responsive.css" />
       <?php endif;?> 
-      <title>Document</title>
+      <title>Books Store</title>
    </head>
    <body>
       <?php if(!($view_name == 'user_login' || $view_name == 'user_resign')):?>

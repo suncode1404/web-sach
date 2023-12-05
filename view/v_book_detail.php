@@ -13,21 +13,7 @@
             <form action="" class="box_item d-flex" method="post">
                <div class="box_img d-flex w-32 flex-column">
                   <div class="img_main d-flex align-items-center w-100">
-                     <ul class="list-group">
-                        <li class="list-group-item d-inline-block w-auto">
-                           <img src="template/img-chitiet/img_1.jpg" alt="" class="img-fluid" />
-                        </li>
-                        <li class="list-group-item d-inline-block w-auto">
-                           <img src="template/img-chitiet/img_1.jpg" alt="" class="img-fluid" />
-                        </li>
-                        <li class="list-group-item d-inline-block w-auto">
-                           <img src="template/img-chitiet/img_1.jpg" alt="" class="img-fluid" />
-                        </li>
-                        <li class="list-group-item d-inline-block w-auto">
-                           <img src="template/img-chitiet/img_4.png" alt="" class="img-fluid" />
-                        </li>
-                     </ul>
-                     <img src="<?=$ctSach['HinhSP']?>" alt="" class="img-fluid d-inline-block w-75" />
+                     <img src="<?=$ctSach['HinhSP']?>" alt="" class="img-fluid d-inline-block w-100" />
                   </div>
                   <?php if(isset($_SESSION['thongbao'])):?>
                      <div class="alert alert-danger" role="alert">
