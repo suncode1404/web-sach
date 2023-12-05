@@ -1,0 +1,71 @@
+@media (max-width:390px){
+    .text-link-css{
+        font-size: 1rem !important;
+    }
+    .box_item{
+        flex-direction: column;
+    }
+    .box_img{
+        width: 100%;
+    }
+    .box-text-book{
+        width: 100%;
+    }
+    .box_sale_price{
+        gap: 20px !important;
+    }
+    .box_infor_sub{
+        gap:22px !important;
+        font-size: .72rem;
+    }
+    .box-text-sub-book{
+        width: 100% !important;
+        gap:30px !important;
+        justify-content: flex-start !important;
+    }
+    .box-text-sub-book p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box_content_logo{
+        flex-direction: column;
+    }
+    .box_content{
+        display: none !important;
+    }
+    .box-product-recomd{
+        flex-direction: column ;
+        align-items: center;
+    }
+    .w-18{
+width: 80% !important;
+    }
+    .box_infor_main{
+        gap:35px;
+        
+    }
+    .container_main_rate{
+        flex-direction: column;
+        align-items: center;
+    }
+    .box_range_rate{
+        width: 100% !important;
+    }
+    .box_service{
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    .box_main_comment{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .main-comment{
+        font-size: 1.2rem;
+    }
+    .buyaad button{
+        font-size: .9rem !important;
+    }
+}

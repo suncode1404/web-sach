@@ -6,11 +6,14 @@
 
       <link rel="stylesheet" href="css/bootstrap.css" />
       <link rel="stylesheet" href="./css-custom/style.css" />
+      <link rel="stylesheet" href="./css-custom/responsivehf.css" />
+      <link rel="stylesheet" href="./responsive/tinhtien.css">
+
       <title>Document</title>
    </head>
    <body>
       <header id="header">
-         <button
+         <!-- <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -20,13 +23,13 @@
             aria-label="Toggle navigation"
          >
             <span class="navbar-toggler-icon"></span>
-         </button>
+         </button> -->
          <nav class="navbar navbar-expand-lg">
             <div class="container container_nav_logo">
-               <a class="navbar-brand w-10" href="#">
+               <a class="navbar-brand w-10 img-logo-main" href="#">
                   <img class="img-fluid rounded w-25" src="./img/logosach.png" alt="" />
                </a>
-               <button
+               <!-- <button
                   class="navbar-toggler"
                   type="button"
                   data-bs-toggle="collapse"
@@ -36,11 +39,8 @@
                   aria-label="Toggle navigation"
                >
                   <span class="navbar-toggler-icon"></span>
-               </button>
-               <div
-                  class="collapse navbar-collapse w-100 justify-content-between"
-                  id="navbarSupportedContent"
-               >
+               </button> -->
+               <div class="collapse navbar-collapse w-100 justify-content-between" id="navbarSupportedContent">
                   <form action="index.html">
                      <div class="input-group justify-content-center" style="width: 25rem">
                         <input
@@ -50,10 +50,7 @@
                            aria-label="Search"
                            aria-describedby="search-addon"
                         />
-                        <button
-                           type="submit"
-                           class="btn btn-outline-light bg-success fs-6 d-flex align-items-center"
-                        >
+                        <button type="submit" class="btn btn-outline-light bg-success fs-6 d-flex align-items-center">
                            <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="17"
@@ -73,7 +70,7 @@
                   <ul class="navbar-nav mb-2 mb-lg-0 w-auto gap-3">
                      <li class="nav-item bg-danger rounded p-1 fs-6">
                         <a
-                           class="nav-link text-light fw-medium d-flex flex-column align-items-center link_service"
+                           class="link-logo-item nav-link text-light fw-medium d-flex flex-column align-items-center link_service"
                            aria-current="page"
                            href="#"
                         >
@@ -94,7 +91,7 @@
                      </li>
                      <li class="nav-item bg-warning rounded p-1">
                         <a
-                           class="nav-link text-light fw-medium d-flex flex-column align-items-center link_service"
+                           class="link-logo-item nav-link text-light fw-medium d-flex flex-column align-items-center link_service"
                            href="#"
                         >
                            <svg
@@ -112,70 +109,53 @@
                            Thông Báo
                         </a>
                      </li>
-                    
 
-
-
-
-
-                     <li
-                     class="nav-item d-flex align-items-center"
-                  >
-                     <a
-                        class="nav-link fw-medium text-light d-flex flex-column align-items-center link_service bg-success rounded p-1"
-                        href="./dn.html"
-                     >
-                        <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           width="22"
-                           height="22"
-                           fill="white"
-                           class="bi bi-person mb-1"
-                           viewBox="0 0 16 16"
+                     <li class="nav-item d-flex align-items-center">
+                        <a
+                           class="link-logo-item nav-link fw-medium text-light d-flex flex-column align-items-center link_service bg-success rounded p-1"
+                           href="./dn.html"
                         >
-                           <path
-                              d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
-                           />
-                        </svg>
-                        Đăng Nhập
-                     </a>
+                           <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="22"
+                              height="22"
+                              fill="white"
+                              class="bi bi-person mb-1"
+                              viewBox="0 0 16 16"
+                           >
+                              <path
+                                 d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+                              />
+                           </svg>
+                           Đăng Nhập
+                        </a>
 
-                     <!-- ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇cái này là lúc login tài khoản ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇ -->
+                        <!-- ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇cái này là lúc login tài khoản ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇ -->
 
-                     <!-- <div class="position-relative bg-primary rounded p-1 box_login_succ h-100 d-flex align-items-center">
-                        <a class="nav-link dropdown-toggle fs-5 text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           Xin chào thi trung tính
-                         </a>
-                        <ul class="dropdown-menu position-absolute bg-dark drop-dow-action end-0">
-         <li><a class="dropdown-item text-light" href="#">Thông tin tài khoản</a></li>
-         <li><a class="dropdown-item text-light" href="#">Lịch Sử Mượn sách</a></li>
-         <li><hr class="dropdown-divider bg-dark-subtle"></li>
-         <li><a class="dropdown-item text-light" href="#">Trang quản lý</a></li>
-         <li><hr class="dropdown-divider bg-dark-subtle"></li>
-         <li><a class="dropdown-item text-light" href="#">Đăng xuất</a></li>
+                        <!-- <div class="position-relative bg-primary rounded p-1 box_login_succ h-100 d-flex align-items-center">
+                           <a class="nav-link dropdown-toggle fs-5 text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Xin chào thi trung tính
+                            </a>
+                           <ul class="dropdown-menu position-absolute bg-dark drop-dow-action end-0">
+            <li><a class="dropdown-item text-light" href="#">Thông tin tài khoản</a></li>
+            <li><a class="dropdown-item text-light" href="#">Lịch Sử Mượn sách</a></li>
+            <li><hr class="dropdown-divider bg-dark-subtle"></li>
+            <li><a class="dropdown-item text-light" href="#">Trang quản lý</a></li>
+            <li><hr class="dropdown-divider bg-dark-subtle"></li>
+            <li><a class="dropdown-item text-light" href="#">Đăng xuất</a></li>
 
-       </ul>
+          </ul>
 
-                     </div> -->
-                     <!-- ⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆cái này là lúc login tài khoản ⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆ -->
-                  </li>
-
-
-
-
-
-
-
+                        </div> -->
+                        <!-- ⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆cái này là lúc login tài khoản ⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆⬆ -->
+                     </li>
                   </ul>
                </div>
             </div>
          </nav>
          <nav class="navbar navbar-expand-lg">
             <div class="container">
-               <div
-                  class="collapse navbar-collapse d-flex justify-content-center me-4"
-                  id="navbarSupportedContent"
-               >
+               <div class="collapse navbar-collapse d-flex justify-content-center me-4" id="navbarSupportedContent">
                   <ul class="navbar-nav mb-lg-0 d-flex align-items-center gap-4">
                      <li class="nav-item dropdown">
                         <a
@@ -265,6 +245,7 @@
             </div>
          </nav>
       </header>
+
       <main id="main">
          <div class="container pt-5">
             <h1 class="border-bottom border-black border-1 fs-3 pb-3">Địa chỉ giao hàng</h1>
@@ -356,10 +337,10 @@
                      </div>
                   </div>
                </div>
-               <div class="box_sale mb-5">
+               <div class="box_sale mb-5 box-code-sale">
                   <h1 class="fs-5 border-bottom border-black pb-3">Mã Khuyến Mãi / Mã Quà Tặng</h1>
 
-                  <div class="input-group w-50">
+                  <div class="input-group w-50 box-code-inp">
                      <p class="me-4 fw-bold">Mã KM/Quà Tặng</p>
                      <input
                         type="text"
@@ -425,10 +406,10 @@
          <div class="container">
             <div class="infor_footer">
                <div class="container">
-                  <div class="row gap-4 border-bottom border-black py-5">
-                     <div class="col-3 d-flex flex-column align-items-center gap-5 ps-5">
+                  <div class="row gap-4 border-bottom border-black py-5 grid-content-footer">
+                     <div class=" col-3 col-3-remake d-flex flex-column align-items-center gap-3 ps-5 remake-logo-list">
                         <img class="img-fluid rounded w-35" src="./img/logosach.png" alt="" />
-                        <ul class="list-group align-self-start gap-3">
+                        <ul class="list-group align-self-start gap-3 list-footer-remake remake-logo-list w-100">
                            <li class="list-group-item fw-medium fs-5 d-flex align-items-center gap-3">
                               <svg
                                  xmlns="http://www.w3.org/2000/svg"
@@ -476,7 +457,7 @@
                               18 Tô kí, Q12, TPHCM
                            </li>
                         </ul>
-                        <div class="d-flex align-self-start gap-4">
+                        <div class="d-flex align-self-start gap-4 footer-svg-css w-100">
                            <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="30"
@@ -527,9 +508,9 @@
                            </svg>
                         </div>
                      </div>
-                     <div class="col-3">
-                        <ul class="list-group gap-4">
-                           <h3>Điều khoàn sử dụng</h3>
+                     <div class="col-3 col-3-remake">
+                        <ul class="list-group gap-4 list-footer-remake">
+                           <h3 class="content-header-footer">Điều khoàn sử dụng</h3>
 
                            <li class="list-group-item fs-5">Điều khoàn sử dụng</li>
                            <li class="list-group-item fs-5">Chính sách bảo mật cá nhận</li>
@@ -537,9 +518,9 @@
                            <li class="list-group-item fs-5">Hệ thống nhà sách</li>
                         </ul>
                      </div>
-                     <div class="col-3">
-                        <ul class="list-group gap-4">
-                           <h3>Tài khoản của tôi</h3>
+                     <div class="col-3 col-3-remake">
+                        <ul class="list-group gap-4 list-footer-remake">
+                           <h3 class="content-header-footer">Tài khoản của tôi</h3>
 
                            <li class="list-group-item fs-5">Tạo tài khoản mới</li>
                            <li class="list-group-item fs-5">Quên mật khẩu</li>
@@ -547,9 +528,9 @@
                            <li class="list-group-item fs-5">Lịch sử mua hàng</li>
                         </ul>
                      </div>
-                     <div class="col">
-                        <ul class="list-group gap-4">
-                           <h3>Hỗ trợ</h3>
+                     <div class="col col-3-remake">
+                        <ul class="list-group gap-4 list-footer-remake">
+                           <h3 class="content-header-footer">Hỗ trợ</h3>
 
                            <li class="list-group-item fs-5">Chính sách đổi trả</li>
                            <li class="list-group-item fs-5">Chính sách bảo hành</li>
@@ -559,10 +540,10 @@
                   </div>
                   <div class="d-flex justify-content-end">
                      <ul class="list-group flex-row gap-5">
-                        <li class="list-group-item fs-5 fw-medium">Privacy</li>
-                        <li class="list-group-item fs-5 fw-medium">Sitemap</li>
-                        <li class="list-group-item fs-5 fw-medium">Terms</li>
-                        <li class="list-group-item fs-5 fw-medium">Purchase</li>
+                        <li class="list-group-item fs-5 fw-medium list-infors-css">Privacy</li>
+                        <li class="list-group-item fs-5 fw-medium list-infors-css">Sitemap</li>
+                        <li class="list-group-item fs-5 fw-medium list-infors-css">Terms</li>
+                        <li class="list-group-item fs-5 fw-medium list-infors-css">Purchase</li>
                      </ul>
                   </div>
                </div>
