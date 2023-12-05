@@ -175,7 +175,7 @@
                            <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                            <div class="card-body">
                               <h5 class="fs-6"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
-                              <p class="text-secondary fw-bold fs-4"><?=$sach['GiaSP']?></p>
+                              <p class="text-secondary fw-bold fs-4"><?=number_format($sach['GiaSP'], 0, '.', '.').'₫';?></p>
                               <p class="text-body-tertiary fw-medium">
                                  <del><?=$sach['GiaKhuyenMai']?></del>
                               </p>

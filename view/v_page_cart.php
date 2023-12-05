@@ -31,8 +31,8 @@
                                  <div class="d-flex">
                                     <img src="<?=$sach['HinhSP']?>" class="img-fluid" width="25%" alt="" />
                                     <div>
-                                       <p class="fs-4 text-start"><?=$sach['TenSP']?></p>
-                                       <p class="fs-5 text-start"><?=$sach['TacGia']?></p>
+                                       <p class="fs-4 text-start ten"><a href="?mod=book&act=detail&id=<?=$sach['MaSP']?>"><?=$sach['TenSP']?></a></p>
+                                       <p class="fs-5 text-start tacgia"><?=$sach['TacGia']?></p>
                                     </div>
                                  </div>
                               </td>
@@ -106,7 +106,7 @@
                            <p class="fw-medium">Chọn tất cả (2)</p>
                            <p class="fw-medium">Xóa</p>
                         </div>
-                        <form action="?mod=page&act=bill" method="post" class="d-flex align-items-center w-50">
+                        <form action="" method="post" class="d-flex align-items-center w-50 muahang">
                            <div class="d-flex flex-column align-items-center me-5 w-100">
                               <p class="fw-medium">
                                  Tổng thanh toán ( <span id="quantity">0</span> sản phẩm):
@@ -118,7 +118,7 @@
                                  <span class=" text-danger">0đ</span>
                               </p>
                            </div>
-                           <button class="btn btn-success w-50">Mua Hàng</button>
+                           <button type="submit" class="btn btn-success w-50 ">Mua Hàng</button>
                         </form>
                      </div>
                      <?php if(isset($_SESSION['thongbao'])):?>
@@ -158,21 +158,31 @@
       checkout.forEach(e => 
          e.addEventListener("click" , ()=> {
             const box =e.parentElement.parentElement
-            // const img =box.querySelector('img').src;
-            const count = box.querySelector('.count')
+            const img =box.querySelector('img').src;
+            const count = box.querySelector('.count').value
+            const nameBook = box.querySelector('.ten').textContent
+            const auth = box.querySelector('.tacgia').textContent
             const quantity = document.querySelector('#quantity')
+            const muahang = document.querySelector('.muahang')
+            const arr= []
             if(e.checked) {
+
                quantity.innerHTML = Number(quantity.textContent) + soluong
                count.disabled = true
                total += Number(e.dataset.price);
                tongtien.textContent = total.toLocaleString('vi-VN',{style: 'currency', currency: 'VND'});
+               console.log(muahang)
+               muahang.addEventListener('submit', e => {
+                  e.preventDefault()
+                  window.location.href = '?mod=page&act=bill';
+               })
+               
             }
             if(!e.checked) {
                quantity.innerHTML = Number(quantity.textContent) - soluong
                count.disabled = false
                total -= Number(e.dataset.price);
                tongtien.textContent = total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
-
             }
          })
       )

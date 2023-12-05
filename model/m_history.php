@@ -5,7 +5,7 @@
         return pdo_query_one("SELECT * FROM lichsu WHERE MaTK =? AND TrangThai=?",$MaTK,'gio-hang');
     }
     function history_add($MaTK) {
-        pdo_execute("INSERT INTO lichsu(`MaTK`,`TrangThai`) VALUES (?,?,?)",$MaTK,'gio-hang');
+        pdo_execute("INSERT INTO lichsu(`MaTK`,`TrangThai`) VALUES (?,?)",$MaTK,'gio-hang');
     }
     function history_addToCart($MaLS,$MaSP,$count) {
         pdo_execute("INSERT INTO chitietlichsu(`MaLS`,`MaSP`,`SoLuongLS`) VALUES (?,?,?)",$MaLS,$MaSP,$count);
