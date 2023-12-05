@@ -1,17 +1,6 @@
 <div class="container pt-5">
-            <h1 class="fs-4 mb-5">GIỎ HÀNG (2 sản phẩm)</h1>
+            <h1 class="fs-4 mb-5">GIỎ HÀNG</h1>
             <div class="box_main_containe">
-               <div class="select-product d-flex justify-content-between">
-                  <div class="box_check">
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label fw-medium" for="flexCheckDefault">
-                           Chọn tất cả (2 sản phẩm)
-                        </label>
-                     </div>
-                  </div>
-               </div>
-
                <div class="box_product_content d-flex flex-column gap-3">
                   <table class="table">
                      <thead class="text-center">
@@ -109,7 +98,7 @@
                         <form action="" method="post" class="d-flex align-items-center w-50 muahang">
                            <div class="d-flex flex-column align-items-center me-5 w-100">
                               <p class="fw-medium">
-                                 Tổng thanh toán ( <span id="quantity">0</span> sản phẩm):
+                                 Tổng thanh toán ( <span class="quantity">0</span> sản phẩm):
                                  <span class="text-body-tertiary fs-4 tongtien">0</span>
                                  <input type="hidden">
                               </p>
@@ -162,9 +151,9 @@
             const count = box.querySelector('.count').value
             const nameBook = box.querySelector('.ten').textContent
             const auth = box.querySelector('.tacgia').textContent
-            const quantity = document.querySelector('#quantity')
+            const quantity = document.querySelector('.quantity')
             const muahang = document.querySelector('.muahang')
-            const arr= []
+            console.log(quantity)
             if(e.checked) {
 
                quantity.innerHTML = Number(quantity.textContent) + soluong
