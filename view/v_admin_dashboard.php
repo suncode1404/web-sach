@@ -115,12 +115,14 @@
                            </thead>
                            <tbody>
                               <?php foreach($dsLS as $user):?>
-                                 <tr>
-                                    <td class="name-td-table"><?=$user['MaLS']?></td>
-                                    <td class="name-td-table"><?=$user['TenTaiKhoan']?></td>
-                                    <td class="name-td-table"><?=$user['TongTien']?></td>
-                                    <td class="type-ship name-td-table"><?=$user['TrangThai']?></td>
-                                 </tr>
+                                 <?php if($user['TrangThai'] === 'chuan-bi' && $user['Quyen'] === 0):?>
+                                    <tr>
+                                       <td class="name-td-table"><?=$user['MaLS']?></td>
+                                       <td class="name-td-table"><?=$user['TenTaiKhoan']?></td>
+                                       <td class="name-td-table"><?=$user['TongTien']?></td>
+                                       <td class="type-ship name-td-table"><?=$user['TrangThai']?></td>
+                                    </tr>
+                                 <?php endif;?>
                               <?php endforeach;?>
                            </tbody>
                         </table>

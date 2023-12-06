@@ -90,9 +90,18 @@ if(isset($_GET['act'])) {
             $MaTK = $_SESSION['user']['MaTK'];
             $GioHang = history_hasCart($MaTK);
             if($GioHang) {
-                
+                $TongTien = $_POST['tongtien1'];
+                $TrangThai = 'chuan-bi';
+                $NgayTao = date('Y-m-d H:i:s');
+                include_once 'model/m_book.php';
+                $ctGioSach = history_getCart($MaTK);
+                foreach($ctGioSach as $sach) {
+                    book_descreateAmount($sach['MaSP']);
+                }
+                history_updateCart($NgayTao,$TongTien,$TrangThai,$GioHang['MaLS']);
+                $_SESSION['thongbao'] ='Đặt hàng thành công vui lòng vào lịch sử mua hàng để biết thông tin';
+                header('Location: ?mod=page&act=home');
             }
-            print_r($_POST);
             break;
         case 'comment':
             include_once 'model/m_comment.php';

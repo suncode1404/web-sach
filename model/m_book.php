@@ -37,3 +37,6 @@
     function book_getRandomByCategory($id) {
         return pdo_query("SELECT * FROM sanpham WHERE MaCD= ? ORDER BY rand() LIMIT 5",$id);
     }
+    function book_descreateAmount($MaSach) {
+        pdo_execute("UPDATE sanpham SET SoLuong = SoLuong-1 WHERE MaSP =?",$MaSach);
+    }

@@ -142,14 +142,14 @@
    function checkout() {
       const checkout = document.querySelectorAll('.checkout');
       const tongtien = document.querySelector('.tongtien')  ;
+      const muahang = document.querySelector('.muahang')
+      const quantity = document.querySelector('.quantity')
       let total = 0
       let soluong = 1;
       checkout.forEach(e => 
          e.addEventListener("click" , ()=> {
             const box =e.parentElement.parentElement
             let valuetongtien = Number(document.querySelector('.valuetongtien').value);
-            const quantity = document.querySelector('.quantity')
-            const muahang = document.querySelector('.muahang')
             if(e.checked) {   
                quantity.innerHTML = Number(quantity.textContent) + soluong
                count.disabled = true

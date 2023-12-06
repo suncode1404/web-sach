@@ -1,3 +1,11 @@
+<?php
+   if(isset($_SESSION['thongbao'])) {
+      $message = $_SESSION['thongbao'];
+      echo "<script>alert('$message');</script>";
+   }
+   unset($_SESSION['thongbao']);
+?>
+
 <div class="d-flex flex-column">
                <!-- ======================================== -->
                <div class="box_time d-flex align-items-center gap-4">
