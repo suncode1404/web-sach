@@ -79,7 +79,7 @@
                         </p>
                         <p class="fw-medium">
                            Tiết kiệm:
-                           <span class=" text-danger">0đ<?=$_POST?></span>
+                           <span class=" text-danger">0đ</span>
                         </p>
                      </div>
                      <div class="btn-group gap-5" role="group" aria-label="Basic example">               

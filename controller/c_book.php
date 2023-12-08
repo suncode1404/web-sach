@@ -121,7 +121,7 @@ if(isset($_GET['act'])) {
                 $kq = history_hasCart($MaTK);
                 if($kq) {
                     //Đúng, đã có giỏ hàng, thêm vào giỏ hàng
-                    history_addToCart($kq['MaLS'],$MaSP,$count);
+                    // history_addToCart($kq['MaLS'],$MaSP,$count);
                 }else {
                     //sai, chưa có giỏ sách 
                     history_add($MaTK);
