@@ -1,0 +1,8 @@
+.container{
+   height: 100vh;
+}
+.box_add_value{
+   box-shadow: 0 0 10px 0 black;
+   padding: 50px;
+   border-radius: 10px;
+}
