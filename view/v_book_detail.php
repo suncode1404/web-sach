@@ -13,7 +13,7 @@
             <form action="" class="box_item d-flex" method="post">
                <div class="box_img d-flex w-32 flex-column">
                   <div class="img_main d-flex align-items-center w-100">
-                     <img src="<?=$ctSach['HinhSP']?>" alt="" class="img-fluid d-inline-block w-100" />
+                     <img src="upload/img/<?=$ctSach['HinhSP']?>" alt="" class="img-fluid d-inline-block w-100" />
                   </div>
                   <?php if(isset($_SESSION['thongbao'])):?>
                      <div class="alert alert-danger" role="alert">
@@ -158,7 +158,7 @@
                   <?php foreach($dsRandomSach as $sach):?>
                      <div class="col w-100 p-0 m-0 shadow p-2">
                         <div class="card w-100">
-                           <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                           <img src="upload/img/<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                            <div class="card-body">
                               <h5 class="fs-6"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
                               <p class="text-secondary fw-bold fs-4"><?=number_format($sach['GiaSP'], 0, '.', '.').'₫';?></p>

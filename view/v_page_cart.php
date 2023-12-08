@@ -18,7 +18,7 @@
                               <td> <input class="form-check-input checkout" data-price="<?=$sach['GiaKhuyenMai']*$sach['SoLuongLS']?>" type="checkbox" value="" /></td>
                               <td class="w-50">
                                  <div class="d-flex">
-                                    <img src="<?=$sach['HinhSP']?>" class="img-fluid" width="25%" alt="" />
+                                    <img src="upload/img/<?=$sach['HinhSP']?>" class="img-fluid" width="25%" alt="" />
                                     <div>
                                        <p class="fs-4 text-start ten"><a href="?mod=book&act=detail&id=<?=$sach['MaSP']?>"><?=$sach['TenSP']?></a></p>
                                        <p class="fs-5 text-start tacgia"><?=$sach['TacGia']?></p>
@@ -149,6 +149,7 @@
       checkout.forEach(e => 
          e.addEventListener("click" , ()=> {
             const box =e.parentElement.parentElement
+            const count =box.querySelector('.count');
             let valuetongtien = Number(document.querySelector('.valuetongtien').value);
             if(e.checked) {   
                quantity.innerHTML = Number(quantity.textContent) + soluong
