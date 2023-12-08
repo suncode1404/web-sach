@@ -149,6 +149,7 @@
       checkout.forEach(e => 
          e.addEventListener("click" , ()=> {
             const box =e.parentElement.parentElement
+            const count = box.querySelector(".count");
             let valuetongtien = Number(document.querySelector('.valuetongtien').value);
             if(e.checked) {   
                quantity.innerHTML = Number(quantity.textContent) + soluong

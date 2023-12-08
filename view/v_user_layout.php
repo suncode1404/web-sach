@@ -160,7 +160,7 @@
                             </a>
                            <ul class="dropdown-menu position-absolute bg-dark drop-dow-action end-0">
                               <li><a class="dropdown-item text-light" href="#">Thông Tin Tài Khoản</a></li>
-                              <li><a class="dropdown-item text-light" href="#">Lịch Sử Mua Hàng</a></li>
+                              <li><a class="dropdown-item text-light" href="?mod=page&act=history">Lịch Sử Mua Hàng</a></li>
                               <?php if($_SESSION['user']['Quyen']>=1):?>
                                  <li><hr class="dropdown-divider bg-dark-subtle"></li>
                                  <li><a class="dropdown-item text-light" href="?mod=admin&act=dashboard">Trang Quản Lý</a></li>
