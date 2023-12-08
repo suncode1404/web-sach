@@ -1,7 +1,7 @@
 <div class="container-box-infor">
                      <div class="box-title-infor">
                         <p>Sách</p>
-                        <button type="submit" class="btn btn-success">Thêm Sách</button>
+                        <a href="?mod=admin&act=product-add"><button type="submit" class="btn btn-success">Thêm Sách</button></a>
                      </div>
 
                      <table class="table-infor-item">
@@ -21,11 +21,11 @@
                            </tr>
                         </thead>
                         <tbody>
-                           <?php $i=1; foreach($dsBook as $book):?>
+                           <?php foreach($dsBook as $book):?>
                               <tr>
-                                 <td><?=$i++?></td>
+                                 <td><?=$book['MaSP']?></td>
                                  <td>
-                                    <img src="<?=$book['HinhSP']?>" alt="" style=" width: 120px;" >
+                                    <img src="upload/img/<?=$book['HinhSP']?>" alt="" style=" width: 120px;" >
                                  </td>
                                  <td><?=$book['TenSP']?></td>
                                  <td><?=$book['TacGia']?></td>
@@ -36,10 +36,10 @@
                                  <td><?=$book['SoLuotThich']?></td>
                                  <td>6500</td>
                                  <td>
-                                    <button class="btn-setting stt-change"><a href="?mod=admin&act=product-edit&id=<?=$book['MaSP']?>">Sửa</a></button>
+                                    <a href="?mod=admin&act=product-edit&id=<?=$book['MaSP']?>" class="btn-setting stt-change"><a href="?mod=admin&act=product-edit&id=<?=$book['MaSP']?>">Sửa</a></a>
                                  </td>
                                  <td>
-                                    <button class="btn-setting stt-dlt">Xoá</button>
+                                    <a href="?mod=admin&act=product-delete&id=<?=$book['MaSP']?>" class="btn-setting stt-dlt">Xoá</a>
                                  </td>
                               </tr>
                            <?php endforeach;?>

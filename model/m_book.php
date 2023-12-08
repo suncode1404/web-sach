@@ -1,6 +1,6 @@
 <?php
     function book_getBook() {
-        return pdo_query("SELECT * FROM sanpham sp INNER JOIN chude cd ON sp.MaCD = cd.MaCD");
+        return pdo_query("SELECT * FROM sanpham sp  INNER JOIN chude cd ON sp.MaCD = cd.MaCD ORDER BY sp.MaSP ASC");
     }
     function book_countBook() {
         return pdo_query_value("SELECT COUNT(*) FROM sanpham");
@@ -37,6 +37,31 @@
     function book_getRandomByCategory($id) {
         return pdo_query("SELECT * FROM sanpham WHERE MaCD= ? ORDER BY rand() LIMIT 5",$id);
     }
+    function user_checknameproduct($TenSP){
+        return pdo_query_one("SELECT * FROM sanpham WHERE TenSP=?", $TenSP);
+    }
+    function add_product($MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $NhaXuatBan) {
+        // ...
+        $result = pdo_execute("INSERT INTO sanpham(MaCD, TenSP, HinhSP, TacGia, SoLuong, GiaSP, NhaXuatBan) VALUES(?, ?, ?, ?, ?, ?, ?)",
+                                   $MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $NhaXuatBan);
+        // ...
+        return empty($result) ? false : true;
+      }
+      function product_edit($MaSP, $MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $NhaXuatBan) {
+        // ...
+        $result = pdo_execute("UPDATE sanpham SET MaCD = ?, TenSP = ?, HinhSP = ?, TacGia = ?, SoLuong = ?, GiaSP = ?, NhaXuatBan = ? WHERE MaSP = ?",
+                               $MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $NhaXuatBan, $MaSP);
+        // ...
+        return empty($result) ? false : true;
+    }
+    
+    function product_getByID($MaSP){
+        return pdo_query_one("SELECT * FROM sanpham WHERE MaSP = ?", $MaSP);
+    }
+    
+      function product_delete($MaSP){
+        pdo_execute("DELETE FROM sanpham WHERE MaSP =? ", $MaSP);
+      }
     function book_descreateAmount($MaSach) {
         pdo_execute("UPDATE sanpham SET SoLuong = SoLuong-1 WHERE MaSP =?",$MaSach);
     }

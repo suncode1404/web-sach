@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="./css-custom/addmin-add.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="template/css-custom/addmin-add.css" />  
+    <link rel="stylesheet" href="template/css/bootstrap.css" />
+    
+    <link rel="stylesheet" href="template/css-custom/admin.css" />
+
 </head>
 
-<body>
+
+    
     <div class="container d-flex justify-content-center align-items-center">
         <div class="w-50 box_add_value">
-            <h1 class="text-center my-2">Sửa người dùng</h1>
-            <form method="post" enctype="multipart/form-data">
+            <h1 class="text-center my-2">Thêm người dùng</h1>
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label">Tên Tài Khoản</label>
                     <input type="text" class="form-control" name="TenTaiKhoan" />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mật Khẩu</label>
+                    <input type="password" class="form-control" name="MatKhau" />
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Họ Tên</label>
@@ -31,10 +38,6 @@
                     <input type="number" class="form-control" name="SoDienThoai" />
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Hình ảnh</label>
-                    <input type="file" class="form-control" name="HinhAnh" />
-                </div>
-                <div class="mb-3">
                     <label class="form-label">Quyền</label>
                     <select class="form-control" name="Quyen">
                         <option value="1">Admin</option>
@@ -43,10 +46,10 @@
                 </div>
 
                 <!-- Số Lượng Chủ Đề Số cảm nghĩ Lượt đọc -->
-                <button type="submit" class="btn btn-success">Sửa</button>
+                <button type="submit" name="submit" value="submit" class="btn btn-success">Thêm</button>
             </form>
         </div>
     </div>
-</body>
+
 
 </html>

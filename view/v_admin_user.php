@@ -1,7 +1,7 @@
 <div class="container-box-infor">
                      <div class="box-title-infor">
                         <p>Tài khoản</p>
-                        <button>Thêm tài khoản</button>
+                        <a href="?mod=admin&act=user-add"><button>Thêm tài khoản</button></a>
                      </div>
 
                      <table class="table-infor-item max-with">
@@ -50,10 +50,10 @@
                                  </td>
 
                                  <td>
-                                    <button class="btn-setting stt-change">Sửa</button>
+                                    <a href="?mod=admin&act=user-edit&id=<?=$user['MaTK']?>" class="btn-setting stt-change">Sửa</a>
                                  </td>
                                  <td>
-                                    <button class="btn-setting stt-dlt">Xoá</button>
+                                    <a href="?mod=admin&act=user-delete&id=<?=$user['MaTK']?>" class="btn-setting stt-dlt">Xoá</a>
                                  </td>
                               </tr>
                            <?php endforeach;?>
