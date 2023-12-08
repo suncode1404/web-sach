@@ -106,6 +106,7 @@ if(isset($_GET['act'])) {
                     } else {
                         // Add the product to the database
                         $addResult = add_product($MaCD, $TenSP, $_FILES['HinhSP']['name'], $TacGia, $SoLuong, $GiaSP, $NhaXuatBan);
+                        header('Location: ?mod=admin&act=product');
 
                         // Check if the product addition was successful
                         if($addResult) {
@@ -138,7 +139,7 @@ if(isset($_GET['act'])) {
                 }
 
                 $kq = product_edit($MaSP, $_POST['MaCD'], $_POST['TenSP'], $img, $_POST['TacGia'], $_POST['SoLuong'], $_POST['GiaSP'], $_POST['NhaXuatBan']);
-
+                header('Location: ?mod=admin&act=product');
                 if($kq) {
                     header('Location: admin.php?mod=admin&act=product');
                 } else {

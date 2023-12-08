@@ -36,7 +36,7 @@
                                  <td><?=$book['SoLuotThich']?></td>
                                  <td>6500</td>
                                  <td>
-                                    <a href="?mod=admin&act=product-edit&id=<?=$book['MaSP']?>" class="btn-setting stt-change"><a href="?mod=admin&act=product-edit&id=<?=$book['MaSP']?>">Sửa</a></a>
+                                    <a href="?mod=admin&act=product-edit&id=<?=$book['MaSP']?>" class="btn-setting stt-change">Sửa</a>
                                  </td>
                                  <td>
                                     <a href="?mod=admin&act=product-delete&id=<?=$book['MaSP']?>" class="btn-setting stt-dlt">Xoá</a>

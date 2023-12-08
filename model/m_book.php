@@ -49,7 +49,7 @@
       }
       function product_edit($MaSP, $MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $NhaXuatBan) {
         // ...
-        $result = pdo_execute("UPDATE sanpham SET MaCD = ?, TenSP = ?, HinhSP = ?, TacGia = ?, SoLuong = ?, GiaSP = ?, NhaXuatBan = ? WHERE MaSP = ?",
+        pdo_execute("UPDATE sanpham SET MaCD = ?, TenSP = ?, HinhSP = ?, TacGia = ?, SoLuong = ?, GiaSP = ?, NhaXuatBan = ? WHERE MaSP = ?",
                                $MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $NhaXuatBan, $MaSP);
         // ...
         return empty($result) ? false : true;
