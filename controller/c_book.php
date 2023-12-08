@@ -13,6 +13,9 @@ if(isset($_GET['act'])) {
             if(isset($_POST['addcart'])) {
                 header('Location: ?mod=book&act=addToCart&id='.$ctSach['MaSP'].'&count='.$_POST['count']);
             }
+            if(isset($_POST['bill'])) {
+                header('Location:?mod=book&act=bill&id='.$ctSach['MaSP'].'&price='.$_POST['gia'].'&count='.$_POST['count']);
+            }
             //Hiện thị dữ liệu
             $view_name = 'book_detail';
             break;
@@ -48,7 +51,7 @@ if(isset($_GET['act'])) {
             include_once 'model/m_book.php';
             $ctSach = book_getIdBooks($_GET['id']);
             if(!isset($_SESSION['user'])) {
-                $_SESSION['thongbao'] = 'Bạn cần đăng nhập để mua hàng';
+                $_SESSION['thongbao'] = 'Bạn cần đăng nhập để thêm vào giỏ hàng';
                 header('Location: ?mod=book&act=detail&id='.$ctSach['MaSP']);
                 return;
             } 
@@ -89,6 +92,7 @@ if(isset($_GET['act'])) {
             include_once 'model/m_history.php';
             $MaTK = $_SESSION['user']['MaTK'];
             $GioHang = history_hasCart($MaTK);
+            
             if($GioHang) {
                 $TongTien = $_POST['tongtien1'];
                 $TrangThai = 'chuan-bi';
@@ -107,6 +111,30 @@ if(isset($_GET['act'])) {
             include_once 'model/m_comment.php';
             comment_add($_SESSION['user']['MaTK'],$_POST['MaSP'],$_POST['NoiDung']);
             header('Location: ?mod=book&act=detail&id='.$_POST['MaSP']);
+            break;
+        case 'bill':
+            if(isset($_SESSION['user'])) {
+                include_once 'model/m_history.php';
+                $MaSP = $_GET['id'];
+                $MaTK = $_SESSION['user']['MaTK'];
+                $count = $_GET['count'];
+                $kq = history_hasCart($MaTK);
+                if($kq) {
+                    //Đúng, đã có giỏ hàng, thêm vào giỏ hàng
+                    // history_addToCart($kq['MaLS'],$MaSP,$count);
+                }else {
+                    //sai, chưa có giỏ sách 
+                    history_add($MaTK);
+                    $kq = history_hasCart($MaTK);
+                    history_addToCart($kq['MaLS'],$MaSP,$count);          
+                }
+                $thanhtien =$_GET['price']*$_GET['count'];
+            }else {
+                $_SESSION['thongbao']= 'Bạn phải đăng nhập để mua hàng';
+                header('Location:?mod=book&act=detail&id='.$_GET['id']);
+            }
+            //Hiện thị dữ liệu
+            $view_name = 'page_bill';
             break;
         default:
             break;
