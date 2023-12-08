@@ -1,0 +1,21 @@
+@media (max-width:390px){
+    .bg-primary-subtle{
+        padding: 1rem;
+        /* border-radius: 1rem; */
+    }
+    .backgr-text{
+        display: none !important;
+    }
+    .box-main-form{
+        width: 100% !important;
+    }
+    input[type="text"]{
+        width: 100%;
+    }
+    .box-login-rsp{
+        border-radius: 1rem;
+    }
+    .box-login-rsp-sub{
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,16 @@
+@media (max-width:390px){
+    .card-sale{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .box-sale-book{
+        width: 100%;
+    }
+    .card-more{
+        display: flex;
+        flex-direction: column;
+    }
+    .card-more .card{
+        width: 100%;
+    }
+}

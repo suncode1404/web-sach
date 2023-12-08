@@ -30,28 +30,23 @@
                   <div class="box_brand_main d-flex flex-column gap-2">
                      <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <img src="./brand_money/1.jpg" width="30px" height="15px" alt="" />
                         <label class="form-check-label" for="flexCheckDefault">Ví Momo</label>
                      </div>
                      <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <img src="./brand_money/3.jpg" width="30px" height="15px" alt="" />
                         <label class="form-check-label" for="flexCheckDefault">Ví ZaloPay</label>
                      </div>
                      <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <img src="./brand_money/4.jpg" width="30px" height="15px" alt="" />
                         <label class="form-check-label" for="flexCheckDefault">VNPAY</label>
                      </div>
                      <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <img src="./brand_money/2.jpg" width="30px" height="15px" alt="" />
                         <label class="form-check-label" for="flexCheckDefault">ATM / Internet Banking</label>
                      </div>
 
                      <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <img src="./brand_money/5.jpg" width="30px" height="15px" alt="" />
                         <label class="form-check-label" for="flexCheckDefault">
                            Thanh toán bằng tiền mặt khi nhận hàng
                         </label>
@@ -73,40 +68,14 @@
                   </div>
                </div>
                <div class="box_check_product d-flex flex-column">
-                  <h1 class="fs-5 border-bottom border-black pb-3">Kiểm tra lại đơn hàng</h1>
-                  <table class="table">
-                     <thead class="text-center">
-                        <tr>
-                           <th scope="col"></th>
-                           <th scope="col">Sách</th>
-                           <th scope="col">Số Lượng</th>
-                           <th scope="col">Giá</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                           <tr class="text-center box-sp">
-                              <td> <input class="form-check-input checkout" data-price="<?=$sach['GiaKhuyenMai']*$sach['SoLuongLS']?>" type="checkbox" value="" /></td>
-                              <td class="w-50">
-                                 <div class="d-flex">
-                                    <img src="./img/product-1/1.jpg" class="img-fluid" width="25%" alt="" />
-                                    <div>
-                                       <p class="fs-4 text-start">Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)</p>
-                                       <p class="fs-5 text-start">Cao Minh</p>
-                                    </div>
-                                 </div>
-                              </td>
-                              <td class="text-center fs-5 " >1</td>
-                              <td class="text-center fs-5 " >143.000đ</td>
-                           </tr>
-                     </tbody>
-                  </table>
+
                   
-                  <div class="box_button_check_sale align-self-end">
+                  <form action="?mod=book&act=updateCart" method="post" class="box_button_check_sale align-self-end">
                      <div class="d-flex flex-column align-items-center me-5 w-100">
                         <p class="fw-medium">
                            Tổng thanh toán (2 sản phẩm):
                            <span class="text-body-tertiary fs-4 tongtien">0</span>
-                           <input type="hidden">
+                           <input type="hidden" class="tongtien1" value="0" name="tongtien1">
                         </p>
                         <p class="fw-medium">
                            Tiết kiệm:
@@ -117,9 +86,17 @@
                         <a href="?mod=page&act=cart" class="btn btn-outline-success rounded-1">
                            Quay về giỏ hàng
                         </a>
-                        <button type="button" class="btn btn-success rounded-1">Xác nhận thanh toán</button>
+                        <button type="submit" class="btn btn-success rounded-1">Xác nhận thanh toán</button>
                      </div>
-                  </div>
+                  </form>
                </div>
             </div>
          </div>
+<script>
+   var valuetongtien =Number(localStorage.getItem('valuetongtin'));
+   let tongtien = document.querySelector('.tongtien');
+   let tongtien1 = document.querySelector('.tongtien1');
+   tongtien.innerHTML = (Number(tongtien.textContent) +  valuetongtien).toLocaleString('vi-VN',{style:'currency', currency: 'VND'})
+   tongtien1.value = valuetongtien;
+   // console.log(tongtien1)
+</script>

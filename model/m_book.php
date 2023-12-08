@@ -61,5 +61,7 @@
     
       function product_delete($MaSP){
         pdo_execute("DELETE FROM sanpham WHERE MaSP =? ", $MaSP);
-
+      }
+    function book_descreateAmount($MaSach) {
+        pdo_execute("UPDATE sanpham SET SoLuong = SoLuong-1 WHERE MaSP =?",$MaSach);
     }

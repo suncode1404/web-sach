@@ -10,6 +10,8 @@ if(isset($_GET['act'])) {
             $checkSP = book_checkCountBook();
             include_once 'model/m_user.php';
             $tongUser = user_countUser();
+            include_once 'model/m_history.php';
+            $dsLS = history_getAllByAccount();
             //Hiện thị dữ liệu
             $view_name = 'admin_dashboard';
             break;

@@ -85,6 +85,24 @@ if(isset($_GET['act'])) {
             }
             header('Location: ?mod=page&act=cart');
             break;
+        case 'updateCart':
+            include_once 'model/m_history.php';
+            $MaTK = $_SESSION['user']['MaTK'];
+            $GioHang = history_hasCart($MaTK);
+            if($GioHang) {
+                $TongTien = $_POST['tongtien1'];
+                $TrangThai = 'chuan-bi';
+                $NgayTao = date('Y-m-d H:i:s');
+                include_once 'model/m_book.php';
+                $ctGioSach = history_getCart($MaTK);
+                foreach($ctGioSach as $sach) {
+                    book_descreateAmount($sach['MaSP']);
+                }
+                history_updateCart($NgayTao,$TongTien,$TrangThai,$GioHang['MaLS']);
+                $_SESSION['thongbao'] ='Đặt hàng thành công vui lòng vào lịch sử mua hàng để biết thông tin';
+                header('Location: ?mod=page&act=home');
+            }
+            break;
         case 'comment':
             include_once 'model/m_comment.php';
             comment_add($_SESSION['user']['MaTK'],$_POST['MaSP'],$_POST['NoiDung']);

@@ -1,7 +1,7 @@
 <div class="container-box-infor">
                      <div class="box-title-infor">
                         <p>Sách</p>
-                        <a href="?mod=admin&act=product-add"><button>Thêm Sách</button></a>
+                        <a href="?mod=admin&act=product-add"><button type="submit" class="btn btn-success">Thêm Sách</button></a>
                      </div>
 
                      <table class="table-infor-item">
@@ -36,7 +36,7 @@
                                  <td><?=$book['SoLuotThich']?></td>
                                  <td>6500</td>
                                  <td>
-                                    <a href="?mod=admin&act=product-edit&id=<?=$book['MaSP']?>" class="btn-setting stt-change">Sửa</a>
+                                    <a href="?mod=admin&act=product-edit&id=<?=$book['MaSP']?>" class="btn-setting stt-change"><a href="?mod=admin&act=product-edit&id=<?=$book['MaSP']?>">Sửa</a></a>
                                  </td>
                                  <td>
                                     <a href="?mod=admin&act=product-delete&id=<?=$book['MaSP']?>" class="btn-setting stt-dlt">Xoá</a>

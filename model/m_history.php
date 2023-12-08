@@ -5,7 +5,7 @@
         return pdo_query_one("SELECT * FROM lichsu WHERE MaTK =? AND TrangThai=?",$MaTK,'gio-hang');
     }
     function history_add($MaTK) {
-        pdo_execute("INSERT INTO lichsu(`MaTK`,`TrangThai`) VALUES (?,?,?)",$MaTK,'gio-hang');
+        pdo_execute("INSERT INTO lichsu(`MaTK`,`TrangThai`) VALUES (?,?)",$MaTK,'gio-hang');
     }
     function history_addToCart($MaLS,$MaSP,$count) {
         pdo_execute("INSERT INTO chitietlichsu(`MaLS`,`MaSP`,`SoLuongLS`) VALUES (?,?,?)",$MaLS,$MaSP,$count);
@@ -15,4 +15,10 @@
     }
     function history_removeFromCart($MaLS,$MaSP) {
         pdo_execute("DELETE FROM chitietlichsu WHERE MaLS =? AND MaSP= ?",$MaLS,$MaSP);
+    }
+    function history_getAllByAccount () {
+        return pdo_query("SELECT * FROM lichsu ls INNER JOIN taikhoan tk ON ls.MaTK = tk.MaTk");
+    }
+    function history_updateCart($NgayTao,$TongTien,$TrangThai,$MaLS) {
+        pdo_execute("UPDATE lichsu SET NgayTao=?, TongTien=?, TrangThai=? WHERE MaLS=?",$NgayTao,$TongTien,$TrangThai,$MaLS);
     }

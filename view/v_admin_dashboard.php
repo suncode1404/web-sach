@@ -114,24 +114,16 @@
                               </tr>
                            </thead>
                            <tbody>
-                              <tr>
-                                 <td class="name-td-table">AK3947</td>
-                                 <td class="name-td-table">Lý Gia Bảo</td>
-                                 <td class="name-td-table">99.500.000 đ</td>
-                                 <td class="type-ship name-td-table">Chờ xử lí</td>
-                              </tr>
-                              <tr>
-                                 <td class="name-td-table">AK3947</td>
-                                 <td class="name-td-table">Lý Gia Bảo</td>
-                                 <td class="name-td-table">99.500.000 đ</td>
-                                 <td class="type-ship name-td-table">Đang vận chuyển</td>
-                              </tr>
-                              <tr>
-                                 <td class="name-td-table">AK3947</td>
-                                 <td class="name-td-table">Lý Gia Bảo</td>
-                                 <td class="name-td-table">99.500.000 đ</td>
-                                 <td class="type-ship name-td-table">Đã hủy</td>
-                              </tr>
+                              <?php foreach($dsLS as $user):?>
+                                 <?php if($user['TrangThai'] === 'chuan-bi' && $user['Quyen'] === 0):?>
+                                    <tr>
+                                       <td class="name-td-table"><?=$user['MaLS']?></td>
+                                       <td class="name-td-table"><?=$user['TenTaiKhoan']?></td>
+                                       <td class="name-td-table"><?=$user['TongTien']?></td>
+                                       <td class="type-ship name-td-table"><?=$user['TrangThai']?></td>
+                                    </tr>
+                                 <?php endif;?>
+                              <?php endforeach;?>
                            </tbody>
                         </table>
                      </div>

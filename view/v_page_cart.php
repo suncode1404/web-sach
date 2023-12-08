@@ -1,17 +1,6 @@
 <div class="container pt-5">
-            <h1 class="fs-4 mb-5">GIỎ HÀNG (2 sản phẩm)</h1>
+            <h1 class="fs-4 mb-5">GIỎ HÀNG</h1>
             <div class="box_main_containe">
-               <div class="select-product d-flex justify-content-between">
-                  <div class="box_check">
-                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label fw-medium" for="flexCheckDefault">
-                           Chọn tất cả (2 sản phẩm)
-                        </label>
-                     </div>
-                  </div>
-               </div>
-
                <div class="box_product_content d-flex flex-column gap-3">
                   <table class="table">
                      <thead class="text-center">
@@ -31,8 +20,8 @@
                                  <div class="d-flex">
                                     <img src="<?=$sach['HinhSP']?>" class="img-fluid" width="25%" alt="" />
                                     <div>
-                                       <p class="fs-4 text-start"><?=$sach['TenSP']?></p>
-                                       <p class="fs-5 text-start"><?=$sach['TacGia']?></p>
+                                       <p class="fs-4 text-start ten"><a href="?mod=book&act=detail&id=<?=$sach['MaSP']?>"><?=$sach['TenSP']?></a></p>
+                                       <p class="fs-5 text-start tacgia"><?=$sach['TacGia']?></p>
                                     </div>
                                  </div>
                               </td>
@@ -106,19 +95,19 @@
                            <p class="fw-medium">Chọn tất cả (2)</p>
                            <p class="fw-medium">Xóa</p>
                         </div>
-                        <form action="?mod=page&act=bill" method="post" class="d-flex align-items-center w-50">
+                        <form action="" method="post" class="d-flex align-items-center w-50 muahang">
                            <div class="d-flex flex-column align-items-center me-5 w-100">
                               <p class="fw-medium">
-                                 Tổng thanh toán ( <span id="quantity">0</span> sản phẩm):
+                                 Tổng thanh toán ( <span class="quantity">0</span> sản phẩm):
                                  <span class="text-body-tertiary fs-4 tongtien">0</span>
-                                 <input type="hidden">
+                                 <input type="hidden"class="valuetongtien" value="0" name="valuetongtien">
                               </p>
                               <p class="fw-medium">
                                  Tiết kiệm:
                                  <span class=" text-danger">0đ</span>
                               </p>
                            </div>
-                           <button class="btn btn-success w-50">Mua Hàng</button>
+                           <button type="submit" class="btn btn-success w-50 ">Mua Hàng</button>
                         </form>
                      </div>
                      <?php if(isset($_SESSION['thongbao'])):?>
@@ -152,27 +141,35 @@
    }
    function checkout() {
       const checkout = document.querySelectorAll('.checkout');
-      const tongtien = document.querySelector('.tongtien')   
+      const tongtien = document.querySelector('.tongtien')  ;
+      const muahang = document.querySelector('.muahang')
+      const quantity = document.querySelector('.quantity')
       let total = 0
       let soluong = 1;
       checkout.forEach(e => 
          e.addEventListener("click" , ()=> {
             const box =e.parentElement.parentElement
-            // const img =box.querySelector('img').src;
-            const count = box.querySelector('.count')
-            const quantity = document.querySelector('#quantity')
-            if(e.checked) {
+            let valuetongtien = Number(document.querySelector('.valuetongtien').value);
+            if(e.checked) {   
                quantity.innerHTML = Number(quantity.textContent) + soluong
                count.disabled = true
                total += Number(e.dataset.price);
                tongtien.textContent = total.toLocaleString('vi-VN',{style: 'currency', currency: 'VND'});
+               
+               muahang.addEventListener('submit', e => {
+                  e.preventDefault()
+                  valuetongtien += total
+                  localStorage.setItem('valuetongtin',valuetongtien);
+                  window.location.href = '?mod=page&act=bill';
+               })
+               
             }
             if(!e.checked) {
                quantity.innerHTML = Number(quantity.textContent) - soluong
                count.disabled = false
                total -= Number(e.dataset.price);
                tongtien.textContent = total.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
-
+               valuetongtien -= total
             }
          })
       )

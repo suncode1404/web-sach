@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="template/css-custom/dndk.css" />
       <link rel="stylesheet" href="template/css-custom/responsive.css" />
       <?php endif;?> 
-      <title>Document</title>
+      <title>Books Store</title>
    </head>
    <body>
       <?php if(!($view_name == 'user_login' || $view_name == 'user_resign')):?>
@@ -159,14 +159,14 @@
                            Xin Chào, <?=$_SESSION['user']['HoTen']?>
                             </a>
                            <ul class="dropdown-menu position-absolute bg-dark drop-dow-action end-0">
-                              <li><a class="dropdown-item text-light" href="#">Thông tin tài khoản</a></li>
-                              <li><a class="dropdown-item text-light" href="#">Lịch Sử Mượn sách</a></li>
+                              <li><a class="dropdown-item text-light" href="#">Thông Tin Tài Khoản</a></li>
+                              <li><a class="dropdown-item text-light" href="#">Lịch Sử Mua Hàng</a></li>
                               <?php if($_SESSION['user']['Quyen']>=1):?>
                                  <li><hr class="dropdown-divider bg-dark-subtle"></li>
-                                 <li><a class="dropdown-item text-light" href="?mod=admin&act=dashboard">Trang quản lý</a></li>
+                                 <li><a class="dropdown-item text-light" href="?mod=admin&act=dashboard">Trang Quản Lý</a></li>
                               <?php endif;?>
                               <li><hr class="dropdown-divider bg-dark-subtle"></li>
-                              <li><a class="dropdown-item text-light" href="?mod=user&act=logout">Đăng xuất</a></li>
+                              <li><a class="dropdown-item text-light" href="?mod=user&act=logout">Đăng Xuất</a></li>
 
                            </ul>
 
@@ -378,6 +378,6 @@
          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
          crossorigin="anonymous"
       ></script>
-      <script src="template/app.js"></script>
+      <!-- <script src="template/app.js"></script> -->
    </body>
 </html>
