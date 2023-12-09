@@ -40,12 +40,9 @@
     function user_checknameproduct($TenSP){
         return pdo_query_one("SELECT * FROM sanpham WHERE TenSP=?", $TenSP);
     }
-    function add_product($MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $NhaXuatBan) {
-        // ...
-        $result = pdo_execute("INSERT INTO sanpham(MaCD, TenSP, HinhSP, TacGia, SoLuong, GiaSP, NhaXuatBan) VALUES(?, ?, ?, ?, ?, ?, ?)",
-                                   $MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $NhaXuatBan);
-        // ...
-        return empty($result) ? false : true;
+    function add_product($MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $GiaGocSP,$NhaXuatBan,$Mota) {
+        pdo_execute("INSERT INTO sanpham(`MaCD`, `TenSP`, `HinhSP`, `TacGia`, `SoLuong`, `GiaSP`,`GiaKhuyenMai`, `NhaXuatBan`,`MoTa`) VALUES(?,?, ?, ?, ?, ?, ?, ?,?)",
+                                   $MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $GiaGocSP,$NhaXuatBan,$Mota);
       }
       function product_edit($MaSP, $MaCD, $TenSP, $HinhSP, $TacGia, $SoLuong, $GiaSP, $NhaXuatBan) {
         // ...

@@ -1,7 +1,9 @@
 <div class="container-box-infor">
                      <div class="box-title-infor">
                         <p>Tài khoản</p>
-                        <a href="?mod=admin&act=user-add"><button>Thêm tài khoản</button></a>
+                        <form action="?mod=admin&act=user-add" method="post">
+                           <button class="btn-add">Thêm Tài Khoản</button> 
+                        </form>
                      </div>
 
                      <table class="table-infor-item max-with">
@@ -37,7 +39,7 @@
                                     </svg>
                                  </td>
                                  <td><?=$user['TenTaiKhoan']?></td>
-                                 <td><?=$user['SoDienThoai']?></td>
+                                 <td><?='0'.$user['SoDienThoai']?></td>
                                  <td class="type-level-user">
                                  <?php switch ($user['Quyen']) {
                                     case '1':

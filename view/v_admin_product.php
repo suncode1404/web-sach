@@ -1,7 +1,9 @@
 <div class="container-box-infor">
                      <div class="box-title-infor">
                         <p>Sách</p>
-                        <a href="?mod=admin&act=product-add"><button type="submit" class="btn btn-success">Thêm Sách</button></a>
+                        <form action="?mod=admin&act=product-add" method="post">
+                           <button class="btn-add">Thêm Sản Phẩm</button> 
+                        </form>
                      </div>
 
                      <table class="table-infor-item">
@@ -11,7 +13,7 @@
                               <th class="name-infor-th">Hình ảnh</th>
                               <th class="name-infor-th">Tựa sách</th>
                               <th class="name-infor-th">Tác giả</th>
-                              <th class="name-infor-th">Giá Trị</th>
+                              <th class="name-infor-th">Giá</th>
                               <th class="name-infor-th">Số Lượng</th>
                               <th class="name-infor-th">Chủ Đề</th>
                               <th class="name-infor-th">Số cảm nghĩ</th>
@@ -29,7 +31,7 @@
                                  </td>
                                  <td><?=$book['TenSP']?></td>
                                  <td><?=$book['TacGia']?></td>
-                                 <td>157.330</td>
+                                 <td><?=number_format($book['GiaKhuyenMai'],0,'.','.').'đ'?></td>
                                  <td><?=$book['SoLuong']?></td>
                                  <td><?=$book['TenCD']?></td>
                                  <td><?=$book['SoLuotMua']?></td>

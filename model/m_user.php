@@ -21,8 +21,8 @@
 
     function user_edit($MaTK,$TenTaiKhoan,$MatKhau, $HoTen, $DiaChi, $SoDienThoai, $Quyen){
         pdo_execute("UPDATE taikhoan SET TenTaiKhoan =? , MatKhau =? ,
-        HoTen =? , DiaChi = ? , SoDienThoai=? , Quyen =? WHERE MaTK =? ",$MaTK, $TenTaiKhoan, $MatKhau,
-        $HoTen, $DiaChi , $SoDienThoai, $Quyen, );
+        HoTen =? , DiaChi = ? , SoDienThoai=? , Quyen =? WHERE MaTK =? ",$TenTaiKhoan, $MatKhau,
+        $HoTen, $DiaChi , $SoDienThoai, $Quyen, $MaTK);
     }   
     function user_getByID($MaTK){
         return pdo_query_one("SELECT * FROM taikhoan WHERE MaTK = ?", $MaTK);

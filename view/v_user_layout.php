@@ -8,13 +8,16 @@
       <link rel="stylesheet" href="template/css-custom/style.css" />
       <?php if($view_name == 'book_detail'):?> 
       <link rel="stylesheet" href="template/css-custom/chitiet.css" />
+      <link rel="stylesheet" href="template/css-custom/responsivehf.css" />
+      <link rel="stylesheet" href="template/responsive/chitiet.css" />
       <?php elseif($view_name == 'page_foreignbooks' || $view_name == 'page_domesticbooks'):?>
       <link rel="stylesheet" href="template/css-custom/ngoainuoc.css" />
       <?php elseif($view_name == 'page_rankbooks'):?>
       <link rel="stylesheet" href="template/css-custom/xephang.css" />
       <?php elseif($view_name == 'user_resign' || $view_name == 'user_login'):?>
       <link rel="stylesheet" href="template/css-custom/dndk.css" />
-      <link rel="stylesheet" href="template/css-custom/responsive.css" />
+      <link rel="stylesheet" href="template/css-custom/responsivehf.css" />
+      <link rel="stylesheet" href="template/responsive/dndk.css" />
       <?php endif;?> 
       <title>Books Store</title>
    </head>

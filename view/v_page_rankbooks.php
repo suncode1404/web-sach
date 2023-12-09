@@ -12,7 +12,7 @@
                            <div class="title_img_content d-flex align-items-center gap-3 w-30">
                               <h1 class="num_img"><?=$i++?></h1>
                               <span class="line_img"></span>
-                              <img src="<?=$sach['HinhSP']?>" alt="" class="w-25 d-block" />
+                              <img src="upload/img/<?=$sach['HinhSP']?>" alt="" class="w-25 d-block" />
                               <p class="name_img_content d-flex flex-column">
                                  <span class="name_book fw-bold">
                                     <?=$sach['TenSP']?>
@@ -31,7 +31,7 @@
                   <h1 class="fs-2">Tuyển tập chọn lọc</h1>
                   <?php foreach($dsSales as $sach):?>  
                      <div class="box_more_content border-bottom border-1 border-secondary">
-                        <img src="<?=$sach['HinhSP']?>" alt="" class="img-fluid">
+                        <img src="upload/img/<?=$sach['HinhSP']?>" alt="" class="img-fluid">
                         <h2 class="fs-5 text-center"><?=$sach['TenSP']?></h2>
                      </div>  
                   <?php endforeach;?>

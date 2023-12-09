@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="template/css-custom/addmin-add.css" />  
+    <link rel="stylesheet" href="template/css/bootstrap.css" />
+    
+    <link rel="stylesheet" href="template/css-custom/addmin-add.css" />
 
-   <link rel="stylesheet" href="template/css/bootstrap.css" />
-   <link rel="stylesheet" href="template/css-custom/addmin-add.css" />
-   <link rel="stylesheet" href="template/css-custom/admin.css" />
-   <title>edit</title>
 </head>
-
-<body>
    <div class="container d-flex justify-content-center align-items-center">
       <div class="w-50 box_add_value">
          <h1 class="text-center my-2">Sửa sản phẩm</h1>
@@ -46,10 +44,11 @@
                <input type="text" class="form-control" name="NhaXuatBan" value="<?= $Data['NhaXuatBan'] ?>" />
             </div>
             <!-- Số Lượng	Chủ Đề	Số cảm nghĩ	Lượt đọc		 -->
+            <a href="?mod=admin&act=product" style="text-decoration: none; color:#000; padding: 10px 20px">Quay Lại</a>
             <button type="submit" name="submit-edit" value="submit" class="btn btn-success">Sửa</button>
          </form>
       </div>
    </div>
-</body>
 
+   
 </html>

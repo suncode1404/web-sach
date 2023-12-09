@@ -96,7 +96,7 @@
 
                   <div class="box_p_m d-flex align-self-start gap-5 mt-4">
                      <h1 class="text-dark fs-3 fw-bold">Số lượng:</h1>
-                     <input type="number" class="h-70 w-25 p-2 border-2" style="outline: none;" min='0' name="count" value="1">
+                     <input type="number" class="h-70 w-25 p-2 border-2" style="outline: none;" min='1' name="count" value="1">
                   </div>
                </div>
             </form>

@@ -11,7 +11,7 @@
                   <div class="mb-3 row">
                      <label for="inputPassword" class="col-sm-2 col-form-label">Số Điện Thoại</label>
                      <div class="col-sm-10">
-                        <input type="text" class="form-control w-25" placeholder="<?=$_SESSION['user']['SoDienThoai']?>" />
+                        <input type="text" class="form-control w-25" placeholder="0<?=$_SESSION['user']['SoDienThoai']?>" />
                      </div>
                   </div>
                   <div class="mb-3 row">
