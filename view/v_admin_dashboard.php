@@ -115,17 +115,77 @@
                            </thead>
                            <tbody>
                               <?php foreach($dsLS as $user):?>
-                                 <tr>
-                                    <td class="name-td-table"><?=$user['MaLS']?></td>
-                                    <td class="name-td-table"><?=$user['TenTaiKhoan']?></td>
-                                    <td class="name-td-table"><?=$user['TongTien']?></td>
-                                    <td class="type-ship name-td-table"><?=$user['TrangThai']?></td>
-                                 </tr>
+                                 <?php if($user['TrangThai'] === 'chuan-bi' && $user['Quyen'] === 0):?>
+                                    <tr>
+                                       <td class="name-td-table"><?=$user['MaLS']?></td>
+                                       <td class="name-td-table"><?=$user['TenTaiKhoan']?></td>
+                                       <td class="name-td-table"><?=$user['TongTien']?></td>
+                                       <td class="type-ship name-td-table"><?=$user['TrangThai']?></td>
+                                    </tr>
+                                 <?php endif;?>
                               <?php endforeach;?>
                            </tbody>
                         </table>
                      </div>
-                     <!-- <canvas id="myChart"></canvas> -->
+                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+         const ctx = document.getElementById("myChart");
+
+         new Chart(ctx, {
+            type: "line",
+            data: {
+               labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6"],
+               datasets: [
+                  {
+                     backgroundColor: "#60a1f580",
+                     data: [50, 49, 50, 40, 80, 0],
+                     fill: true,
+                     label: "",
+                     borderWidth: 1,
+                  },
+                  {
+                     backgroundColor: "#ecd172ad",
+                     data: [20, 60, 90, 50, 55, 100],
+                     fill: true,
+                     label: "",
+
+                     borderWidth: 1,
+                  },
+               ],
+            },
+            options: {
+               scales: {
+                  y: {
+                     beginAtZero: true,
+                  },
+               },
+               tension: 0.3,
+            },
+         });
+
+         function CheckShip() {
+            const mainType = document.querySelectorAll(".type-ship");
+            // class="type-level-user
+           
+               
+            mainType.forEach((e) => {
+               if (e.textContent.toLowerCase() === "chờ xử lí") {
+                  e.style.backgroundColor = "#79afff";
+                  e.style.color = "#1843ff";
+               }
+               if (e.textContent.toLowerCase() === "đang vận chuyển") {
+                  e.style.backgroundColor = "#ffd66c";
+                  e.style.color = "#ff9237";
+               }
+               if (e.textContent.toLowerCase() === "đã hủy") {
+                  e.style.backgroundColor = "#f57272";
+                  e.style.color = "#fd1d1d";
+               }
+            });
+         }
+
+         CheckShip();
+      </script>
                   </div>
 
 <script>

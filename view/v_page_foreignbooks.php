@@ -204,7 +204,7 @@
                               <?php foreach($dsSach as $sach):?>
                               <div class="col card gap-1 p-2 tstall">
                                     <img
-                                    src="<?=$sach['HinhSP']?>"
+                                    src="upload/img/<?=$sach['HinhSP']?>"
                                     class="card-img-top"
                                     alt="..." />
                                     <div

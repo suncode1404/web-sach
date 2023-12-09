@@ -11,7 +11,7 @@
                   <div class="mb-3 row">
                      <label for="inputPassword" class="col-sm-2 col-form-label">Số Điện Thoại</label>
                      <div class="col-sm-10">
-                        <input type="text" class="form-control w-25" placeholder="<?=$_SESSION['user']['SoDienThoai']?>" />
+                        <input type="text" class="form-control w-25" placeholder="0<?=$_SESSION['user']['SoDienThoai']?>" />
                      </div>
                   </div>
                   <div class="mb-3 row">
@@ -73,9 +73,9 @@
                   <form action="?mod=book&act=updateCart" method="post" class="box_button_check_sale align-self-end">
                      <div class="d-flex flex-column align-items-center me-5 w-100">
                         <p class="fw-medium">
-                           Tổng thanh toán (2 sản phẩm):
-                           <span class="text-body-tertiary fs-4 tongtien">0</span>
-                           <input type="hidden" class="tongtien1" value="0" name="tongtien1">
+                           Tổng thanh toán:
+                           <span class="text-body-tertiary fs-4 tongtien"><?=isset($thanhtien)?number_format($thanhtien,0,'.','.').'đ':0?></span>
+                           <input type="hidden" class="tongtien1" value="<?=isset($thanhtien)?$thanhtien:0?>" name="tongtien1">
                         </p>
                         <p class="fw-medium">
                            Tiết kiệm:
@@ -96,7 +96,9 @@
    var valuetongtien =Number(localStorage.getItem('valuetongtin'));
    let tongtien = document.querySelector('.tongtien');
    let tongtien1 = document.querySelector('.tongtien1');
-   tongtien.innerHTML = (Number(tongtien.textContent) +  valuetongtien).toLocaleString('vi-VN',{style:'currency', currency: 'VND'})
-   tongtien1.value = valuetongtien;
+   if(tongtien1.value==0) {
+      tongtien.innerHTML = (Number(tongtien.textContent) +  valuetongtien).toLocaleString('vi-VN',{style:'currency', currency: 'VND'})
+      tongtien1.value = valuetongtien;
+   }
    // console.log(tongtien1)
 </script>

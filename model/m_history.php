@@ -19,3 +19,6 @@
     function history_getAllByAccount () {
         return pdo_query("SELECT * FROM lichsu ls INNER JOIN taikhoan tk ON ls.MaTK = tk.MaTk");
     }
+    function history_updateCart($NgayTao,$TongTien,$TrangThai,$MaLS) {
+        pdo_execute("UPDATE lichsu SET NgayTao=?, TongTien=?, TrangThai=? WHERE MaLS=?",$NgayTao,$TongTien,$TrangThai,$MaLS);
+    }

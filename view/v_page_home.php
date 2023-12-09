@@ -1,3 +1,11 @@
+<?php
+   if(isset($_SESSION['thongbao'])) {
+      $message = $_SESSION['thongbao'];
+      echo "<script>alert('$message');</script>";
+   }
+   unset($_SESSION['thongbao']);
+?>
+
 <div class="d-flex flex-column">
                <!-- ======================================== -->
                <div class="box_time d-flex align-items-center gap-4">
@@ -30,7 +38,7 @@
                   <!-- ======================================== -->
                   <?php foreach($dsSales as $sach):?>
                      <div class="col card gap-1 p-2 tstall">
-                        <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                        <img src="upload/img/<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                         <div class="card-body d-flex flex-column justify-content-between">
                            <h5 class="card-title"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
                            <div class="mt-3 d-flex justify-content-between">
@@ -67,7 +75,7 @@
                   <!-- ======================================== -->
                   <?php foreach($dsRankTopBooks as $sach):?>
                      <div class="col card gap-1 p-2 tstall">
-                        <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                        <img src="upload/img/<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                         <div class="card-body d-flex flex-column justify-content-between">
                            <h5 class="card-title"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
                            <div class="mt-3 d-flex justify-content-between">
@@ -104,7 +112,7 @@
                   <!-- ======================================== -->
                   <?php foreach($dsDomesticBooks as $sach):?>
                      <div class="col card gap-1 p-2 tstall">
-                        <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                        <img src="upload/img/<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                         <div class="card-body d-flex flex-column justify-content-between">
                            <h5 class="card-title"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
                            <div class="mt-3 d-flex justify-content-between">
@@ -142,7 +150,7 @@
 
                   <?php foreach($dsForeignBooks as $sach):?>
                      <div class="col card gap-1 p-2 tstall">
-                        <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                        <img src="upload/img/<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                         <div class="card-body d-flex flex-column justify-content-between">
                            <h5 class="card-title"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
                            <div class="mt-3 d-flex justify-content-between">

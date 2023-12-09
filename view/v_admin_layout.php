@@ -5,12 +5,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" href="template/img/logosach.png">
       <link rel="stylesheet" href="template/css-custom/admin.css" />
-      <?php if($view_name == 'product-edit'):?> 
-      <link rel="stylesheet" href="template/css-custom/addmin-add.css" />
+      <?php if($_GET['act']== 'user'):?> 
+         <link rel="stylesheet" href="template/css-custom/admin.css" />
       <?php endif;?> 
       <title>Quản Lý Book Store</title>
    </head>
    <body class="">
+   <?php if(!($view_name == 'admin_user_edit' || $view_name == 'admin_user_add' || $view_name == 'admin_product_add'|| $view_name == 'admin_product_edit')):?>
       <div class="container">
          <div class="box-content">
             <div class="box-sub-content">
@@ -187,13 +188,14 @@
                      </div>
                   </div>
                </div>
-
+               <?php endif;?>
                <div class="box-c-infor">
 
                     <?=require_once 'view/v_'.$view_name.'.php';?>
 
 
                </div>
+            <?php if(!($view_name == 'admin_user_edit' || $view_name == 'admin_product_edit' || $view_name == 'admin_product_add' || $view_name == 'admin_product_edit')):?>
             </div>
          </div>
 
@@ -218,64 +220,7 @@
             </svg>
          </a>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script>
-         const ctx = document.getElementById("myChart");
-
-         new Chart(ctx, {
-            type: "line",
-            data: {
-               labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6"],
-               datasets: [
-                  {
-                     backgroundColor: "#60a1f580",
-                     data: [50, 49, 50, 40, 80, 0],
-                     fill: true,
-                     label: "",
-                     borderWidth: 1,
-                  },
-                  {
-                     backgroundColor: "#ecd172ad",
-                     data: [20, 60, 90, 50, 55, 100],
-                     fill: true,
-                     label: "",
-
-                     borderWidth: 1,
-                  },
-               ],
-            },
-            options: {
-               scales: {
-                  y: {
-                     beginAtZero: true,
-                  },
-               },
-               tension: 0.3,
-            },
-         });
-
-         function CheckShip() {
-            const mainType = document.querySelectorAll(".type-ship");
-            // class="type-level-user
-           
-               
-            mainType.forEach((e) => {
-               if (e.textContent.toLowerCase() === "chờ xử lí") {
-                  e.style.backgroundColor = "#79afff";
-                  e.style.color = "#1843ff";
-               }
-               if (e.textContent.toLowerCase() === "đang vận chuyển") {
-                  e.style.backgroundColor = "#ffd66c";
-                  e.style.color = "#ff9237";
-               }
-               if (e.textContent.toLowerCase() === "đã hủy") {
-                  e.style.backgroundColor = "#f57272";
-                  e.style.color = "#fd1d1d";
-               }
-            });
-         }
-
-         CheckShip();
-      </script>
+   <?php endif;?>
+      
    </body>
 </html>

@@ -13,7 +13,7 @@
             <form action="" class="box_item d-flex" method="post">
                <div class="box_img d-flex w-32 flex-column">
                   <div class="img_main d-flex align-items-center w-100">
-                     <img src="<?=$ctSach['HinhSP']?>" alt="" class="img-fluid d-inline-block w-100" />
+                     <img src="upload/img/<?=$ctSach['HinhSP']?>" alt="" class="img-fluid d-inline-block w-100" />
                   </div>
                   <?php if(isset($_SESSION['thongbao'])):?>
                      <div class="alert alert-danger" role="alert">
@@ -29,7 +29,7 @@
                      <button type="submit" name="addcart" class="btn btn-outline-secondary fw-bold fs-6 py-2 border-2">
                         Thêm vào giỏ hàng
                      </button>
-                     <button type="button" class="btn btn-secondary py-2 fw-bold fs-5 mx-2">Mua ngay</button>
+                     <button type="submit" name="bill" class="btn btn-secondary py-2 fw-bold fs-5 mx-2">Mua ngay</button>
                   </div>
                </div>
                <div class="d-flex flex-column w-68">
@@ -78,7 +78,8 @@
                      <p style="color: #f6a602" class="fs-5">(3 đánh giá)</p>
                   </div>
                   <div class="box_sale_price d-flex align-items-center gap-5 mt-4">
-                     <h1 class="text-secondary"><?=number_format($ctSach['GiaSP'],0,'.','.').'đ'?></h1>
+                     <h1 class="text-secondary"><?=number_format($ctSach['GiaKhuyenMai'],0,'.','.').'đ'?></h1>
+                     <input type="hidden" value="<?=$ctSach['GiaKhuyenMai']?>" name="gia">
                      <p class="fs-5 text-dark"><s><?=number_format($ctSach['GiaSP'],0,'.','.').'đ'?></s></p>
                      <p class="btn btn-secondary fs-4 fw-medium">-20%</p>
                   </div>
@@ -95,7 +96,7 @@
 
                   <div class="box_p_m d-flex align-self-start gap-5 mt-4">
                      <h1 class="text-dark fs-3 fw-bold">Số lượng:</h1>
-                     <input type="number" class="h-70 w-25 p-2 border-2" style="outline: none;" min='0' name="count" value="1">
+                     <input type="number" class="h-70 w-25 p-2 border-2" style="outline: none;" min='1' name="count" value="1">
                   </div>
                </div>
             </form>
@@ -158,12 +159,12 @@
                   <?php foreach($dsRandomSach as $sach):?>
                      <div class="col w-100 p-0 m-0 shadow p-2">
                         <div class="card w-100">
-                           <img src="<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
+                           <img src="upload/img/<?=$sach['HinhSP']?>" class="card-img-top" alt="..." />
                            <div class="card-body">
                               <h5 class="fs-6"><?=strlen($sach['TenSP'])<=100?$sach['TenSP']:substr($sach['TenSP'],0,100).'...'?></h5>
-                              <p class="text-secondary fw-bold fs-4"><?=number_format($sach['GiaSP'], 0, '.', '.').'₫';?></p>
+                              <p class="text-secondary fw-bold fs-4"><?=number_format($sach['GiaKhuyenMai'], 0, '.', '.').'₫';?></p>
                               <p class="text-body-tertiary fw-medium">
-                                 <del><?=$sach['GiaKhuyenMai']?></del>
+                                 <del><?=number_format($sach['GiaSP'], 0, '.', '.').'₫';?></del>
                               </p>
                               <div class="box_rating d-flex align-items-center mt-4 gap-2">
                                  <div class="box_start d-flex gap-1">
